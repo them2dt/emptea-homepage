@@ -1,0 +1,38 @@
+.home {
+    background-color: black;
+}
+
+.home {
+    width: 100%;
+    min-height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+.section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 100vw;
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+    color: white;
+    text-align: left;
+}
+
+.home-header-logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.home-intro-title h2 {
+    font-size: 45px;
+    margin: 0;
+    padding: 0;
+}
+
+.home-intro-text p {
+    max-width: 50vw;
+}

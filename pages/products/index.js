@@ -1,16 +1,16 @@
 import Image from "next/image";
 import Link from "next/link";
-import logo from "../components/images/logo.png";
+import logo from "../../components/images/logo.png";
 import { motion } from "framer-motion";
 
 import { useRef } from "react";
 import { useInView } from "framer-motion";
 
-export default function Home() {
+export default function index() {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true });
   return (
-    <div className="home">
+    <div>
       <div className="navbar">
         <div className="navbar-left">
           <Link href="/">
@@ -22,7 +22,7 @@ export default function Home() {
             <li>
               <Link href="/philosophy">philosophy</Link>
             </li>
-            <li>
+            <li className="marked">
               <Link href="/products">products</Link>
             </li>
             <li>
@@ -32,17 +32,15 @@ export default function Home() {
         </div>
         <div className="navbar-right"></div>
       </div>
-      <div className="home-header section">
-        <div className="home-header-content section-content">
-          <div className="home-header-logo">
-            <div className="home-header-icon">
-              <Image src={logo} height={60} />
-            </div>
-            <div className="vertical-splitter"></div>
+      <div className="products section">
+        <div className="products-content section-content">
+          {isInView && (
             <motion.div
-              initial={{ opacity: 0 }}
+              className="products-title"
+              initial={{ opacity: 0, y: "10px" }}
               animate={{
                 opacity: 1,
+                y: "0",
                 transition: {
                   delay: 0,
                   duration: 1,
@@ -50,10 +48,27 @@ export default function Home() {
                   stiffness: 500,
                 },
               }}
-              className="homee-header-title"
             >
-              <h1>Building a better tomorrow.</h1>
+              <h1>Products & Services</h1>
             </motion.div>
+          )}
+          <div className="products-grid" ref={ref}>
+            <Link href="https://campaigns.emptea.xyz" target={"_blank"}>
+              <motion.button
+                className="product campaigns"
+                initial={{ scale: 1 }}
+                transition={{ duration: 0.05 }}
+                whileHover={{
+                  scale: 1.05
+                }}
+                whileTap={{ scale: 0.95 }}
+              >
+                <div className="product-content">
+                  <h3>Emptea Campaigns</h3>
+                  <p>A crowdfunding platform built on solana.</p>
+                </div>
+              </motion.button>
+            </Link>
           </div>
         </div>
       </div>
