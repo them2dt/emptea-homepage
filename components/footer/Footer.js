@@ -58,7 +58,7 @@ export default function Footer() {
             </Link>
           </li>
           <li>
-            <Link href="https://discord.gg/D5YCfRjSDY" target={"_blank"}>
+            <Link href="https://discord.gg/Kra7FhpX" target={"_blank"}>
               Discord
             </Link>
           </li>
