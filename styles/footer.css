@@ -10,12 +10,12 @@
     padding: 0;
     background: transparent;
     z-index: 1001;
-    color: rgba(255, 255, 255, 0.1);
+    color: var(--white-faded);
     font-family: "Inter Tight Regular";
 }
 
 .footer a:hover {
-    color: #c2ff00;
+    color: var(--sign);
     transition-duration: 0.2s;
 }
 

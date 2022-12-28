@@ -8,15 +8,15 @@
     min-height: 10vh;
     margin: 0;
     padding: 0;
-    background: black;
-    border-bottom: 1px solid #c2ff00;
+    background: var(--black);
+    border-bottom: 1px solid var(--sign);
     z-index: 1000;
-    color: white;
+    color: var(--white);
     font-family: "Inter Tight SemiBold";
 }
 
 .navbar a:hover {
-    color: #c2ff00;
+    color: var(--sign);
     transition-duration: 0.2s;
 }
 

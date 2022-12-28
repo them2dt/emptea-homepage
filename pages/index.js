@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import logo from "../components/images/logo.png";
+import Footer from "../components/footer/Footer";
 import { motion } from "framer-motion";
 
 import { useRef } from "react";
@@ -36,7 +37,7 @@ export default function Home() {
         <div className="home-header-content section-content">
           <div className="home-header-logo">
             <div className="home-header-icon">
-              <Image src={logo} height={60} />
+              <Image src={logo} height={60} alt="The emptea logo"/>
             </div>
             <div className="vertical-splitter"></div>
             <motion.div
@@ -57,28 +58,7 @@ export default function Home() {
           </div>
         </div>
       </div>
-      <div className="footer">
-        <div className="footer-left">
-          <Link href="https://emptea.xyz" target={"_blank"}>
-            <p>emptea.</p>
-          </Link>
-        </div>
-        <div className="footer-center"></div>
-        <div className="footer-right">
-          <ul>
-            <li>
-              <Link href="https://twitter.com/empteaxyz" target={"_blank"}>
-                Twitter
-              </Link>
-            </li>
-            <li>
-              <Link href="https://discord.gg/D5YCfRjSDY" target={"_blank"}>
-                Discord
-              </Link>
-            </li>
-          </ul>
-        </div>
-      </div>
+      <Footer />
     </div>
   );
 }

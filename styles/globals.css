@@ -19,33 +19,20 @@
 }
 
 :root {
-    --max-width: 1100px;
-    --border-radius: 12px;
-    --font-mono: ;
-    --foreground-rgb: 0, 0, 0;
-    --background-start-rgb: 214, 219, 220;
-    --background-end-rgb: 255, 255, 255;
-    --primary-glow: conic-gradient( from 180deg at 50% 50%, #16abff33 0deg, #0885ff33 55deg, #54d6ff33 120deg, #0071ff33 160deg, transparent 360deg);
-    --secondary-glow: radial-gradient( rgba(255, 255, 255, 1), rgba(255, 255, 255, 0));
-    --tile-start-rgb: 239, 245, 249;
-    --tile-end-rgb: 228, 232, 233;
-    --tile-border: conic-gradient( #00000080, #00000040, #00000030, #00000020, #00000010, #00000010, #00000080);
-    --callout-rgb: 238, 240, 241;
-    --callout-border-rgb: 172, 175, 176;
-    --card-rgb: 180, 185, 188;
-    --card-border-rgb: 131, 134, 135;
-    --black: black;
-    --white: white;
-    --teal: teal;
+    --white-faded: rgba(255, 255, 255, 0.1);
+    --black-faded: rgba(0, 0, 0, 0.1);
+    --white: rgb(255, 255, 255);
+    --black: rgb(0, 0, 0);
+    --sign: rgb(207, 242, 0);
     scroll-behavior: smooth;
-    background-color: black;
+    background-color: var(--black);
 }
 
 body {
     padding: 0;
     margin: 0;
     overflow-x: hidden;
-    background-color: black;
+    background-color: var(--black);
 }
 
 h1,
@@ -65,11 +52,11 @@ a {
 }
 
 .vertical-splitter {
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    border: 1px solid var(--white-faded);
     height: 80px;
     margin: 20px;
 }
 
 .marked {
-    color: #cff200;
+    color: var(--sign);
 }

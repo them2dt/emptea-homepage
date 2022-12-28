@@ -1,12 +1,12 @@
 import Image from "next/image";
 import Link from "next/link";
-import logo from "../../components/images/logo.png";
+import Footer from "../../components/footer/Footer";
 import { motion } from "framer-motion";
 
 import { useRef } from "react";
 import { useInView } from "framer-motion";
 
-export default function index() {
+export default function Index() {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true });
   return (
@@ -60,40 +60,19 @@ export default function index() {
               <br />A small group of companies is in control of almost all of
               the personal data in the internet. They use your data to track you
               down and offer you the personalized advertisment which gets them
-              the most money. Maybe you don't want this. Maybe all you want is a
+              the most money. Maybe you don`&apos;`t want this. Maybe all you want is a
               simple user experience, where you can be whoever you want. A
-              internet where you don't have to worry about your data. A
+              internet where you don`&apos;`t have to worry about your data. A
               internet, where the user is the true owner of his identity & data.
               <br />
               <br />
               Our goal is it to build a ecosystem of products & services, which
-              are fully aligned with the user's neeeds.
+              are fully aligned with the user`&apos;`s neeeds.
             </p>
           </div>
         </div>
       </div>
-      <div className="footer">
-        <div className="footer-left">
-          <Link href="https://emptea.xyz" target={"_blank"}>
-            <p>emptea.</p>
-          </Link>
-        </div>
-        <div className="footer-center"></div>
-        <div className="footer-right">
-          <ul>
-            <li>
-              <Link href="https://twitter.com/empteaxyz" target={"_blank"}>
-                Twitter
-              </Link>
-            </li>
-            <li>
-              <Link href="https://discord.gg/D5YCfRjSDY" target={"_blank"}>
-                Discord
-              </Link>
-            </li>
-          </ul>
-        </div>
-      </div>
+      <Footer />
     </div>
   );
 }
