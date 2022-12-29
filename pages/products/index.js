@@ -14,18 +14,19 @@ export default function Index() {
       <div className="navbar">
         <div className="navbar-left">
           <Link href="/">
-            <h1>
-              emptea <span className="marked">news</span>
-            </h1>
+            <h1>emptea</h1>
           </Link>
         </div>
         <div className="navbar-center">
           <ul>
             <li>
-              <Link href="/philosophy">mission</Link>
+              <Link href="/philosophy">philosophy</Link>
             </li>
             <li className="marked">
-              <Link href="/products">timeline</Link>
+              <Link href="/products">products</Link>
+            </li>
+            <li>
+              <Link href="/collective ">collective</Link>
             </li>
           </ul>
         </div>
@@ -48,18 +49,14 @@ export default function Index() {
                 },
               }}
             >
-              <h1>Timeline</h1>
+              <h1>Products & Services</h1>
             </motion.div>
           )}
-          <div className="products-grid">
-            <motion.button className="product">
+          <div className="products-grid" ref={ref}>
+            <motion.button className="product campaigns">
               <div className="product-content">
-                <h3>DeGods is moving to Ethereum</h3>
-                <p>
-                  Dust Labs decided to leave solana.
-                  <br />
-                  DeGods is bridging to Ethereum & Yoots is moving to Polygon.
-                </p>
+                <h3>emptea campaigns</h3>
+                <p>A crowdfunding platform built on solana. Coming soon.</p>
               </div>
             </motion.button>
           </div>

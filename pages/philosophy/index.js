@@ -20,10 +20,13 @@ export default function Index() {
         <div className="navbar-center">
           <ul>
             <li className="marked">
-              <Link href="/mission">mission</Link>
+              <Link href="/philosophy">philosophy</Link>
             </li>
             <li>
-              <Link href="/timeline">timeline</Link>
+              <Link href="/products">products</Link>
+            </li>
+            <li>
+              <Link href="/collective ">collective</Link>
             </li>
           </ul>
         </div>
@@ -46,17 +49,25 @@ export default function Index() {
                 },
               }}
             >
-              <h2>Our mission</h2>
+              <h2>For an independent future.</h2>
             </motion.div>
           )}
           <div className="home-intro-text" ref={ref}>
             <p>
-              The blockchain-space is vibrant. Something happens every second.
-              Trends come as fast they go. Projects are born on daily basis.
+              We build products, which bring you more freedom and control of
+              your digital identity.
+              <br />
+              <br />A small group of companies is in control of almost all of
+              the personal data in the internet. They use your data to track you
+              down and offer you the personalized advertisment which gets them
+              the most money. Maybe you don`&apos;`t want this. Maybe all you want is a
+              simple user experience, where you can be whoever you want. A
+              internet where you don`&apos;`t have to worry about your data. A
+              internet, where the user is the true owner of his identity & data.
               <br />
               <br />
-              Emptea news delivers news in the purest form without redundancy, so
-              you can get the core essence instantly. 
+              Our goal is it to build a ecosystem of products & services, which
+              are fully aligned with the user`&apos;`s neeeds.
             </p>
           </div>
         </div>

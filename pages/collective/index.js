@@ -1,17 +1,16 @@
 import Image from "next/image";
 import Link from "next/link";
-import logo from "../components/images/logo.png";
-import Footer from "../components/footer/Footer";
+import Footer from "../../components/footer/Footer";
 import { motion } from "framer-motion";
 
 import { useRef } from "react";
 import { useInView } from "framer-motion";
 
-export default function Home() {
+export default function Index() {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true });
   return (
-    <div className="home">
+    <div>
       <div className="navbar">
         <div className="navbar-left">
           <Link href="/">
@@ -26,24 +25,22 @@ export default function Home() {
             <li>
               <Link href="/products">products</Link>
             </li>
-            <li>
+            <li className="marked">
               <Link href="/collective ">collective</Link>
             </li>
           </ul>
         </div>
         <div className="navbar-right"></div>
       </div>
-      <div className="home-header section">
-        <div className="home-header-content section-content">
-          <div className="home-header-logo">
-            <div className="home-header-icon">
-              <Image src={logo} height={60} alt="The emptea logo"/>
-            </div>
-            <div className="vertical-splitter"></div>
+      <div className="home-intro section">
+        <div className="home-intro-content section-content">
+          {isInView && (
             <motion.div
-              initial={{ opacity: 0 }}
+              className="home-intro-title"
+              initial={{ opacity: 0, y: "10px" }}
               animate={{
                 opacity: 1,
+                y: "0",
                 transition: {
                   delay: 0,
                   duration: 1,
@@ -51,10 +48,20 @@ export default function Home() {
                   stiffness: 500,
                 },
               }}
-              className="homee-header-title"
             >
-              <h1>Building a better tomorrow.</h1>
+              <h2>The Collective</h2>
             </motion.div>
+          )}
+          <div className="home-intro-text" ref={ref}>
+            <p>
+              The emptea collective is a series of handcrafted artworks.
+              <br />
+              The collective represents an private club. A place where
+              like-minded people can come together and build something great.
+              <br />
+              <br />
+              Further details will be announced soon.
+            </p>
           </div>
         </div>
       </div>

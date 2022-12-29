@@ -37,7 +37,6 @@
     color: var(--black);
     text-align: left;
     cursor: pointer;
-    background-color: var(--white);
 }
 
 .product:hover {

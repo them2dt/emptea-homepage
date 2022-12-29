@@ -37,7 +37,7 @@ export default function Footer() {
         main: "#000000",
       },
       secondary: {
-        main: "#C654FE",
+        main: "#cff200",
       },
     },
   });
