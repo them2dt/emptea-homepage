@@ -23,7 +23,7 @@
     --black-faded: rgba(0, 0, 0, 0.1);
     --white: rgb(255, 255, 255);
     --black: rgb(0, 0, 0);
-    --sign: rgb(207, 242, 0);
+    --sign: #C654FE;
     scroll-behavior: smooth;
     background-color: var(--black);
 }

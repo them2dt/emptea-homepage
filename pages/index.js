@@ -15,19 +15,16 @@ export default function Home() {
       <div className="navbar">
         <div className="navbar-left">
           <Link href="/">
-            <h1>emptea</h1>
+            <h1>emptea <span className="marked">news</span></h1>
           </Link>
         </div>
         <div className="navbar-center">
           <ul>
             <li>
-              <Link href="/philosophy">philosophy</Link>
+              <Link href="/mission">mission</Link>
             </li>
             <li>
-              <Link href="/products">products</Link>
-            </li>
-            <li>
-              <Link href="/collective ">collective</Link>
+              <Link href="/timeline">timeline</Link>
             </li>
           </ul>
         </div>
