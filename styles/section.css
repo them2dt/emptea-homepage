@@ -1,0 +1,23 @@
+.section {
+    width: 100%;
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.section-content {
+    max-width: 60vw;
+    text-align: center;
+}
+
+.section-title {
+    font-family: "Inter Tight SemiBold";
+    font-size: 45px;
+}
+
+.section-text {
+    font-family: "Inter Tight Regular";
+}

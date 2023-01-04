@@ -19,31 +19,22 @@
 }
 
 :root {
-    --white-faded: rgba(255, 255, 255, 0.1);
-    --black-faded: rgba(0, 0, 0, 0.1);
-    --white: rgb(255, 255, 255);
-    --black: rgb(0, 0, 0);
-    --sign: rgb(207, 242, 0);
+    --white-faded: rgba(255, 255, 255, 0.2);
+    --black-faded: rgba(0, 0, 0, 0.2);
+    --white: #ffffff;
+    --black: #000000;
+    --sign: #cff200;
+    /*#dbc16c*/
     scroll-behavior: smooth;
     background-color: var(--black);
 }
 
 body {
-    padding: 0;
     margin: 0;
+    padding: 0;
     overflow-x: hidden;
     background-color: var(--black);
-}
-
-h1,
-h2,
-h3,
-h4 {
-    font-family: "Inter Tight SemiBold";
-}
-
-p {
-    font-family: "Inter Tight Regular";
+    color: var(--white);
 }
 
 a {
@@ -51,12 +42,38 @@ a {
     color: inherit;
 }
 
-.vertical-splitter {
+button {
+    cursor: pointer;
+}
+
+.marked {
+    color: var(--sign);
+}
+
+.vertical-splitter div {
     border: 1px solid var(--white-faded);
     height: 80px;
     margin: 20px;
 }
 
-.marked {
-    color: var(--sign);
+.LazyLoad {
+    opacity: 0;
+    transition: all 1s ease-in-out;
+}
+
+.is-visible {
+    opacity: 1;
+}
+
+@media only screen and (max-width: 768px) {
+    .vertical-splitter {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .vertical-splitter div {
+        border: 1px solid var(--white-faded);
+        width: 80vw;
+        height: 0vh;
+    }
 }

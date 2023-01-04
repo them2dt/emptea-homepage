@@ -1,45 +1,26 @@
+//natives
 import Image from "next/image";
-import Link from "next/link";
-import logo from "../components/images/logo.png";
-import Footer from "../components/footer/Footer";
+//3rd-parties
 import { motion } from "framer-motion";
-
-import { useRef } from "react";
-import { useInView } from "framer-motion";
+//locals
+import logo from "../components/bricks/media/logo.png";
+import Navbar from "../components/bricks/navbar/Navbar";
+import Footer from "../components/bricks/footer/Footer";
+import Link from "next/link";
 
 export default function Home() {
-  const ref = useRef(null);
-  const isInView = useInView(ref, { once: true });
   return (
     <div className="home">
-      <div className="navbar">
-        <div className="navbar-left">
-          <Link href="/">
-            <h1>emptea</h1>
-          </Link>
-        </div>
-        <div className="navbar-center">
-          <ul>
-            <li>
-              <Link href="/philosophy">philosophy</Link>
-            </li>
-            <li>
-              <Link href="/products">products</Link>
-            </li>
-            <li>
-              <Link href="/collective ">collective</Link>
-            </li>
-          </ul>
-        </div>
-        <div className="navbar-right"></div>
-      </div>
-      <div className="home-header section">
-        <div className="home-header-content section-content">
+      <Navbar />
+      <div className="home-header" id="home-header">
+        <div className="home-header-content">
           <div className="home-header-logo">
             <div className="home-header-icon">
-              <Image src={logo} height={60} alt="The emptea logo"/>
+              <Image src={logo} height={60} />
             </div>
-            <div className="vertical-splitter"></div>
+            <div className="vertical-splitter">
+              <div></div>
+            </div>
             <motion.div
               initial={{ opacity: 0 }}
               animate={{
@@ -51,10 +32,15 @@ export default function Home() {
                   stiffness: 500,
                 },
               }}
-              className="homee-header-title"
+              className="home-header-title"
             >
-              <h1>Building a better tomorrow.</h1>
+              Building an empire from the bedroom.
             </motion.div>
+          </div>
+          <div className="home-header-button">
+            <Link href={"/philosophy"}>
+              <button>Philosophy</button>
+            </Link>
           </div>
         </div>
       </div>
