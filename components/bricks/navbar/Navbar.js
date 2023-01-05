@@ -42,14 +42,6 @@ export default function Navbar({ id }) {
                   suite
                 </Link>
               </li>
-              <li className="navbar-list-item">
-                <Link
-                  href="/teacup"
-                  style={id == 3 ? { color: "var(--sign)" } : {}}
-                >
-                  teacup
-                </Link>
-              </li>
             </ul>
           </div>
           <div className="navbar-right">

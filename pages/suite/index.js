@@ -14,7 +14,7 @@ export default function index() {
         <div className="suite-grid">
           <div className="suite-grid-cell">
             <div className="suite-area">
-              <div className="suite-area-title">Production</div>
+              <div className="suite-area-title">Released</div>
               <div className="suite-area-content">
                 <div className="product">
                   <div className="product-content">
