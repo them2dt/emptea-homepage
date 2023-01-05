@@ -18,6 +18,35 @@
     src: url("./fonts/InterTight-SemiBold.ttf");
 }
 
+
+/* width */
+
+::-webkit-scrollbar {
+    width: 0px;
+    display: none;
+}
+
+
+/* Track */
+
+ ::-webkit-scrollbar-track {
+    display: none;
+}
+
+
+/* Handle */
+
+ ::-webkit-scrollbar-thumb {
+    display: none;
+}
+
+
+/* Handle on hover */
+
+ ::-webkit-scrollbar-thumb:hover {
+    display: none;
+}
+
 :root {
     --white-faded: rgba(255, 255, 255, 0.2);
     --black-faded: rgba(0, 0, 0, 0.2);
