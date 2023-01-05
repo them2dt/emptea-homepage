@@ -34,7 +34,7 @@ export default function Home() {
               }}
               className="home-header-title"
             >
-              Building an empire from the bedroom.
+              The space for developers.
             </motion.div>
           </div>
           <div className="home-header-button">

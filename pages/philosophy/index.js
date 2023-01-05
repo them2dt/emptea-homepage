@@ -8,8 +8,8 @@ export default function index() {
       <div className="section-content">
         <div className="section-title">Philosophy</div>
         <div className="section-text">
-          Emptea is a community of developers coming together to build the
-          emptea suite. A collection of products & services.
+          Emptea is a community of developers coming together to build together
+          and achieve more.
           <br />
           Talk less. Do more.
         </div>
