@@ -13,6 +13,9 @@
     z-index: 101;
     color: white;
     font-family: "Inter Tight SemiBold";
+    background: var(--black-faded);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(5px);
 }
 
 .navbar a {
