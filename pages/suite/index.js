@@ -33,21 +33,6 @@ export default function index() {
                     </div>
                   </div>
                 </div>
-                <div className="product">
-                  <div className="product-content">
-                    <div className="product-info">
-                      <div className="product-title">emptea news</div>
-                      <div className="product-description">
-                        An transparent news-platform.
-                      </div>
-                    </div>
-                    <div className="product-link">
-                      <Link href={"https://news.emptea.xyz"} target="_blank">
-                        Explore <FontAwesomeIcon icon={faArrowRight} />
-                      </Link>
-                    </div>
-                  </div>
-                </div>
               </div>
             </div>
           </div>
@@ -69,6 +54,21 @@ export default function index() {
                         href={"https://campaigns.emptea.xyz"}
                         target="_blank"
                       >
+                        Explore <FontAwesomeIcon icon={faArrowRight} />
+                      </Link>
+                    </div>
+                  </div>
+                </div>
+                <div className="product">
+                  <div className="product-content">
+                    <div className="product-info">
+                      <div className="product-title">emptea news</div>
+                      <div className="product-description">
+                        An transparent news-platform.
+                      </div>
+                    </div>
+                    <div className="product-link">
+                      <Link href={"https://news.emptea.xyz"} target="_blank">
                         Explore <FontAwesomeIcon icon={faArrowRight} />
                       </Link>
                     </div>
