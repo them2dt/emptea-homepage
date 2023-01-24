@@ -7134,7 +7134,7 @@
   "resolved" "https://registry.npmjs.org/neo-async/-/neo-async-2.6.2.tgz"
   "version" "2.6.2"
 
-"next@13.0.7":
+"next@^13.0.7":
   "integrity" "sha512-YfTifqX9vfHm+rSU/H/3xvzOHDkYuMuh4wsvTjiqj9h7qHEF7KHB66X4qrH96Po+ohdid4JY8YVGPziDwdXL0A=="
   "resolved" "https://registry.npmjs.org/next/-/next-13.0.7.tgz"
   "version" "13.0.7"

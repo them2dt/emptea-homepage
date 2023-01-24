@@ -51,8 +51,9 @@
 }
 
 .suite-area-content {
-    display: grid;
-    grid-template-columns: auto auto auto auto;
+    display: flex;
+    align-items: center;
+    justify-content: left;
 }
 
 .product {

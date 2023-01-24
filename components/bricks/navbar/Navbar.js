@@ -26,22 +26,14 @@ export default function Navbar({ id }) {
           </div>
           <div className="navbar-center">
             <ul className="navbar-list">
-              <li className="navbar-list-item">
-                <Link
-                  href="/philosophy"
-                  style={id == 1 ? { color: "var(--sign)" } : {}}
-                >
-                  philosophy
-                </Link>
-              </li>
-              <li className="navbar-list-item">
+              {/* <li className="navbar-list-item">
                 <Link
                   href="/suite"
                   style={id == 2 ? { color: "var(--sign)" } : {}}
                 >
                   suite
                 </Link>
-              </li>
+              </li> */}
             </ul>
           </div>
           <div className="navbar-right">
@@ -62,21 +54,13 @@ export default function Navbar({ id }) {
             <ul className="navbar-list">
               <li className="navbar-list-item">
                 <Link
-                  href="/philosophy"
-                  style={id == 1 ? { color: "var(--sign)" } : {}}
-                >
-                  philosophy
-                </Link>
-              </li>
-              <li className="navbar-list-item">
-                <Link
                   href="/suite"
                   style={id == 2 ? { color: "var(--sign)" } : {}}
                 >
                   suite
                 </Link>
               </li>
-              
+
               <li>
                 <WalletMultiButtonDynamic />
               </li>

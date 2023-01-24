@@ -34,12 +34,12 @@ export default function Home() {
               }}
               className="home-header-title"
             >
-              The space for developers.
+              Move fast. Break free.
             </motion.div>
           </div>
           <div className="home-header-button">
-            <Link href={"/philosophy"}>
-              <button>Philosophy</button>
+            <Link href={"/suite"}>
+              <button>Enter the suite</button>
             </Link>
           </div>
         </div>
