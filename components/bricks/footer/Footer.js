@@ -61,6 +61,11 @@ export default function Footer() {
               emptea
             </Link>
           </li>
+          <li>
+            <Link href="https://github.com/them2dt" target={"_blank"}>
+              A project by M2DT
+            </Link>
+          </li>
 
           <li>
             <ThemeProvider theme={theme}>

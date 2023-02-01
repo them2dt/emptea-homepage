@@ -7,7 +7,7 @@ import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
 export default function index() {
   return (
     <div className="suite">
-      <Navbar id={2} />
+      <Navbar/>
       <div className="suite-content">
         <div className="suite-title">emptea suite</div>
         <div className="suite-description">
