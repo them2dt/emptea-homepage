@@ -1,9 +1,6 @@
 //natives
 import Image from "next/image";
-import Link from "next/link";
-
-//locals
-import logo from "../components/bricks/media/logo.png";
+import web3_mockup from "../components/bricks/media/web3-mockup.svg";
 import Navbar from "../components/bricks/navbar/Navbar";
 import Footer from "../components/bricks/footer/Footer";
 
@@ -32,7 +29,7 @@ export default function Home() {
               }}
               className="home-header-icon"
             >
-              <Image src={logo} height={100} />
+              <Image src={web3_mockup} />
             </motion.div>
           </div>
         </div>

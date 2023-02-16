@@ -46,11 +46,6 @@ export default function Footer() {
       <div className="footer-left"></div>
       <div className="footer-right">
         <ul>
-          <li>
-            <Link href="https://twitter.com/empteaxyz" target={"_blank"}>
-              Twitter
-            </Link>
-          </li>
           <li>©2023 Emptea. All rights reserved.</li>
           <li>
             <ThemeProvider theme={theme}>

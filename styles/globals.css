@@ -1,108 +1,106 @@
 @font-face {
-    font-family: "Inter Tight ExtraLight";
-    src: url("./fonts/InterTight-ExtraLight.ttf");
+  font-family: "Inter Tight ExtraLight";
+  src: url("./fonts/InterTight-ExtraLight.ttf");
 }
 
 @font-face {
-    font-family: "Inter Tight Light";
-    src: url("./fonts/InterTight-Light.ttf");
+  font-family: "Inter Tight Light";
+  src: url("./fonts/InterTight-Light.ttf");
 }
 
 @font-face {
-    font-family: "Inter Tight Regular";
-    src: url("./fonts/InterTight-Regular.ttf");
+  font-family: "Inter Tight Regular";
+  src: url("./fonts/InterTight-Regular.ttf");
 }
 
 @font-face {
-    font-family: "Inter Tight SemiBold";
-    src: url("./fonts/InterTight-SemiBold.ttf");
+  font-family: "Inter Tight SemiBold";
+  src: url("./fonts/InterTight-SemiBold.ttf");
 }
-
 
 /* width */
 
 ::-webkit-scrollbar {
-    width: 0px;
-    display: none;
+  width: 0px;
+  display: none;
 }
-
 
 /* Track */
 
- ::-webkit-scrollbar-track {
-    display: none;
+::-webkit-scrollbar-track {
+  display: none;
 }
-
 
 /* Handle */
 
- ::-webkit-scrollbar-thumb {
-    display: none;
+::-webkit-scrollbar-thumb {
+  display: none;
 }
-
 
 /* Handle on hover */
 
- ::-webkit-scrollbar-thumb:hover {
-    display: none;
+::-webkit-scrollbar-thumb:hover {
+  display: none;
 }
 
 :root {
-    --white-faded: rgba(255, 255, 255, 0.2);
-    --black-faded: rgba(0, 0, 0, 0.2);
-    --white: #ffffff;
-    --black: #000000;
-    --sign: #cff200;
-    /*#dbc16c*/
-    scroll-behavior: smooth;
-    background-color: var(--black);
+  --white-faded: rgba(255, 255, 255, 0.2);
+  --black-faded: rgba(0, 0, 0, 0.2);
+  --sign-faded: rgba(67, 199, 121, 0.2);
+  --white: #ffffff;
+  --black: #000000;
+  --sign: #43c779;
+  scroll-behavior: smooth;
+  background-color: var(--sign);
 }
 
 body {
-    margin: 0;
-    padding: 0;
-    overflow-x: hidden;
-    background-color: var(--black);
-    color: var(--white);
+  width: 100vw;
+  max-width: 100vw;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  background-color: var(--black);
+  color: var(--white);
 }
 
 a {
-    text-decoration: none;
-    color: inherit;
+  text-decoration: none;
+  color: inherit;
 }
 
 button {
-    cursor: pointer;
+  cursor: pointer;
 }
 
 .marked {
-    color: var(--sign);
+  color: var(--sign);
 }
 
 .vertical-splitter div {
-    border: 1px solid var(--white-faded);
-    height: 80px;
-    margin: 20px;
+  border: 1px solid var(--white-faded);
+  height: 80px;
+  margin: 20px;
 }
 
 .LazyLoad {
-    opacity: 0;
-    transition: all 1s ease-in-out;
+  opacity: 0;
+  transition: all 1s ease-in-out;
 }
 
 .is-visible {
-    opacity: 1;
+  opacity: 1;
 }
 
 @media only screen and (max-width: 768px) {
-    .vertical-splitter {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
-    .vertical-splitter div {
-        border: 1px solid var(--white-faded);
-        width: 80vw;
-        height: 0vh;
-    }
+  .vertical-splitter {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .vertical-splitter div {
+    border: 1px solid var(--white-faded);
+    width: 80vw;
+    height: 0vh;
+  }
 }
