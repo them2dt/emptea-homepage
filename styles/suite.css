@@ -10,8 +10,6 @@
 
 .suite-content {
     text-align: center;
-    margin-top: 20vh;
-    margin-bottom: 20vh;
 }
 
 .suite-title {
@@ -40,6 +38,19 @@
     background-color: var(--white-faded);
     border-radius: 20px;
     width: 80vw;
+}
+
+.suite-area-locked {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 10px;
+    padding: 40px;
+    background-color: var(--white-faded);
+    border-radius: 20px;
+    width: 80vw;
+    height: 40vh;
+    font-family: "Inter Tight SemiBold";
 }
 
 .suite-area-title {

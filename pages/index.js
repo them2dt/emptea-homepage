@@ -1,12 +1,16 @@
 //natives
 import Image from "next/image";
-//3rd-parties
-import { motion } from "framer-motion";
+import Link from "next/link";
+
 //locals
 import logo from "../components/bricks/media/logo.png";
 import Navbar from "../components/bricks/navbar/Navbar";
 import Footer from "../components/bricks/footer/Footer";
-import Link from "next/link";
+
+//3rd-parties
+import { motion } from "framer-motion";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faLock } from "@fortawesome/free-solid-svg-icons";
 
 export default function Home() {
   return (
@@ -15,12 +19,6 @@ export default function Home() {
       <div className="home-header" id="home-header">
         <div className="home-header-content">
           <div className="home-header-logo">
-            <div className="home-header-icon">
-              <Image src={logo} height={60} />
-            </div>
-            <div className="vertical-splitter">
-              <div></div>
-            </div>
             <motion.div
               initial={{ opacity: 0 }}
               animate={{
@@ -32,15 +30,26 @@ export default function Home() {
                   stiffness: 500,
                 },
               }}
-              className="home-header-title"
+              className="home-header-icon"
             >
-              Move fast. Break free.
+              <Image src={logo} height={100} />
             </motion.div>
           </div>
-          <div className="home-header-button">
-            <Link href={"/suite"}>
-              <button>Enter the suite</button>
-            </Link>
+        </div>
+      </div>
+      <div className="about-us"></div>
+      <div className="suite">
+        <div className="suite-content">
+          <div className="suite-title">The Suite</div>
+          <div className="suite-grid">
+            <div className="suite-grid-cell">
+              <div className="suite-area-locked">
+                <div>
+                  <FontAwesomeIcon icon={faLock} />
+                  <div>Coming soon.</div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>

@@ -9,7 +9,6 @@
     margin: 0;
     padding: 0;
     background: var(--black);
-    border-bottom: 1px solid var(--sign);
     z-index: 101;
     color: white;
     font-family: "Inter Tight SemiBold";

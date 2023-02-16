@@ -21,21 +21,7 @@ export default function Navbar({ id }) {
     <>
       <AnimatePresence initial={true} mode="wait">
         <div className="navbar">
-          <div className="navbar-left">
-            <Link href="/">emptea</Link>
-          </div>
-          <div className="navbar-center">
-            <ul className="navbar-list">
-              {/* <li className="navbar-list-item">
-                <Link
-                  href="/suite"
-                  style={id == 2 ? { color: "var(--sign)" } : {}}
-                >
-                  suite
-                </Link>
-              </li> */}
-            </ul>
-          </div>
+          <div className="navbar-left"></div>
           <div className="navbar-right">
             <WalletMultiButtonDynamic />
           </div>
@@ -52,15 +38,6 @@ export default function Navbar({ id }) {
         {expand == true ? (
           <motion.div className="navbar-hamburger">
             <ul className="navbar-list">
-              <li className="navbar-list-item">
-                <Link
-                  href="/suite"
-                  style={id == 2 ? { color: "var(--sign)" } : {}}
-                >
-                  suite
-                </Link>
-              </li>
-
               <li>
                 <WalletMultiButtonDynamic />
               </li>

@@ -48,25 +48,10 @@ export default function Footer() {
         <ul>
           <li>
             <Link href="https://twitter.com/empteaxyz" target={"_blank"}>
-              twitter
+              Twitter
             </Link>
           </li>
-          <li>
-            <Link href="https://discord.gg/D5YCfRjSDY" target={"_blank"}>
-              discord
-            </Link>
-          </li>
-          <li>
-            <Link href="https://emptea.xyz" target={"_blank"}>
-              emptea
-            </Link>
-          </li>
-          <li>
-            <Link href="https://github.com/them2dt" target={"_blank"}>
-              A project by M2DT
-            </Link>
-          </li>
-
+          <li>©2023 Emptea. All rights reserved.</li>
           <li>
             <ThemeProvider theme={theme}>
               <Switch
