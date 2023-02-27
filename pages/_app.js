@@ -67,19 +67,13 @@ const App = ({ Component, pageProps }) => {
     }
   `;
   return (
-    <ConnectionProvider endpoint={endpoint}>
-      <WalletProvider wallets={wallets} autoConnect>
-        <WalletModalProvider>
-          <Head>
-            <title>emptea</title>
-            <meta name="description" content="Move fast. Break free." />
-          </Head>
-          <StyledSnackbarProvider>
-            <Component {...pageProps} />
-          </StyledSnackbarProvider>
-        </WalletModalProvider>
-      </WalletProvider>
-    </ConnectionProvider>
+    <>
+      <Head>
+        <title>emptea</title>
+        <meta name="description" content="Move fast. Break free." />
+      </Head>
+      <Component {...pageProps} />
+    </>
   );
 };
 

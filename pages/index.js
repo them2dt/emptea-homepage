@@ -1,8 +1,6 @@
 //natives
 import Image from "next/image";
 import web3_mockup from "../components/bricks/media/web3-mockup.svg";
-import Navbar from "../components/bricks/navbar/Navbar";
-import Footer from "../components/bricks/footer/Footer";
 
 //3rd-parties
 import { motion } from "framer-motion";
