@@ -58,16 +58,6 @@ export default function Home() {
           </div>
         </div>
       </div>
-      <div className="home-about">
-        <div className="home-about-content">
-          <div className="home-about-title">
-            Time to revolutionize the industry standard for software.
-          </div>
-          <div className="home-about-grid">
-            <div className="home-about-grid-item"></div>
-          </div>
-        </div>
-      </div>
     </div>
   );
 }
