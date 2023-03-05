@@ -53,7 +53,8 @@
     --sign-faded: rgba(67, 199, 121, 0.2);
     --white: #ffffff;
     --black: #000000;
-    --sign: #43c779;
+    --sign: #00ac6b;
+    --library: #dbc16c;
     scroll-behavior: smooth;
     background-color: var(--white);
 }

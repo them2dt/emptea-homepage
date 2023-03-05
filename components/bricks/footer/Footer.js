@@ -4,57 +4,13 @@ import Switch from "@mui/material/Switch";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 
 export default function Footer() {
-  const [hiding, setHiding] = useState(false);
-  const [darkMode, setDarkMode] = useState(true);
-  const [count, setCount] = useState(0);
-  const hideSwitchHandler = (event) => {
-    setHiding(event.target.checked);
-  };
-  const dragSwitchHandler = (event) => {
-    setDarkMode(event.target.checked);
-  };
-
-  useEffect(() => {
-    if (darkMode) {
-      const root = document.querySelector(":root");
-      root.style.setProperty("--black", "black");
-      root.style.setProperty("--white", "white");
-      root.style.setProperty("--white-faded", "rgba(255, 255, 255, 0.2)");
-      root.style.setProperty("--black-faded", "rgba(0, 0, 0, 0.2)");
-    } else if (!darkMode) {
-      const root = document.querySelector(":root");
-      root.style.setProperty("--black", "white");
-      root.style.setProperty("--white", "black");
-      root.style.setProperty("--black-faded", "rgba(255, 255, 255, 0.2)");
-      root.style.setProperty("--white-faded", "rgba(0, 0, 0, 0.2)");
-    }
-  });
-
-  const theme = createTheme({
-    palette: {
-      primary: {
-        main: "#000000",
-      },
-      secondary: {
-        main: "#cff200",
-      },
-    },
-  });
-
   return (
     <div className="footer">
       <div className="footer-left"></div>
       <div className="footer-right">
         <ul>
-          <li>©2023 Emptea. All rights reserved.</li>
           <li>
-            <ThemeProvider theme={theme}>
-              <Switch
-                color="secondary"
-                checked={darkMode}
-                onChange={dragSwitchHandler}
-              />
-            </ThemeProvider>
+            <a href=""> A project by M2DT.</a>
           </li>
         </ul>
       </div>

@@ -1,6 +1,9 @@
 //natives
 import Image from "next/image";
 import web3_mockup from "../components/bricks/media/web3-mockup.svg";
+import Footer from "../components/bricks/footer/Footer";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
 
 //3rd-parties
 import { motion } from "framer-motion";
@@ -35,6 +38,13 @@ export default function Home() {
               offering more
               <br />
               <span> freedom</span> and<span> independence</span>.
+              <span>
+                <br />
+                <br />
+                <a href="#home-library">
+                  Learn more <FontAwesomeIcon icon={faArrowRight} />
+                </a>
+              </span>
             </motion.div>
           </div>
           <div className="home-header-foreground-right">
@@ -56,6 +66,16 @@ export default function Home() {
           </div>
         </div>
       </div>
+      <div className="home-overlay"></div>
+      <div className="home-overlay ho-1"></div>
+      <div className="home-product home-library" id="home-library">
+        <div className="home-product-intro">
+          <div className="home-product-pretitle">Write independently.</div>
+          <div className="home-product-title">Emptea Library</div>
+        </div>
+      </div>
+
+      <Footer />
     </div>
   );
 }
