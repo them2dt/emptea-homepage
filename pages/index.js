@@ -66,16 +66,6 @@ export default function Home() {
           </div>
         </div>
       </div>
-      <div className="home-overlay"></div>
-      <div className="home-overlay ho-1"></div>
-      <div className="home-product home-library" id="home-library">
-        <div className="home-product-intro">
-          <div className="home-product-pretitle">Write independently.</div>
-          <div className="home-product-title">Emptea Library</div>
-        </div>
-      </div>
-
-      <Footer />
     </div>
   );
 }
