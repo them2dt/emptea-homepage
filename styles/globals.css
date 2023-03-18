@@ -48,9 +48,6 @@
 }
 
 :root {
-    --white-faded: rgba(255, 255, 255, 0.2);
-    --black-faded: rgba(0, 0, 0, 0.2);
-    --sign-faded: rgba(67, 199, 121, 0.2);
     --white: #ffffff;
     --black: #000000;
     --sign: #00ac6b;
