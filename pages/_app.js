@@ -9,7 +9,7 @@ const App = ({ Component, pageProps }) => {
     <>
       <Head>
         <title>emptea</title>
-        <meta name="twitter:card" content="emptea" />
+        <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:site" content="emptea" />
         <meta name="twitter:creator" content="@emptea" />
         <meta name="twitter:title" content="emptea." />

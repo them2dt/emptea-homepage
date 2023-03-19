@@ -51,7 +51,6 @@
     --white: #ffffff;
     --black: #000000;
     --sign: #00ac6b;
-    --library: #dbc16c;
     scroll-behavior: smooth;
     background-color: var(--white);
 }
@@ -63,6 +62,9 @@ body {
     padding: 0;
     overflow-x: hidden;
     background-color: var(--white);
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
 }
 
 a {
@@ -75,20 +77,64 @@ button {
 }
 
 .marked {
+    background: -webkit-linear-gradient(#008150, #00dd88);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.title {
+    font-family: "Inter Tight SemiBold";
+    font-size: 72px;
+    letter-spacing: -2.5px;
+}
+
+.headline-1 {
+    font-family: "Inter Tight SemiBold";
+    font-size: 64px;
+}
+
+.headline-2 {
+    font-family: "Inter Tight SemiBold";
+    font-size: 48px;
+}
+
+.headline-3 {
+    font-family: "Inter Tight Regular";
+    font-size: 36px;
+}
+
+.pre-text {
+    font-family: "Inter Tight ExtraLight";
+    font-size: 18px;
+    letter-spacing: -1px;
+}
+
+.text {
+    font-family: "Inter Tight regular";
+    font-size: 24px;
+}
+
+.social-widget {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    margin: 0;
+    padding: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    font-size: 24px;
+}
+
+.social-widget a {
+    padding: 10px;
+}
+
+.social-widget a:hover {
     color: var(--sign);
+    transition-duration: 0.2s;
 }
 
-.vertical-splitter div {
-    border: 1px solid var(--white-faded);
-    height: 80px;
-    margin: 20px;
-}
-
-.LazyLoad {
-    opacity: 0;
-    transition: all 1s ease-in-out;
-}
-
-.is-visible {
-    opacity: 1;
+.social-widget a:not(:hover) {
+    transition-duration: 0.2s;
 }
