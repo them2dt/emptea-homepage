@@ -31,6 +31,9 @@
   height: 30vw;
 }
 
+.home-webs-headline {
+  text-align: center;
+}
 .home-webs-grid {
   display: flex;
   align-items: flex-start;

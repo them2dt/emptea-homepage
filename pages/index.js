@@ -37,7 +37,7 @@ export default function Index() {
       <div className="section home-webs">
         <div className="section-content home-webs-content">
           <div className="home-webs-headline headline-1">
-            We build trust<span className="marked">less</span>.
+            Don't trust, <span className="marked">verify</span>.
           </div>
           <div className="home-webs-grid">
             <div className="home-web">
@@ -72,9 +72,9 @@ export default function Index() {
                   Web 3.0
                 </div>
                 <div className="home-web-text text">
-                  One log-in for everything. Instead of vulnerable accounts, you
-                  now have a encrypted wallet. You don't log in, you sign
-                  transactions.
+                  One log-in for everything. Instead of 100 vulnerable accounts,
+                  you now have one encrypted wallet. You don't log in, you
+                  approve transactions.
                   <br />
                   <br />
                   No database to attack, no passwords to steal.
