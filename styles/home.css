@@ -75,10 +75,19 @@
   grid-template-columns: auto auto auto;
 }
 
+.campaigns {
+  background: radial-gradient(#8cff5e, #8cff5e, var(--white));
+}
+.oxygen {
+  background: radial-gradient(#5eccff, #5eccff, var(--white));
+}
+.library {
+  background: radial-gradient(#b600ee, #b600ee, var(--white));
+}
 .home-product {
   position: relative;
   background-color: var(--black-faded);
-  width: 30vw;
+  width: 25vw;
   height: 20vh;
   margin: 10px;
   border-radius: 20px;
