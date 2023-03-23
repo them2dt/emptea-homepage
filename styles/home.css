@@ -59,3 +59,38 @@
   width: 20vw;
   text-align: center;
 }
+
+.home-products-headline {
+  text-align: center;
+}
+
+.home-products-grid-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.home-products-grid {
+  display: grid;
+  grid-template-columns: auto auto auto;
+}
+
+.home-product {
+  position: relative;
+  background-color: var(--black-faded);
+  width: 30vw;
+  height: 20vh;
+  margin: 10px;
+  border-radius: 20px;
+}
+
+.home-product-info {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+}
+.home-product-link {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+}
