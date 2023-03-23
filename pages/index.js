@@ -30,20 +30,20 @@ export default function Index() {
             </div>
           </div>
           <div className="home-intro-right">
-            <Image src={web_mockup} />
+            <Image src={web_mockup} alt="web mockup"/>
           </div>
         </div>
       </div>
       <div className="section home-webs">
         <div className="section-content home-webs-content">
           <div className="home-webs-headline headline-1">
-            Don't trust, <span className="marked">verify</span>.
+            Don{"&apos;"}t trust, <span className="marked">verify</span>.
           </div>
           <div className="home-webs-grid">
             <div className="home-web">
               <div className="home-web-content">
                 <div className="home-web-image">
-                  <Image src={web_1} />
+                  <Image src={web_1}  alt="web 1 login"/>
                 </div>
                 <div className="home-web-headline headline-2">Web 1.0</div>
                 <div className="home-web-text text">
@@ -54,7 +54,7 @@ export default function Index() {
             <div className="home-web">
               <div className="home-web-content">
                 <div className="home-web-image">
-                  <Image src={web_2} />
+                  <Image src={web_2} alt="web 2 login"/>
                 </div>
                 <div className="home-web-headline headline-2">Web 2.0</div>
                 <div className="home-web-text text">
@@ -66,14 +66,14 @@ export default function Index() {
             <div className="home-web">
               <div className="home-web-content">
                 <div className="home-web-image">
-                  <Image src={web_3} />
+                  <Image src={web_3} alt="web 3 login"/>
                 </div>
                 <div className="home-web-headline headline-2 marked">
                   Web 3.0
                 </div>
                 <div className="home-web-text text">
                   One log-in for everything. Instead of 100 vulnerable accounts,
-                  you now have one encrypted wallet. You don't log in, you
+                  you now have one encrypted wallet. You don{'&apos;'}t log in, you
                   approve transactions.
                   <br />
                   <br />
