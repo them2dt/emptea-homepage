@@ -71,7 +71,7 @@ a {
 }
 
 a:hover {
-  color: var(--sign);
+  color: var(--white);
   transition-duration: 0.2s;
 }
 a:not(:hover) {

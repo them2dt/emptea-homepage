@@ -135,66 +135,57 @@ export default function Index() {
           </motion.div>
           <motion.div className="home-products-grid-container">
             <motion.div className="home-products-grid">
-              <motion.div
-                className="home-product campaigns"
-                initial={{ opacity: 0 }}
-                whileInView={{ opacity: 1 }}
-                transition={{ duration: 0.2 }}
-              >
-                <motion.div className="home-product-info">
-                  <motion.div className="home-product-headline headline-3">
-                    Emptea Campaigns
-                  </motion.div>
-                  <motion.div className="home-product-description text">
-                    Crowdfunding-platform on solana.
-                  </motion.div>
-                </motion.div>
-                <motion.div className="home-product-link text">
-                  <Link href={"https://campaigns.emptea.xyz"} target="_blank">
-                    Explore
-                  </Link>
-                </motion.div>
-              </motion.div>
-              <motion.div
-                className="home-product oxygen"
-                initial={{ opacity: 0 }}
-                whileInView={{ opacity: 1 }}
-                transition={{ duration: 0.6 }}
-              >
-                <motion.div className="home-product-info">
-                  <motion.div className="home-product-headline headline-3">
-                    Emptea Oxygen
-                  </motion.div>
-                  <motion.div className="home-product-description text">
-                    Mint NFTs on solana.
+              <Link href={"https://campaigns.emptea.xyz"} target="_blank">
+                <motion.div
+                  className="home-product campaigns"
+                  initial={{ opacity: 0 }}
+                  whileInView={{ opacity: 1 }}
+                  transition={{ duration: 0.2 }}
+                >
+                  <motion.div className="home-product-info">
+                    <motion.div className="home-product-headline headline-3">
+                      Emptea Campaigns
+                    </motion.div>
+                    <motion.div className="home-product-description text">
+                      Crowdfunding-platform on solana.
+                    </motion.div>
                   </motion.div>
                 </motion.div>
-                <motion.div className="home-product-link text">
-                  <Link href={"https://oxygen.emptea.xyz"} target="_blank">
-                    Explore
-                  </Link>
-                </motion.div>
-              </motion.div>
-              <motion.div
-                className="home-product library"
-                initial={{ opacity: 0 }}
-                whileInView={{ opacity: 1 }}
-                transition={{ duration: 1 }}
-              >
-                <motion.div className="home-product-info">
-                  <motion.div className="home-product-headline headline-3">
-                    Emptea Library
-                  </motion.div>
-                  <motion.div className="home-product-description text">
-                    Read, write and collect written content on solana.
+              </Link>
+              <Link href={"https://oxygen.emptea.xyz"} target="_blank">
+                <motion.div
+                  className="home-product oxygen"
+                  initial={{ opacity: 0 }}
+                  whileInView={{ opacity: 1 }}
+                  transition={{ duration: 0.6 }}
+                >
+                  <motion.div className="home-product-info">
+                    <motion.div className="home-product-headline headline-3">
+                      Emptea Oxygen
+                    </motion.div>
+                    <motion.div className="home-product-description text">
+                      Mint NFTs on solana.
+                    </motion.div>
                   </motion.div>
                 </motion.div>
-                <motion.div className="home-product-link text">
-                  <Link href={"https://library.emptea.xyz"} target="_blank">
-                    Explore
-                  </Link>
+              </Link>
+              <Link href={"https://library.emptea.xyz"} target="_blank">
+                <motion.div
+                  className="home-product library"
+                  initial={{ opacity: 0 }}
+                  whileInView={{ opacity: 1 }}
+                  transition={{ duration: 1 }}
+                >
+                  <motion.div className="home-product-info">
+                    <motion.div className="home-product-headline headline-3">
+                      Emptea Library
+                    </motion.div>
+                    <motion.div className="home-product-description text">
+                      Read, write and collect written content on solana.
+                    </motion.div>
+                  </motion.div>
                 </motion.div>
-              </motion.div>
+              </Link>
             </motion.div>
           </motion.div>
         </motion.div>
