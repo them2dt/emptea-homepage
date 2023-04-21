@@ -3,6 +3,7 @@ import Head from "next/head";
 
 import "../styles/globals.css";
 import "../styles/home.css";
+import "../styles/home-mobile.css";
 
 const App = ({ Component, pageProps }) => {
   return (
