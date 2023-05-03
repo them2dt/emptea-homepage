@@ -4,6 +4,8 @@ import Head from "next/head";
 import "../styles/globals.css";
 import "../styles/tabs.css";
 import "../styles/home.css";
+import "../styles/tabs-mobile.css";
+import "../styles/home-mobile.css";
 
 const App = ({ Component, pageProps }) => {
   return (
