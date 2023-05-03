@@ -50,7 +50,6 @@
   --black-faded: #00000020;
   --sign: #00ac6b;
   scroll-behavior: smooth;
-  background-color: var(--white);
 }
 
 body {
@@ -59,10 +58,12 @@ body {
   margin: 0;
   padding: 0;
   overflow-x: hidden;
-  background-color: var(--white);
+  background-color: rgb(45, 45, 45);
+  color: white;
   -webkit-user-select: none;
   -ms-user-select: none;
   user-select: none;
+  scroll-behavior: smooth;
 }
 
 a {
@@ -112,25 +113,9 @@ button {
     font-size: 48px;
   }
 
-  .headline-2 {
-    font-family: "Inter Tight SemiBold";
-    font-size: 36px;
-  }
-
-  .headline-3 {
-    font-family: "Inter Tight SemiBold";
-    font-size: 24px;
-  }
-
-  .pre-text {
-    font-family: "Inter Tight ExtraLight";
-    font-size: 16px;
-    letter-spacing: -1px;
-  }
-
   .text {
-    font-family: "Inter Tight regular";
-    font-size: 14px;
+    font-family: "Inter Tight Light";
+    font-size: 24px;
   }
 
   .social-widget {

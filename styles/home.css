@@ -1,107 +1,92 @@
 @media only screen and (min-width: 768px) {
-  .home {
+  .row-1 {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
     width: 100vw;
-    margin: 0;
-    padding: 0;
-    overflow-x: hidden;
   }
-
-  .home-intro-content {
+  .row-1-box-top {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+  }
+  .row-1-box-bottom {
     display: flex;
     align-items: center;
     justify-content: center;
+    height: 12.5vw;
   }
 
-  .home-intro-left,
-  .home-intro-right {
+  .row-2 {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    width: 100vw;
+  }
+  .row-2-box-top {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+  }
+  .row-2-box-bottom {
+    display: flex;
+    align-items: center;
+  }
+  .row-2-box-bottom-text {
+    width: calc(25vw - 20px);
+    margin: 10px;
+    text-align: right;
+  }
+
+  .row-3 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50vw;
+  }
+
+  .row-2-box-2-top {
+    display: flex;
+    align-items: center;
+  }
+  .row-2-box-3-top {
     display: flex;
     align-items: center;
     justify-content: left;
-    width: 35vw;
-    height: 35vw;
-    margin: 0;
-    padding: 0;
   }
-
-  .home-intro-right {
-    justify-content: right;
-  }
-
-  .home-intro-right img {
-    width: 30vw;
-    height: 30vw;
-  }
-
-  .home-webs-headline {
-    text-align: center;
-  }
-  .home-webs-grid {
+  .row-2-box-3-bottom {
     display: flex;
-    align-items: flex-start;
-    justify-content: center;
+    align-items: center;
+    justify-content: flex-start;
   }
 
-  .home-web {
-    display: flex;
-    align-items: flex-start;
-    justify-content: center;
-    margin: 20px;
+  .products-text {
+    margin-left: 10px;
   }
 
-  .home-web-image img {
-    width: 20vw;
-    height: 20vw;
-  }
-  .home-web-headline {
-    margin-top: 20px;
-  }
-  .home-web-headline,
-  .home-web-text {
-    width: 20vw;
-    text-align: center;
-  }
-
-  .home-products-headline {
-    text-align: center;
-  }
-
-  .home-products-grid-container {
+  .row-3-box-top,
+  .row-3-box-mid,
+  .row-3-box-bottom {
     display: flex;
     align-items: center;
     justify-content: center;
   }
 
-  .home-products-grid {
-    display: grid;
-    grid-template-columns: auto auto auto;
-  }
-
-  .campaigns {
-    background: radial-gradient(#8cff5e, #8cff5e, var(--white));
-  }
-  .oxygen {
-    background: radial-gradient(#5eccff, #5eccff, var(--white));
-  }
-  .library {
-    background: radial-gradient(#b600ee, #b600ee, var(--white));
-  }
-  .home-product {
-    position: relative;
-    background-color: var(--black-faded);
-    width: 25vw;
-    height: 20vh;
-    margin: 10px;
-    border-radius: 20px;
-  }
-
-  .home-product-info {
+  .team-member-details {
     position: absolute;
     top: 20px;
     left: 20px;
+
+    text-align: left;
   }
-  .home-product-link {
+  .team-member-link {
     position: absolute;
     bottom: 20px;
     right: 20px;
+  }
+  .row-4 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 }
