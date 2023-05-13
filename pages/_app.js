@@ -1,38 +1,34 @@
-import React from "react";
+import "../styles/navbar.css";
+import "../styles/globals.css";
+import "../styles/home.css";
+
 import Head from "next/head";
 
-import "../styles/globals.css";
-import "../styles/tabs.css";
-import "../styles/home.css";
-import "../styles/tabs-mobile.css";
-import "../styles/home-mobile.css";
-
-const App = ({ Component, pageProps }) => {
+export default function App({ Component, pageProps }) {
   return (
     <>
       <Head>
-        <title>emptea</title>
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:site" content="emptea" />
-        <meta name="twitter:creator" content="@emptea" />
-        <meta name="twitter:title" content="emptea." />
+        <title>Emptea</title>
+        <meta name="twitter:card" content="summary" />
+        <meta name="twitter:site" content="@Emptea" />
+        <meta name="twitter:title" content="Emptea" />
+        <meta name="twitter:description" content="Building dreams." />
         <meta
-          name="twitter:description"
-          content="Building the next generation of products and services."
+          name="twitter:image"
+          content="https://bafkreicvmlugn7gqyxl3vmk5usuqk2klotzlbwvvvbdsselsgkbbwrohui.ipfs.nftstorage.link/"
         />
+
+        <meta property="og:title" content="Emptea" />
+        <meta property="og:description" content="Building dreams." />
         <meta
-          name="twitter:image:src"
-          content="https://bafkreicsctvtrwky6csbllm4dxox3634sj5wykbrx2ifhcdhymmuypcjae.ipfs.nftstorage.link/"
+          property="og:image"
+          content="https://bafkreicvmlugn7gqyxl3vmk5usuqk2klotzlbwvvvbdsselsgkbbwrohui.ipfs.nftstorage.link/"
         />
-        <meta name="title" content="emptea" />
-        <meta
-          name="description"
-          content="Building the next generation of products & services."
-        />
+        <meta property="og:image:type" content="image/png" />
+        <meta property="og:image:width" content="300" />
+        <meta property="og:image:height" content="300" />
       </Head>
       <Component {...pageProps} />
     </>
   );
-};
-
-export default App;
+}
