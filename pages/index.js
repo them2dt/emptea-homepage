@@ -134,17 +134,31 @@ export default function Index() {
         <div className="services-content">
           <div className="services-title">Services</div>
           <div className="services-grid">
-            <div className="service">
+            <motion.div
+              className="product"
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              transition={{
+                duration: 0.2,
+                delay: 0.2,
+              }}
+              viewport={{ once: false }}
+            >
               <Image src={backpack_painting} />
               <div className="service-details">
                 <div className="service-text">
                   <div className="service-title">xNFT</div>
                   <div className="service-description">
-                    Need a xNFT? We're here for you.
+                    Need an xNFT? We got your back.
                   </div>
                 </div>
+                <div className="service-button">
+                  <Link href={"#contact"}>
+                    <button>Get in contact!</button>
+                  </Link>
+                </div>
               </div>
-            </div>
+            </motion.div>
           </div>
         </div>
       </div>

@@ -199,3 +199,81 @@
   font-size: 28px;
   color: white;
 }
+
+.services-grid {
+  margin-top: 40px;
+}
+
+.service {
+  position: relative;
+  width: 20vw;
+  height: 25vw;
+}
+.service img {
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  width: 20vw;
+  height: 20vw;
+
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+}
+
+.service-details {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+
+  width: 20vw;
+  height: 10vw;
+
+  background-color: white;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+}
+
+.service-text {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+}
+
+.service-title {
+  font-family: "inter tight semibold";
+  color: black;
+}
+.service-description {
+  font-family: "inter tight medium";
+  color: rgba(0, 0, 0, 0.5);
+}
+
+.service-button {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+}
+
+.service-button button {
+  padding: 20px;
+
+  background-color: black;
+  border: 0px solid black;
+  border-radius: 10px;
+  font-family: "inter tight semibold";
+  font-size: 16px;
+  color: white;
+
+  cursor: pointer;
+}
+
+.service-button button:hover {
+  background-color: #f3f3f3;
+  color: black;
+  transition-duration: 0.2s;
+}
+
+.service-button button:not(:hover) {
+  transition-duration: 0.2s;
+}
