@@ -43,7 +43,21 @@ html {
 body {
   margin: 0;
   padding: 0;
-  background-color: white;
+  background-color: #9747ff;
+  background: linear-gradient(
+    #9747ff,
+    #9747ff,
+    #9747ff,
+    #9747ff,
+    #9747ff,
+    #9747ff,
+    #e4bd3a,
+    #e4bd3a,
+    #e4bd3a,
+    #e4bd3a,
+    #e4bd3a,
+    #e4bd3a
+  );
   scroll-behavior: smooth;
   overflow-x: hidden;
 }

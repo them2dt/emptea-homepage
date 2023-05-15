@@ -442,6 +442,8 @@
   .products-title {
     text-align: center;
 
+    margin-top: 100px;
+
     font-family: "inter tight semibold";
     font-size: 24px;
     color: black;
@@ -532,6 +534,7 @@
   .services-title {
     text-align: center;
 
+    margin-top: 100px;
     font-family: "inter tight semibold";
     font-size: 24px;
     color: white;
