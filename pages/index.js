@@ -1,7 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { motion } from "framer-motion";
-import { faStar } from "@fortawesome/free-solid-svg-icons";
+import { faEnvelope, faStar } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 import Navbar from "/components/general/Navbar";
@@ -9,7 +9,13 @@ import Navbar from "/components/general/Navbar";
 import voting from "../assets/voting.png";
 import xnft_dream from "../assets/xnft_dream.png";
 import backpack_painting from "../assets/backpack-painting.png";
+import pc from "../assets/pc.png";
 import dragon_run_scenery from "../assets/dragon-run-scenery.png";
+import {
+  faDiscord,
+  faGithub,
+  faTwitter,
+} from "@fortawesome/free-brands-svg-icons";
 
 export default function Index() {
   return (
@@ -135,7 +141,7 @@ export default function Index() {
           <div className="services-title">Services</div>
           <div className="services-grid">
             <motion.div
-              className="product"
+              className="service"
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
               transition={{
@@ -159,6 +165,59 @@ export default function Index() {
                 </div>
               </div>
             </motion.div>
+            <motion.div
+              className="service"
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              transition={{
+                duration: 0.2,
+                delay: 0.4,
+              }}
+              viewport={{ once: false }}
+            >
+              <Image src={pc} />
+              <div className="service-details">
+                <div className="service-text">
+                  <div className="service-title">Website</div>
+                  <div className="service-description">
+                    Establish your digital presence with a professional website.
+                  </div>
+                </div>
+                <div className="service-button">
+                  <Link href={"#contact"}>
+                    <button>Get in contact!</button>
+                  </Link>
+                </div>
+              </div>
+            </motion.div>
+          </div>
+        </div>
+      </div>
+
+      <div className="contact">
+        <div className="contact-content">
+          <div className="contact-title">Contact us!</div>
+          <div className="contact-grid">
+            <Link href={"https://twitter.com/EmpteaXYZ"} target="_blank">
+              <div className="contact-button">
+                <FontAwesomeIcon icon={faTwitter} />
+              </div>
+            </Link>
+            <Link href={"https://discord.gg/rXzY3PSaeJ"} target="_blank">
+              <div className="contact-button">
+                <FontAwesomeIcon icon={faDiscord} />
+              </div>
+            </Link>
+            <Link href={"https://github.com/Emptea-XYZ"} target="_blank">
+              <div className="contact-button">
+                <FontAwesomeIcon icon={faGithub} />
+              </div>
+            </Link>
+            <Link href={"mailto:info@emptea.xyz"} target="_blank">
+              <div className="contact-button">
+                <FontAwesomeIcon icon={faEnvelope} />
+              </div>
+            </Link>
           </div>
         </div>
       </div>

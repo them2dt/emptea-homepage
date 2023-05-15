@@ -53,17 +53,6 @@ export default function Navbar() {
               }}
               viewport={{ once: false }}
             >
-              <Link href={"#team"}>team</Link>
-            </motion.div>
-            <motion.div
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
-              transition={{
-                duration: 0.2,
-                delay: 0.4,
-              }}
-              viewport={{ once: false }}
-            >
               <Link href={"#contact"}>contact</Link>
             </motion.div>
           </div>

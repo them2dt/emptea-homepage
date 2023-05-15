@@ -201,13 +201,18 @@
 }
 
 .services-grid {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  justify-content: center;
   margin-top: 40px;
 }
 
 .service {
   position: relative;
+
   width: 20vw;
   height: 25vw;
+  margin: 10px;
 }
 .service img {
   position: absolute;
@@ -275,5 +280,49 @@
 }
 
 .service-button button:not(:hover) {
+  transition-duration: 0.2s;
+}
+
+.contact {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  margin: 0;
+  padding: 0;
+  width: 100vw;
+  min-height: 100vh;
+
+  background: linear-gradient(#ffd342, #e4bd3a);
+}
+
+.contact-title {
+  text-align: center;
+
+  font-family: "inter tight semibold";
+  font-size: 28px;
+  color: black;
+}
+
+.contact-grid {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  margin-top: 40px;
+}
+
+.contact-button {
+  margin: 10px;
+
+  font-size: 36px;
+  color: black;
+}
+
+.contact-button:hover {
+  color: white;
+  transition-duration: 0.2s;
+}
+.contact-button:not(:hover) {
   transition-duration: 0.2s;
 }
