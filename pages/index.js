@@ -194,7 +194,7 @@ export default function Index() {
         </div>
       </div>
 
-      <div className="contact">
+      <div className="contact" id="contact">
         <div className="contact-content">
           <div className="contact-title">Contact us!</div>
           <div className="contact-grid">
