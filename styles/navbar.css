@@ -48,3 +48,21 @@
 .navbar-title span {
   color: white;
 }
+@media only screen and (max-width: 768px) {
+  .navbar {
+    align-items: center;
+    z-index: 1000;
+
+    height: 15vh;
+    backdrop-filter: blur(15.4px);
+    -webkit-backdrop-filter: blur(15.4px);
+  }
+  .navbar-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .navbar-left {
+    display: none;
+  }
+}
