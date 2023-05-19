@@ -96,10 +96,9 @@ export default function Index() {
 
               <div className="product-details">
                 <div className="product-text">
-                  <div className="product-title">Dragon Run</div>
+                  <div className="product-title">****** ***</div>
                   <div className="product-description">
-                    Explore the caves of Lamporia <br />
-                    and face the creatures from the underworld.
+                    ***!
                   </div>
                 </div>
                 <div className="product-status">
