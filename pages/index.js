@@ -46,7 +46,7 @@ export default function Index() {
           }}
           viewport={{ once: false }}
         >
-          Emptea creates magical experiences on Backpack.
+          Emptea creates magical experiences.
         </motion.div>
         <motion.div
           className="intro-button"

@@ -376,6 +376,8 @@
     display: flex;
     align-items: center;
     justify-content: center;
+
+    color: black;
   }
   .intro-button button {
     display: flex;
