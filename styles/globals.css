@@ -1,14 +1,10 @@
 @font-face {
-  font-family: "inter tight light";
-  src: url("./fonts/inter-tight-light.ttf");
+  font-family: "sunrise";
+  src: url("./fonts/Righteous-Regular.ttf");
 }
 @font-face {
-  font-family: "inter tight medium";
-  src: url("./fonts/inter-tight-medium.ttf");
-}
-@font-face {
-  font-family: "inter tight semibold";
-  src: url("./fonts/inter-tight-semibold.ttf");
+  font-family: "righteous";
+  src: url("./fonts/WaitingfortheSunrise-Regular.ttf");
 }
 
 ::-webkit-scrollbar {
@@ -39,104 +35,5 @@
 html {
   --scroll-behavior: smooth !important;
   scroll-behavior: smooth !important;
-}
-body {
-  margin: 0;
-  padding: 0;
-  background-color: #9747ff;
-  background: linear-gradient(
-    #9747ff,
-    #9747ff,
-    #9747ff,
-    #9747ff,
-    #9747ff,
-    #9747ff,
-    #e4bd3a,
-    #e4bd3a,
-    #e4bd3a,
-    #e4bd3a,
-    #e4bd3a,
-    #e4bd3a
-  );
-  scroll-behavior: smooth;
-  overflow-x: hidden;
-}
-
-a {
-  text-decoration: none;
-  color: inherit;
-}
-
-.blob {
-  background: black;
-  border-radius: 50%;
-  box-shadow: 0 0 0 0 rgba(0, 0, 0, 1);
-  margin: 10px;
-  height: 20px;
-  width: 20px;
-  transform: scale(1);
-  animation: pulse-black 2s infinite;
-}
-
-@keyframes pulse-black {
-  0% {
-    transform: scale(0.95);
-    box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.7);
-  }
-
-  70% {
-    transform: scale(1);
-    box-shadow: 0 0 0 10px rgba(0, 0, 0, 0);
-  }
-
-  100% {
-    transform: scale(0.95);
-    box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
-  }
-}
-
-.blob.red {
-  background: rgba(255, 82, 82, 1);
-  box-shadow: 0 0 0 0 rgba(255, 82, 82, 1);
-  animation: pulse-red 2s infinite;
-}
-
-@keyframes pulse-red {
-  0% {
-    transform: scale(0.95);
-    box-shadow: 0 0 0 0 rgba(255, 82, 82, 0.7);
-  }
-
-  70% {
-    transform: scale(1);
-    box-shadow: 0 0 0 10px rgba(255, 82, 82, 0);
-  }
-
-  100% {
-    transform: scale(0.95);
-    box-shadow: 0 0 0 0 rgba(255, 82, 82, 0);
-  }
-}
-
-.blob.yellow {
-  background: rgba(255, 177, 66, 1);
-  box-shadow: 0 0 0 0 rgba(255, 177, 66, 1);
-  animation: pulse-yellow 2s infinite;
-}
-
-@keyframes pulse-yellow {
-  0% {
-    transform: scale(0.95);
-    box-shadow: 0 0 0 0 rgba(255, 177, 66, 0.7);
-  }
-
-  70% {
-    transform: scale(1);
-    box-shadow: 0 0 0 10px rgba(255, 177, 66, 0);
-  }
-
-  100% {
-    transform: scale(0.95);
-    box-shadow: 0 0 0 0 rgba(255, 177, 66, 0);
-  }
+  background-color: #151515;
 }

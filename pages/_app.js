@@ -12,7 +12,7 @@ export default function App({ Component, pageProps }) {
         <meta name="twitter:card" content="summary" />
         <meta name="twitter:site" content="@Emptea" />
         <meta name="twitter:title" content="Emptea" />
-        <meta name="twitter:description" content="Building dreams." />
+        <meta name="twitter:description" content="Building dreams.  " />
         <meta
           name="twitter:image"
           content="https://bafkreicvmlugn7gqyxl3vmk5usuqk2klotzlbwvvvbdsselsgkbbwrohui.ipfs.nftstorage.link/"
