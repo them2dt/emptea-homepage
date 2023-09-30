@@ -1,0 +1,91 @@
+#atelier > .title {
+  font-family: "righteous";
+  font-size: 36px;
+  color: #dcdcdc;
+
+  position: absolute;
+  top: 80px;
+  left: 80px;
+}
+
+#atelier > .navbar {
+  position: absolute;
+  top: 80px;
+  right: 80px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#atelier .navbar a {
+  text-decoration: none;
+  font-family: "sunrise";
+  font-size: 24px;
+  color: #969696;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+#atelier .navbar a:first-child {
+  color: rgb(17, 191, 255);
+}
+
+#atelier .navbar a:hover {
+  color: rgb(17, 191, 255);
+  transition-duration: 0.2s;
+}
+#atelier > .navbar a:not(:hover) {
+  transition-duration: 0.2s;
+}
+
+.gallery-fade-container {
+  position: absolute;
+  top: 20vw;
+  left: 0;
+
+  width: 100vw;
+}
+.gallery-container {
+  width: 100vw;
+  height: calc(20vw + 40px);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  align-items: flex-start;
+
+  overflow-y: scroll;
+}
+
+.gallery-fade-top {
+  width: 100vw;
+  height: 40px;
+  z-index: 100;
+  background: linear-gradient(rgb(255, 255, 255), rgba(255, 255, 255, 0));
+
+  position: relative;
+  top: 40px;
+}
+.gallery-fade-bottom {
+  width: 100vw;
+  height: 40px;
+  z-index: 100;
+  background: linear-gradient(rgba(255, 255, 255, 0), rgb(255, 255, 255));
+
+  position: relative;
+  bottom: 40px;
+}
+.gallery {
+  display: grid;
+  grid-template-columns: auto auto auto;
+}
+
+.gallery-item {
+  width: 20vw;
+  height: 20vw;
+
+  margin: 20px;
+  background-color: #d5d5d5;
+  z-index: 20;
+}

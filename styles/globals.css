@@ -1,9 +1,9 @@
 @font-face {
-  font-family: "sunrise";
+  font-family: "righteous";
   src: url("./fonts/Righteous-Regular.ttf");
 }
 @font-face {
-  font-family: "righteous";
+  font-family: "sunrise";
   src: url("./fonts/WaitingfortheSunrise-Regular.ttf");
 }
 
@@ -35,5 +35,10 @@
 html {
   --scroll-behavior: smooth !important;
   scroll-behavior: smooth !important;
-  background-color: #151515;
+  background-color: #ffffff;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
 }
