@@ -23,7 +23,6 @@ export default function Index() {
         </motion.div>
 
         <div className="gallery-fade-container">
-          <div className="gallery-fade-top"></div>
           <div className="gallery-container">
             <div className="gallery">
               <div className="gallery-item"></div>
@@ -34,7 +33,6 @@ export default function Index() {
               <div className="gallery-item"></div>
             </div>
           </div>
-          <div className="gallery-fade-bottom"></div>
         </div>
       </div>
     </div>

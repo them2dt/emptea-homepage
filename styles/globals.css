@@ -6,6 +6,14 @@
   font-family: "sunrise";
   src: url("./fonts/WaitingfortheSunrise-Regular.ttf");
 }
+@font-face {
+  font-family: "clash-semibold";
+  src: url("./fonts/ClashDisplay-Semibold.otf");
+}
+@font-face {
+  font-family: "switzer-light";
+  src: url("./fonts/Switzer-Light.otf");
+}
 
 ::-webkit-scrollbar {
   width: 0px;
