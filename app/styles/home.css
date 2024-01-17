@@ -1,0 +1,349 @@
+.intro {
+    position: relative;
+
+    width: 100%;
+    height: 100vh;
+
+    overflow: hidden;
+}
+
+.intro .glow {
+    position: absolute;
+    top: 0vh;
+    left: calc(50vw - 50vh);
+
+    width: 100vh;
+    height: 100vh;
+
+    background-image: radial-gradient(var(--white) 0%, var(--transparent)50%);
+}
+
+.intro .grid {
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    display: grid;
+    grid-template-columns: auto auto auto auto auto;
+    gap: 2px;
+    background-color: var(--transparent);
+}
+
+.intro .grid div {
+    width: calc(20vw - 2px);
+    height: calc(20vw - 2px);
+
+    background-color: var(--sky);
+}
+
+.intro .content {
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.intro .content .title {
+    text-shadow: 0px 0px 20px white;
+}
+
+.about {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.about .topics {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.about .topics .topic {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+}
+
+.about .topics .topic .media {
+    width: 400px;
+    height: 400px;
+}
+
+.about .topics .topic .media img {
+    filter: drop-shadow(0px 0px 10px rgba(0, 0, 0, 0.5))
+}
+
+.about .topics .topic .content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 10px;
+
+    width: 700px;
+    height: 400px;
+}
+
+.about .topics .topic .content .button {
+    width: fit-content;
+
+    padding: 10px 10px 10px 10px;
+
+    background-color: var(--white);
+    box-shadow: 0px 0px 5px 2px rgba(0, 0, 0, 0.1);
+    color: var(--black);
+
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.about .topics .topic .content .button:hover {
+    background-color: var(--sky-dimmed);
+    color: var(--white);
+    transition-duration: 0.2s;
+}
+
+.about .topics .topic .content .button:not(:hover) {
+    transition-duration: 0.2s;
+}
+
+
+.about .topics .topic-products .content {
+    align-items: flex-end;
+}
+
+#chip-box {
+    position: relative;
+    width: 400px;
+    height: 400px;
+
+    overflow: hidden;
+    background-image: radial-gradient(var(--sky-dimmed) 0%, var(--transparent) 60%);
+}
+
+#chip-box .glow {
+    position: absolute;
+
+    width: 160px;
+    height: 160px;
+
+    background-image: linear-gradient(var(--transparent), var(--white), var(--transparent));
+}
+
+#chip-box .glow.top {
+    top: -160px;
+    left: 120px;
+    animation: cl-top 1s ease-in-out 0s infinite;
+}
+
+#chip-box .glow.right {
+    top: 120px;
+    right: -160px;
+    animation: cl-right 1s ease-in-out 0s infinite;
+    rotate: 90deg;
+}
+
+#chip-box .glow.bottom {
+    bottom: -160px;
+    right: 120px;
+    animation: cl-bottom 1s ease-in-out 0s infinite;
+}
+
+#chip-box .glow.left {
+    bottom: 120px;
+    left: -160px;
+    animation: cl-left 1s ease-in-out 0s infinite;
+    rotate: 90deg;
+
+}
+
+
+#chip-box .fibres {
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    width: 400px;
+    height: 400px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+
+}
+
+#chip-box .fibres .top {
+    position: relative;
+
+    width: 400px;
+    height: 165px;
+
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 10px;
+
+}
+
+#chip-box .fibres .top .chunk {
+    width: 165px;
+    height: 165px;
+
+    background-color: var(--sky);
+
+}
+
+#chip-box .fibres .top .stripe {
+    width: 20px;
+    height: 165px;
+
+    background-color: var(--sky);
+}
+
+#chip-box .fibres .mid {
+    position: relative;
+
+    width: 400px;
+    height: 70px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+
+}
+
+#chip-box .fibres .mid .stripe {
+    width: 400px;
+    height: 20px;
+
+    background-color: var(--sky);
+}
+
+#chip-box .chip {
+    position: absolute;
+    top: 100px;
+    left: 100px;
+
+    width: 200px;
+    height: 200px;
+    overflow: hidden;
+
+
+    background-image: linear-gradient(90deg, #556F80, #A2C6DE, #556F80);
+    border-radius: 20px;
+}
+
+#chip-box .chip .surface {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+
+    width: 180px;
+    height: 180px;
+    overflow: hidden;
+
+
+    background-color: #ADE0FF;
+    border-radius: 10px;
+    box-shadow: inset 0px 0px 2px 2px rgba(0, 0, 0, 0.35);
+}
+
+#chip-box .chip .shade {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+
+    width: 300px;
+    height: 300px;
+
+    background: linear-gradient(45deg, rgba(0, 0, 0, 0.5), rgba(255, 255, 255, 0.25));
+}
+
+#chip-box .chip .image {
+    position: absolute;
+    top: 50px;
+    left: 50px;
+}
+
+#chip-box .chip .image img {
+    position: absolute;
+    color: white;
+    filter: drop-shadow(0px 0px 10px rgba(255, 255, 255, 0.5));
+    animation: yin-enlight 2s infinite;
+
+}
+
+/*cl-top*/
+@keyframes cl-top {
+    0% {
+        top: -160px;
+    }
+
+    100% {
+        top: 120px;
+    }
+}
+
+/*cl-left*/
+@keyframes cl-left {
+    0% {
+        left: -160px;
+    }
+
+    100% {
+        left: 120px;
+    }
+}
+
+/*cl-right*/
+@keyframes cl-right {
+    0% {
+        right: -160px;
+    }
+
+    100% {
+        right: 120px;
+    }
+}
+
+/*cl-bottom*/
+@keyframes cl-bottom {
+    0% {
+        bottom: -160px;
+    }
+
+    100% {
+        bottom: 120px;
+    }
+}
+
+@keyframes yin-enlight {
+    0% {
+        filter: drop-shadow(0px 0px 10px rgba(0, 0, 0, 0.2))
+    }
+
+    40% {
+        filter: drop-shadow(0px 0px 10px rgba(255, 255, 255, 0.5))
+    }60% {
+        filter: drop-shadow(0px 0px 10px rgba(255, 255, 255, 0.5))
+    }100% {
+        filter: drop-shadow(0px 0px 10px rgba(0, 0, 0, 0.2))
+    }
+}
