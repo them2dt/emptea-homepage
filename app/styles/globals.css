@@ -19,6 +19,7 @@
   --transparent: #ffffff00;
   --pastel: #F9F2DB;
   --sky: #5CB2E7;
+  --sky-blended: #acdfff;
   --sky-dimmed: #2F5D7A;
 }
 
@@ -44,6 +45,26 @@ body {
   font-size: 48px;
   letter-spacing: 1;
 }
+
+.heading-2 {
+  font-family: "satoshi-black";
+  font-size: 36px;
+  letter-spacing: -1px;
+  line-height: 30px;
+}
+
+.heading-3 {
+  font-family: "satoshi-black";
+  font-size: 24px;
+  letter-spacing: 1;
+}
+
+.heading-4 {
+  font-family: "satoshi-black";
+  font-size: 24px;
+  letter-spacing: 1;
+}
+
 
 .text {
   font-family: "satoshi-medium";

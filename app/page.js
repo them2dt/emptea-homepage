@@ -1,6 +1,9 @@
 import Image from "next/image";
-import teabox from "./media/teacup.png"
-import yin from "./media/yin-yang.svg"
+import teabox from "./media/teacup.png";
+import yin from "./media/yin-yang.svg";
+import maru from "./media/maru.png";
+import batu from "./media/batu.png";
+import erzhan from "./media/erzhan.png";
 
 export default function Home() {
   return (
@@ -86,6 +89,65 @@ export default function Home() {
               <Image src={teabox} height={400} />
             </div>
           </div>
+        </div>
+      </div>
+      <div className="team" id="team">
+        <div className="member maru">
+          <div className="box">
+            <div className="name heading-2">maru</div>
+            <div className="role text">Frontend-developer</div>
+          </div>
+          <div className="image">
+            <Image src={maru} width={200} />
+          </div>
+        </div>
+        <div className="member batu">
+          <div className="box">
+            <div className="name heading-2">batu</div>
+            <div className="role text">Backend-developer</div>
+          </div>
+          <div className="image">
+            <Image src={batu} width={200} />
+          </div>
+        </div>
+        <div className="member erzhan">
+          <div className="box">
+            <div className="name heading-2">erzhan</div>
+            <div className="role text">marketing specialist</div>
+          </div>
+          <div className="image">
+            <Image src={erzhan} width={200} />
+          </div>
+        </div>
+      </div>
+      <div className="collabs" id="collabs">
+        <div className="info">
+          <div className="heading-1">Want to level up?</div>
+          <div className="text">
+            At this moment, we're fully booked out. Get notified first, when
+            we're open for collaborations again.
+          </div>
+        </div>
+        <div className="mailchimp">
+          <div className="form">
+            <input
+              type="text"
+              className="textfield text"
+              placeholder="text goes here"
+            />
+            <div className="button">Go</div>
+          </div>
+        </div>
+      </div>
+
+      <div className="footer" id="footer">
+        <div className="fill">
+          <div className="socials">
+            <div className="text">Discord</div>
+            <div className="text">Medium</div>
+            <div className="text">X</div>
+          </div>
+          <div className="name heading-2">emptea labs</div>
         </div>
       </div>
     </div>
