@@ -139,7 +139,6 @@ export default function Home() {
           </div>
         </div>
       </div>
-
       <div className="footer" id="footer">
         <div className="fill">
           <div className="socials">

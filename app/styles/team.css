@@ -1,0 +1,98 @@
+@media only screen and (min-width: 768px) {
+
+    .team {
+        position: relative;
+        width: 100%;
+        height: 100vh;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        gap: 10px;
+    }
+
+    .team .member {
+        position: relative;
+
+        width: 300px;
+        height: 200px;
+
+        background-image: linear-gradient(var(--white), var(--transparent));
+        border: 1px solid var(--sky-blended);
+        border-radius: 20px;
+    }
+
+    .team .member .box {
+        position: absolute;
+        bottom: 40px;
+        width: 300px;
+        text-align: center;
+    }
+
+    .team .member .box .name {
+        color: black;
+    }
+
+    .team .member .image {
+        position: absolute;
+        top: -100px;
+
+        width: 300px;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+
+
+    .team {
+        position: relative;
+        width: 100%;
+        height: 140vh;
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+
+        gap: 100px;
+    }
+
+    .team .member {
+        position: relative;
+
+        width: 300px;
+        height: 200px;
+
+        background-image: linear-gradient(var(--white), var(--transparent));
+        border: 1px solid var(--sky-blended);
+        border-radius: 20px;
+    }
+
+    .team .member .box {
+        position: absolute;
+        bottom: 40px;
+        width: 300px;
+        text-align: center;
+    }
+
+    .team .member .box .name {
+        color: black;
+    }
+
+    .team .member .image {
+        position: absolute;
+        top: -100px;
+
+        width: 300px;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+}
