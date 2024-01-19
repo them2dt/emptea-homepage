@@ -4,6 +4,8 @@ import yin from "./media/yin-yang.svg";
 import maru from "./media/maru.png";
 import batu from "./media/batu.png";
 import erzhan from "./media/erzhan.png";
+import Head from "next/head";
+
 
 export default function Home() {
   return (
