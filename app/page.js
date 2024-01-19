@@ -63,7 +63,9 @@ export default function Home() {
                   <div className="surface"></div>
                   <div className="shade"></div>
                   <div className="image">
+
                     <Image src={yin} alt={"An image of the yin-yang symbol."}height={100} />
+
                   </div>
                 </div>
               </div>
@@ -87,6 +89,7 @@ export default function Home() {
             </div>
             <div className="media">
               <Image src={teabox} alt={"image of an rounded rectangular with an icon of a teacup inside."}height={400} />
+
             </div>
           </div>
         </div>
@@ -99,8 +102,7 @@ export default function Home() {
           </div>
           <div className="image">
             <Image src={maru} alt={"the avatar of maru."} width={200} />
-
-          </div>
+ </div>
         </div>
         <div className="member batu">
           <div className="box">
@@ -108,8 +110,9 @@ export default function Home() {
             <div className="role text">Backend-developer</div>
           </div>
           <div className="image">
+
             <Image src={batu} alt={"the avatar of batu."} width={200} />
-          </div>
+</div>
         </div>
         <div className="member erzhan">
           <div className="box">
@@ -117,8 +120,9 @@ export default function Home() {
             <div className="role text">marketing specialist</div>
           </div>
           <div className="image">
+
             <Image src={erzhan} alt={"the avatar of erzhan."} width={200} />
-          </div>
+</div>
         </div>
       </div>
       <div className="collabs" id="collabs">
