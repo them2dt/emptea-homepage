@@ -99,11 +99,12 @@
     .collabs .info {
         position: relative;
 
-        width: 400px;
+        width: 80vw;
+
 
         display: flex;
         flex-direction: column;
-        align-items: flex-start;
+        align-items: center;
         justify-content: center;
         text-align: center;
     }
@@ -111,7 +112,7 @@
     .collabs .mailchimp {
         position: relative;
 
-        width: 400px;
+        width: 80vw;
 
         display: flex;
         align-items: center;
@@ -129,7 +130,7 @@
 
     .collabs .mailchimp .form .textfield {
 
-        width: 300px;
+        width: 70%;
         height: 60px;
 
         display: flex;
@@ -149,7 +150,7 @@
 
     .collabs .mailchimp .form .button {
 
-        width: 60px;
+        width: 25%;
         height: 60px;
 
         display: flex;

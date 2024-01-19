@@ -291,6 +291,13 @@
     }
 
 
+    .about .topics .topic-products{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 50px;
+    }
 
     .about .topics .topic .media img {
         filter: drop-shadow(0px 0px 10px rgba(0, 0, 0, 0.5));
@@ -304,6 +311,8 @@
         align-items: center;
         justify-content: center;
         gap: 20px;
+
+        width: 80vw;
     }
 
     .about .topics .topic .content .button {
