@@ -4,37 +4,10 @@ import yin from "./media/yin-yang.svg";
 import maru from "./media/maru.png";
 import batu from "./media/batu.png";
 import erzhan from "./media/erzhan.png";
-import Head from "next/head";
-
 
 export default function Home() {
   return (
     <>
-      <Head>
-        <title>Emptea Studios</title>
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:site" content="@EmpteaStudios" />
-        <meta name="twitter:title" content="Emptea Studios" />
-        <meta name="twitter:description" content="Conquer horizons." />
-        <meta
-          name="twitter:image:alt"
-          content="A cover image for the website."
-        />
-        <meta
-          name="twitter:image"
-          content="https://bafkreifzxtg23dbae6xw5vsazrwhgbf2h25kymlct4lsgqauxakvs46kfa.ipfs.nftstorage.link/"
-        />
-
-        <meta property="og:title" content="Emptea Studios" />
-        <meta property="og:description" content="Conquer horizons." />
-        <meta
-          property="og:image"
-          content="https://bafkreifzxtg23dbae6xw5vsazrwhgbf2h25kymlct4lsgqauxakvs46kfa.ipfs.nftstorage.link/"
-        />
-        <meta property="og:image:type" content="image/png" />
-        <meta property="og:image:width" content="1000" />
-        <meta property="og:image:height" content="500" />
-      </Head>
       <div className="body" id="body">
         <div className="intro" id="intro">
           <div className="glow"></div>
@@ -106,7 +79,7 @@ export default function Home() {
                   Together with the other builders we develop universal values
                   to ensure a seamless experience.
                 </div>
-                <div className="button text">dive in</div>
+                <div className="button text">coming soon</div>
               </div>
             </div>
             <div className="topic topic-products">
@@ -115,7 +88,7 @@ export default function Home() {
                 <div className="text">
                   We have too much ambition to just offer services.
                 </div>
-                <div className="button text">explore teacup</div>
+                <div className="button text">coming this february</div>
               </div>
               <div className="media">
                 <Image
@@ -168,12 +141,39 @@ export default function Home() {
           </div>
           <div className="mailchimp">
             <div className="form">
-              <input
-                type="text"
-                className="textfield text"
-                placeholder="text goes here"
-              />
-              <div className="button">Go</div>
+              <form action="https://submit-form.com/wJZr6S1Pg" method="POST">
+                <input
+                  type="hidden"
+                  name="_redirect"
+                  value="https://emptea.xyz/"
+                />
+                <input
+                  className="name"
+                  type="text"
+                  id="name"
+                  name="name"
+                  placeholder="Name"
+                  required="true"
+                />
+                <input
+                  className="e-mail"
+                  type="email"
+                  id="email"
+                  name="email"
+                  placeholder="Email"
+                  required="true"
+                />
+                <textarea
+                  className="message"
+                  id="message"
+                  name="message"
+                  placeholder="Message"
+                  required="true"
+                ></textarea>
+                <button className="submit" type="submit">
+                  Send
+                </button>
+              </form>
             </div>
           </div>
         </div>

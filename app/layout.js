@@ -5,8 +5,6 @@ import "./styles/team.css";
 import "./styles/collabs.css";
 import "./styles/footer.css";
 
-import Head from "next/head";
-
 export const metadata = {
   title: "Emptea Studios",
   description: "Conquer horizons.",
