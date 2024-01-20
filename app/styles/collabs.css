@@ -169,18 +169,32 @@
         gap: 10px;
     }
 
-    .collabs .mailchimp .form .textfield {
+    .collabs .mailchimp .form form {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
 
-        width: 70%;
+    }
+
+    .collabs .mailchimp .form input,
+    .collabs .mailchimp .form textarea,
+    .collabs .mailchimp .form button {
+
+        width: 330px;
         height: 60px;
 
         display: flex;
         align-items: center;
         justify-content: left;
         padding-left: 20px;
+        padding-right: 20px;
+
 
         background-color: var(--white);
         border: 1px solid var(--sky-blended);
+        resize: none;
         border-radius: 20px;
 
         color: var(--black);
@@ -189,19 +203,47 @@
         outline: none;
     }
 
-    .collabs .mailchimp .form .button {
 
-        width: 25%;
-        height: 60px;
+    .collabs .mailchimp .form textarea {
+        height: 120px;
+
+        padding-top: 20px;
+
+    }
+
+    .collabs .mailchimp .form button {
+        width: 370px;
+        text-align: center;
 
         display: flex;
         align-items: center;
         justify-content: center;
 
-        background-color: var(--sky-dimmed);
-        border: 1px solid var(--sky-dimmed);
-        border-radius: 20px;
+        font-family: "satoshi-medium";
 
+        background-color: var(--sky-dimmed);
+        border-color: var(--sky-dimmed);
         color: var(--white);
+
+        cursor: pointer;
+    }
+
+    .collabs .mailchimp .form button:hover {
+        background-color: var(--white);
+        color: var(--sky-dimmed);
+        transition-duration: 0.2s;
+    }
+
+    .collabs .mailchimp .form button:not(:hover) {
+        transition-duration: 0.2s;
+    }
+
+    .collabs .mailchimp .form textarea::-webkit-scrollbar-track {
+        display: none;
+    }
+
+    input::placeholder,
+    textarea::placeholder {
+        font-family: "satoshi-regular";
     }
 }
