@@ -1,0 +1,76 @@
+.services {
+    gap: 40px;
+}
+
+.services .cards {
+    gap: 20px;
+}
+
+.card {
+    width: fit-content;
+    height: fit-content;
+
+    background: linear-gradient(rgb(255, 242, 242), rgb(255, 218, 218));
+    border-radius: 20px;
+
+    padding: 2px;
+    box-sizing: border-box;
+}
+
+.topping {
+    min-width: 15vw;
+    min-height: 40vh;
+    height: fit-content;
+    background: linear-gradient(white, rgb(255, 233, 233));
+    border-radius: 18px;
+
+    padding: 30px;
+    box-sizing: border-box;
+    color: rgba(216, 117, 103, 0.8);
+    gap:20px;
+}
+
+.card-name {
+    letter-spacing: 2px;
+}
+
+.card-price {
+    font-size: 72px;
+    line-height: 0.9;
+
+}
+
+.card-content {
+    gap: 10px;
+}
+
+
+.card.gladiator {
+
+    background: linear-gradient(rgb(255, 226, 172), rgb(255, 174, 24));
+}
+
+.card.gladiator .topping {
+    background: linear-gradient(rgb(255, 243, 189), rgb(255, 202, 105));
+    color: rgb(189, 139, 48);
+}
+
+.card.gladiator .card-price {
+    text-shadow: 0px 0px 4px rgb(192, 145, 58);
+}
+
+.card.legend {
+
+    background: linear-gradient(rgb(0, 0, 0), rgb(78, 78, 78));
+}
+
+.card.legend .topping {
+    background: linear-gradient(rgb(22, 22, 22), rgb(0, 0, 0));
+    color: rgba(255, 255, 255, 0.2);
+}
+
+.card.legend .card-name,
+.card.legend .card-price {
+    color: rgb(255, 42, 42);
+    text-shadow: 0px 0px 4px rgb(255, 67, 67);
+}

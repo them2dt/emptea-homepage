@@ -1,133 +1,300 @@
 @font-face {
-  font-family: satoshi-black;
-  src: url(../fonts/Satoshi-Black.otf);
+  font-family: "satoshi-regular";
+  src: url(./fonts/Satoshi-Regular.otf);
 }
 
 @font-face {
-  font-family: satoshi-medium;
-  src: url(../fonts/Satoshi-Medium.otf);
-}
-
-@font-face {
-  font-family: satoshi-regular;
-  src: url(../fonts/Satoshi-Regular.otf);
+  font-family: "satoshi-bold";
+  src: url(./fonts/Satoshi-black.otf);
 }
 
 :root {
-  --black: #000000;
-  --white: #ffffff;
-  --transparent: #ffffff00;
-  --pastel: #F9F2DB;
-  --sky: #5CB2E7;
-  --sky-blended: #acdfff;
-  --sky-dimmed: #2F5D7A;
+  max-width: 100vw;
+
+  --black: rgb(0, 0, 0);
+  --white: #FFFFFF;
+  --accent: #bb0000;
+
+  background-color: var(--white);
 }
 
-html,
-body {
-  max-width: 100vw;
-  overflow-x: hidden;
-  background-color: var(--sky);
+::-webkit-scrollbar {
+  width: 0;
+  background: transparent;
+}
 
+
+html {
+  scroll-behavior: smooth;
+  background-color: var(--white);
+
+  max-width: 100vw;
+}
+
+body {
   margin: 0;
   padding: 0;
-  color: var(--white);
+  font-family: "satoshi-regular";
+  background-color: var(--white);
+  color: var(--black);
+  overflow-x: hidden;
+
+  max-width: 100vw;
 }
 
-@media only screen and (min-width: 768px) {
-
-
-  .title {
-    font-family: "satoshi-black";
-    font-size: 64px;
-    letter-spacing: 1;
-  }
-
-  .heading-1 {
-    font-family: "satoshi-black";
-    font-size: 48px;
-    letter-spacing: 1;
-  }
-
-  .heading-2 {
-    font-family: "satoshi-black";
-    font-size: 36px;
-    letter-spacing: -1px;
-    line-height: 30px;
-  }
-
-  .heading-3 {
-    font-family: "satoshi-black";
-    font-size: 24px;
-    letter-spacing: 1;
-  }
-
-  .heading-4 {
-    font-family: "satoshi-black";
-    font-size: 24px;
-    letter-spacing: 1;
-  }
-
-
-  .text {
-    font-family: "satoshi-medium";
-    font-size: 24px;
-    letter-spacing: 1;
-  }
-
-  .button {
-    font-family: "satoshi-black";
-    font-size: 16px;
-    letter-spacing: 1;
-
-  }
+a {
+  text-decoration: none;
+  color: inherit;
 }
 
-@media only screen and (max-width: 768px) {
+span {
+  color: var(--accent);
+}
+
+a:hover {
+  color: var(--accent);
+}
+
+.section {
+  width: 100%;
+  height: 100vh;
+}
+
+.paragraph {
+  width: 50vw;
+  padding: 160px;
+
+  box-sizing: border-box;
+}
+
+.font-h1 {
+  font-family: "satoshi-bold";
+  font-size: 52px;
+  letter-spacing: -0.2rem;
+}
+
+.font-h2 {
+  font-family: "satoshi-bold";
+  font-size: 40px;
+  letter-spacing: -0.1rem;
+}
+
+.font-h3 {
+  font-family: "satoshi-bold";
+  font-size: 28px;
+  letter-spacing: -0.1rem;
+}
+
+.font-h4 {
+  font-family: "satoshi-bold";
+  font-size: 22px;
+  letter-spacing: -0.1rem;
+
+}
+
+.font-text {
+  font-family: "satoshi-regular";
+  font-size: 18px;
+
+}
+
+.font-text-bold {
+  font-family: "satoshi-bold";
+  font-size: 18px;
+}
+
+.font-text-light {
+  font-family: "satoshi-regular";
+  font-size: 18px;
+}
+
+.font-text-small {
+  font-family: "satoshi-regular";
+  font-size: 16px;
+}
+
+.font-text-small-bold {
+  font-family: "satoshi-bold";
+  font-size: 16px;
+}
+
+.font-text-small-light {
+  font-family: "satoshi-regular";
+  font-size: 16px;
+}
+
+.font-text-tiny {
+  font-family: "satoshi-regular";
+  font-size: 14px;
+}
+
+.font-text-tiny-bold {
+  font-family: "satoshi-bold";
+  font-size: 14px;
+}
 
 
-  .title {
-    font-family: "satoshi-black";
-    font-size: 36px;
-    letter-spacing: 1;
-  }
 
-  .heading-1 {
-    font-family: "satoshi-black";
-    font-size: 32px;
-    letter-spacing: 1;
-  }
-
-  .heading-2 {
-    font-family: "satoshi-black";
-    font-size: 28px;
-    letter-spacing: -1px;
-    line-height: 30px;
-  }
-
-  .heading-3 {
-    font-family: "satoshi-black";
-    font-size: 24px;
-    letter-spacing: 1;
-  }
-
-  .heading-4 {
-    font-family: "satoshi-black";
-    font-size: 22px;
-    letter-spacing: 1;
-  }
+.font-text-tiny-light {
+  font-family: "satoshi-regular";
+  font-size: 14px;
+}
 
 
-  .text {
-    font-family: "satoshi-medium";
-    font-size: 18px;
-    letter-spacing: 1;
-  }
+/* a set of classes for display:flex variations, like this: .flex-(row / column)-(justify-content)-(align-items)*/
+/*row-start**/
+.flex-row-start-start {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
 
-  .button {
-    font-family: "satoshi-black";
-    font-size: 16px;
-    letter-spacing: 1;
+.flex-row-start-center {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+}
 
-  }
+.flex-row-start-end {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: flex-end;
+}
+
+/*row-center**/
+.flex-row-center-start {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.flex-row-center-center {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.flex-row-between-center {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.flex-row-center-end {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-end;
+}
+
+/*row-end**/
+.flex-row-end-start {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: flex-start;
+}
+
+.flex-row-end-center {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.flex-row-end-end {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: flex-end;
+}
+
+.flex-row-between-start {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.flex-row-between-center {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.flex-row-between-end {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+.flex-column-center-center {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.flex-column-center-start {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.flex-column-center-end {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-end;
+}
+
+.flex-column-start-center {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.flex-column-start-start {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
+.flex-column-start-end {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-end;
+}
+
+.flex-column-end-center {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.flex-column-end-start {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: flex-start;
+}
+
+.flex-column-end-end {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: flex-end;
 }

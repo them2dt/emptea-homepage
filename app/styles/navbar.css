@@ -1,0 +1,27 @@
+.navbar-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: fit-content;
+    padding: 20px 30px;
+
+    box-sizing: border-box;
+}
+
+.navbar {
+    width: 100%;
+    height: fit-content;
+
+    background-color: var(--white);
+    box-sizing: border-box;
+}
+
+.navbar .font-h4 {
+    color: var(--accent);
+}
+
+.navbar .operations {
+    gap: 20px;
+}
