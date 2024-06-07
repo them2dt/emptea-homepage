@@ -25,6 +25,7 @@ export default function Home() {
       <div className="hero section flex-column-center-center">
         <div className="font-h1">
           Making <span>blockchain</span> accessible for everyone.
+          <br/>Initiated by <Link href={"https://twitter.com/them2dt"}>THEM2DT</Link>.
         </div>
       </div>
     </main>
