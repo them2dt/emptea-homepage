@@ -5,27 +5,66 @@ import Loader from "./components/Loader";
 export default function Home() {
   return (
     <main>
-      <Loader />
-      <div className="navbar-container">
-        <div className="navbar flex-row-between-center">
-          <div className="font-h4">emptea labs</div>
-          <div className="operations flex-row-center-center">
-            <Link href={""}>
-              <div className="operation font-text">Product</div>
+      <div className="navigation flex-row-center">
+        <div className="nav-bar flex-row-between-center">
+          <div className="logo font-h4">Emptea Studios</div>
+          <div className="nav-links flex-row-center-center">
+            <Link href="#hero">
+              <div className="nav-link font-text">Home</div>
             </Link>
-            <Link href={""}>
-              <div className="operation font-text">Explorer</div>
+            <Link href="#services">
+              <div className="nav-link font-text">Services</div>
             </Link>
-            <Link href={""}>
-              <div className="operation font-text">Contact</div>
+            <Link href="#contact">
+              <div className="nav-link font-text">Contact</div>
             </Link>
           </div>
         </div>
       </div>
-      <div className="hero section flex-column-center-center">
-        <div className="font-h1">
-          Making <span>blockchain</span> accessible for everyone.
-          <br/>Initiated by <Link href={"https://twitter.com/them2dt"}>THEM2DT</Link>.
+      <div id="hero" className="section flex-column-start-center">
+        <div className="grid-container">
+          {[...Array(140)].map((_, index) => (
+            <div className="grid-box"></div>
+          ))}
+        </div>
+        <div className="spacer flex-row-center-center"></div>
+        <div className="primary-info flex-column-center-center">
+          <div className="title font-h1">Elevate your web presence.</div>
+          <div className="description font-text">
+            Emptea Studios creates professional web experiences using innovative
+            tools.
+          </div>
+          <div className="buttons flex-row-center-center">
+            <div className="button-base">
+              <div className="button">
+                <div className="text">Get started</div>
+              </div>
+            </div>
+            <div className="button-base">
+              <div className="button">
+                <div className="text">Learn more</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div className="demo-monitor flex-row-center-center">
+          <div className="screen">
+            <div className="screen content"></div>
+          </div>
+        </div>
+      </div>
+      <div id="services" className="section flex-column-center-center">
+        <div className="service flex-row-start-start">
+          <div className="icon">
+            <img src="/icons/website.svg" alt="Website" />
+          </div>
+          <div className="text flex-column-start-start">
+            <div className="title font-h2">Web Development</div>
+            <div className="description font-text">
+              We create responsive websites that are optimized for speed and
+              performance.
+            </div>
+          </div>
         </div>
       </div>
     </main>

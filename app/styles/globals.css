@@ -11,9 +11,8 @@
 :root {
   max-width: 100vw;
 
-  --black: rgb(0, 0, 0);
-  --white: #FFFFFF;
-  --accent: #bb0000;
+  --primary: rgb(0, 0, 0);
+  --secondary: #FFFFFF;
 
   background-color: var(--white);
 }
@@ -35,8 +34,8 @@ body {
   margin: 0;
   padding: 0;
   font-family: "satoshi-regular";
-  background-color: var(--white);
-  color: var(--black);
+  background-color: rgb(22, 22, 22);
+  color:rgb(253, 255, 162);
   overflow-x: hidden;
 
   max-width: 100vw;
@@ -53,11 +52,6 @@ span {
 
 a:hover {
   color: var(--accent);
-}
-
-.section {
-  width: 100%;
-  height: 100vh;
 }
 
 .paragraph {

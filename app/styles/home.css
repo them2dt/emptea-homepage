@@ -1,76 +1,142 @@
-.services {
-    gap: 40px;
+.navigation {
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: fit-content;
+    z-index: 1000;
+
+    box-sizing: border-box;
+    padding: 10px;
 }
 
-.services .cards {
+.nav-bar {
+    width: fill;
+    height: fit-content;
+
+    background-color: rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(4px);
+    border-radius: 40px;
+    padding: 10px 20px;
+}
+
+.nav-links {
     gap: 20px;
 }
 
-.card {
-    width: fit-content;
-    height: fit-content;
-
-    background: linear-gradient(rgb(255, 242, 242), rgb(255, 218, 218));
-    border-radius: 20px;
-
-    padding: 2px;
-    box-sizing: border-box;
+.section {
+    min-height: 100vh;
 }
 
-.topping {
-    min-width: 15vw;
-    min-height: 40vh;
-    height: fit-content;
-    background: linear-gradient(white, rgb(255, 233, 233));
-    border-radius: 18px;
-
-    padding: 30px;
-    box-sizing: border-box;
-    color: rgba(216, 117, 103, 0.8);
-    gap:20px;
+#hero {
+    position: relative;
 }
 
-.card-name {
-    letter-spacing: 2px;
+#hero.section {
+    gap: 40px;
 }
 
-.card-price {
-    font-size: 72px;
-    line-height: 0.9;
-
+#hero .spacer {
+    height: 200px;
 }
 
-.card-content {
+.primary-info {
+    gap: 20px;
+}
+
+.buttons {
     gap: 10px;
 }
 
+.button-base {
+    width: fit-content;
+    height: fit-content;
 
-.card.gladiator {
+    background: linear-gradient(rgb(37, 37, 37), rgb(18, 18, 18));
 
-    background: linear-gradient(rgb(255, 226, 172), rgb(255, 174, 24));
+    border-radius: 12px;
+    box-shadow: 0px 1px 4px 2px rgba(0, 0, 0, 0.1);
+
+    padding: 2px;
+    cursor: pointer;
 }
 
-.card.gladiator .topping {
-    background: linear-gradient(rgb(255, 243, 189), rgb(255, 202, 105));
-    color: rgb(189, 139, 48);
+.button {
+    width: fit-content;
+    height: fit-content;
+
+    background-color: rgb(22, 22, 22);
+
+    border-radius: 10px;
+
+    padding: 10px 20px;
 }
 
-.card.gladiator .card-price {
-    text-shadow: 0px 0px 4px rgb(192, 145, 58);
+.demo-monitor {
+
+    width: fit-content;
+    height: fit-content;
+
+    background-color: rgb(22, 22, 22);
+    border-radius: 20px;
+    box-shadow: 0px 1px 4px 2px rgba(0, 0, 0, 0.4);
+
+    padding: 20px;
 }
 
-.card.legend {
+.screen {
+    width: 60vw;
+    height: 60vh;
 
-    background: linear-gradient(rgb(0, 0, 0), rgb(78, 78, 78));
+    background-color: rgb(22, 22, 22);
+    box-shadow: inset 0px 1px 4px 2px rgba(0, 0, 0, 0.4);
+
+
+    border-radius: 10px;
 }
 
-.card.legend .topping {
-    background: linear-gradient(rgb(22, 22, 22), rgb(0, 0, 0));
-    color: rgba(255, 255, 255, 0.2);
+.grid-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: fit-content;
+
+    display: grid;
+    gap: 1px;
+    grid-template-columns: repeat(auto-fit, minmax(calc((100vw - 19px) / 20), 1fr));
+    padding-bottom: 1px;
+    background: radial-gradient(rgb(253, 255, 162), rgb(51, 51, 51));
+
+    /*     background-color: rgb(173, 164, 144);*/
+    opacity: 0.1;
+
+    z-index: -1;
 }
 
-.card.legend .card-name,
-.card.legend .card-price {
-    color: rgb(255, 42, 42);
-    text-shadow: 0px 0px 4px rgb(255, 67, 67);
+
+
+.grid-box {
+    background-color: rgb(22, 22, 22);
+    aspect-ratio: 1 / 1;
+    /* animation: rotate 2s linear infinite; */
+
+}
+
+@keyframes rotate {
+    0% {
+        scale: 0.98;
+    }
+
+    50% {
+        scale: 1;
+
+    }
+
+    100% {
+        scale: 0.98;
+
+    }
 }
