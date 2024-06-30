@@ -54,17 +54,41 @@ export default function Home() {
         </div>
       </div>
       <div id="services" className="section flex-column-center-center">
-        <div className="service flex-row-start-start">
-          <div className="icon">
-            <img src="/icons/website.svg" alt="Website" />
-          </div>
-          <div className="text flex-column-start-start">
-            <div className="title font-h2">Web Development</div>
-            <div className="description font-text">
-              We create responsive websites that are optimized for speed and
-              performance.
+        <div className="service service-web-development flex-row-end-end">
+          <div className="service-detail flex-row-end-end">
+            <div className="text flex-column-start-start">
+              <div className="title font-h2">Web Development</div>
+              <div className="description font-text">
+                We create responsive websites that are optimized for speed and
+                performance.
+              </div>
             </div>
           </div>
+          <div className="service-demo flex-row-center-center"></div>
+        </div>
+        <div className="service service-ux-design flex-row-end-end">
+          <div className="service-demo flex-row-center-center"></div>
+          <div className="service-detail flex-row-end-end">
+            <div className="text flex-column-end-end">
+              <div className="title font-h2">UX Design</div>
+              <div className="description font-text">
+                We create responsive websites that are optimized for speed and
+                performance.
+              </div>
+            </div>
+          </div>
+        </div>
+        <div className="service service-web-development flex-row-end-end">
+          <div className="service-detail flex-row-end-end">
+            <div className="text flex-column-start-start">
+              <div className="title font-h2"></div>
+              <div className="description font-text">
+                We create responsive websites that are optimized for speed and
+                performance.
+              </div>
+            </div>
+          </div>
+          <div className="service-demo flex-row-center-center"></div>
         </div>
       </div>
     </main>
