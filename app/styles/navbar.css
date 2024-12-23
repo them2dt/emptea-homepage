@@ -1,27 +1,38 @@
-.navbar-container {
+.navigation {
     position: fixed;
     top: 0;
-    left: 0;
-
     width: 100%;
-    height: fit-content;
-    padding: 20px 30px;
-
-    box-sizing: border-box;
+    z-index: 100;
+    display: flex;
+    justify-content: center;
+    padding-top: 20px;
 }
 
-.navbar {
-    width: 100%;
-    height: fit-content;
-
-    background-color: var(--white);
-    box-sizing: border-box;
+.nav-bar {
+    position: relative;
+    width: 60vw;
+    padding: 20px;
+    background: rgba(31, 31, 31, 0.8);
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(49, 49, 49, 0.2);
+    border-radius: 12px;
 }
 
-.navbar .font-h4 {
-    color: var(--accent);
+@media (max-width: 768px) {
+    .nav-bar {
+        width: 90vw;
+        padding: 16px;
+    }
 }
 
-.navbar .operations {
+.nav-links {
     gap: 20px;
+}
+
+.nav-link {
+    transition: color 0.2s ease;
+}
+
+.nav-link:hover {
+    color: rgb(253, 255, 162);
 }

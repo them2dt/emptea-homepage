@@ -22,12 +22,15 @@
   background: transparent;
 }
 
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
 
-html {
-  scroll-behavior: smooth;
-  background-color: var(--white);
-
-  max-width: 100vw;
+html, body {
+  max-width: 100%;
+  overflow-x: hidden;
 }
 
 body {
@@ -35,10 +38,15 @@ body {
   padding: 0;
   font-family: "satoshi-regular";
   background-color: rgb(22, 22, 22);
-  color:rgb(253, 255, 162);
+  color: rgb(253, 255, 162);
   overflow-x: hidden;
+  width: 100%;
+}
 
-  max-width: 100vw;
+main {
+  width: 100%;
+  overflow-x: hidden;
+  position: relative;
 }
 
 a {
@@ -291,4 +299,56 @@ a:hover {
   flex-direction: column;
   justify-content: flex-end;
   align-items: flex-end;
+}
+
+@import './button.css';
+@import './product-catalog.css';
+@import './grid.css';
+
+@media (max-width: 768px) {
+    .font-h1 {
+        font-size: 36px;
+        letter-spacing: -0.1rem;
+    }
+
+    .font-h4 {
+        font-size: 18px;
+    }
+
+    .font-text {
+        font-size: 16px;
+    }
+
+    .primary-info {
+        padding: 0 20px;
+        text-align: center;
+    }
+
+    .buttons {
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .button-base {
+        margin: 0;
+    }
+}
+
+/* Update product catalog width */
+.product-catalog {
+  width: min(40vw, 100%);
+}
+
+@media (max-width: 768px) {
+  .product-catalog {
+    width: min(90vw, 100%);
+  }
+
+  .button {
+    width: min(80vw, 100%);
+  }
+
+  .nav-bar {
+    width: min(90vw, 100%);
+  }
 }

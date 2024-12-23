@@ -1,94 +1,55 @@
 "use client";
-import Link from "next/link";
-import Loader from "./components/Loader";
+import Navigation from "./components/Navigation";
+import Button from "./components/Button";
+import ProductCatalog from "./components/ProductCatalog";
 
 export default function Home() {
+
+  const buttons = [
+    {
+      text: "Follow us",
+      link: "https://twitter.com/empteastudios"
+    },
+    {
+      text: "Read our articles",
+      link: "https://empteastudios.notion.site"
+    }
+  ];
+
   return (
     <main>
-      <div className="navigation flex-row-center">
-        <div className="nav-bar flex-row-between-center">
-          <div className="logo font-h4">Emptea Studios</div>
-          <div className="nav-links flex-row-center-center">
-            <Link href="#hero">
-              <div className="nav-link font-text">Home</div>
-            </Link>
-            <Link href="#services">
-              <div className="nav-link font-text">Services</div>
-            </Link>
-            <Link href="#contact">
-              <div className="nav-link font-text">Contact</div>
-            </Link>
-          </div>
-        </div>
-      </div>
+      <Navigation />
+      {/* Hero Section */}
       <div id="hero" className="section flex-column-start-center">
+        {/* Background Grid */}
         <div className="grid-container">
           {[...Array(140)].map((_, index) => (
-            <div className="grid-box"></div>
+            <div key={index} className="grid-box" />
           ))}
         </div>
-        <div className="spacer flex-row-center-center"></div>
+        <div className="spacer flex-row-center-center" />
+
+        {/* Hero Content */}
         <div className="primary-info flex-column-center-center">
-          <div className="title font-h1">Elevate your web presence.</div>
+          <div className="title font-h1">
+            Designing the decentralized future.
+          </div>
           <div className="description font-text">
-            Emptea Studios creates professional web experiences using innovative
-            tools.
+            We build usable apps for Solana.
           </div>
+          {/* Updated Buttons */}
           <div className="buttons flex-row-center-center">
-            <div className="button-base">
-              <div className="button">
-                <div className="text">Get started</div>
-              </div>
-            </div>
-            <div className="button-base">
-              <div className="button">
-                <div className="text">Learn more</div>
-              </div>
-            </div>
+            {buttons.map((button) => (
+              <Button 
+                key={button.text} 
+                text={button.text} 
+                link={button.link}
+              />
+            ))}
           </div>
-        </div>
-        <div className="demo-monitor flex-row-center-center">
-          <div className="screen">
-            <div className="screen content"></div>
-          </div>
-        </div>
-      </div>
-      <div id="services" className="section flex-column-center-center">
-        <div className="service service-web-development flex-row-end-end">
-          <div className="service-detail flex-row-end-end">
-            <div className="text flex-column-start-start">
-              <div className="title font-h2">Web Development</div>
-              <div className="description font-text">
-                We create responsive websites that are optimized for speed and
-                performance.
-              </div>
-            </div>
-          </div>
-          <div className="service-demo flex-row-center-center"></div>
-        </div>
-        <div className="service service-ux-design flex-row-end-end">
-          <div className="service-demo flex-row-center-center"></div>
-          <div className="service-detail flex-row-end-end">
-            <div className="text flex-column-end-end">
-              <div className="title font-h2">UX Design</div>
-              <div className="description font-text">
-                We create responsive websites that are optimized for speed and
-                performance.
-              </div>
-            </div>
-          </div>
-        </div>
-        <div className="service service-web-development flex-row-end-end">
-          <div className="service-detail flex-row-end-end">
-            <div className="text flex-column-start-start">
-              <div className="title font-h2"></div>
-              <div className="description font-text">
-                We create responsive websites that are optimized for speed and
-                performance.
-              </div>
-            </div>
-          </div>
-          <div className="service-demo flex-row-center-center"></div>
+          
+          {/* Product Catalog */}
+          <ProductCatalog />
         </div>
       </div>
     </main>
