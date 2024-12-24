@@ -10,10 +10,6 @@ export default function Home() {
       text: "Follow us",
       link: "https://twitter.com/empteastudios"
     },
-    {
-      text: "Read our articles",
-      link: "https://empteastudios.notion.site"
-    }
   ];
 
   return (

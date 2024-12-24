@@ -1,5 +1,4 @@
 import "./styles/globals.css";
-import "./styles/loader.css";
 import "./styles/navbar.css";
 import "./styles/home.css";
 
@@ -13,7 +12,7 @@ export const metadata = {
     siteName: "Emptea Studios",
     images: [
       {
-        url: "https://bafkreifzxtg23dbae6xw5vsazrwhgbf2h25kymlct4lsgqauxakvs46kfa.ipfs.nftstorage.link/",
+        url: "/og-image.png",
         width: "1000",
         height: "500",
       },
@@ -24,7 +23,7 @@ export const metadata = {
     title: "Emptea Studios.",
     description: "Conquer horizons.",
     creator: "@EmpteaStudios",
-    images: ["https://bafkreifzxtg23dbae6xw5vsazrwhgbf2h25kymlct4lsgqauxakvs46kfa.ipfs.nftstorage.link/"],
+    images: ["/og-image.png"],
   },
 };
 
