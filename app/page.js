@@ -2,6 +2,7 @@
 import Navigation from "./components/Navigation";
 import Button from "./components/Button";
 import ProductCatalog from "./components/ProductCatalog";
+import Footer from "./components/Footer";
 
 export default function Home() {
 
@@ -10,6 +11,7 @@ export default function Home() {
       text: "Follow us",
       link: "https://twitter.com/empteastudios"
     },
+
   ];
 
   return (
@@ -48,6 +50,7 @@ export default function Home() {
           <ProductCatalog />
         </div>
       </div>
+      <Footer />
     </main>
   );
 }

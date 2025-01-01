@@ -1,0 +1,38 @@
+.footer {
+  width: 100%;
+  padding: 40px 0;
+  margin-top: 40px;
+}
+
+.footer-content {
+  width: 60%;
+  padding: 24px;
+  background: rgba(31, 31, 31, 0.8);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(49, 49, 49, 0.2);
+  border-radius: 12px;
+}
+
+.footer-right {
+  gap: 20px;
+}
+
+.footer-link {
+  transition: color 0.2s ease;
+  color: rgba(253, 255, 162, 0.7);
+}
+
+.footer-link:hover {
+  color: rgb(253, 255, 162);
+}
+
+@media (max-width: 768px) {
+  .footer-content {
+    width: 90%;
+    padding: 20px;
+    flex-direction: column;
+    gap: 12px;
+    align-items: center;
+    text-align: center;
+  }
+} 

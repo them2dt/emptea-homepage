@@ -304,6 +304,8 @@ a:hover {
 @import './button.css';
 @import './product-catalog.css';
 @import './grid.css';
+@import './footer.css';
+@import './preda.css';
 
 @media (max-width: 768px) {
     .font-h1 {
