@@ -12,9 +12,9 @@
     position: relative;
     width: 60vw;
     padding: 20px;
-    background: rgba(31, 31, 31, 0.8);
+    background: rgba(0, 0, 0, 0.05);
     backdrop-filter: blur(8px);
-    border: 1px solid rgba(49, 49, 49, 0.2);
+    border: 1px solid rgba(0, 0, 0, 0.05);
     border-radius: 12px;
 }
 

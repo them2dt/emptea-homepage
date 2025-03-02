@@ -33,7 +33,7 @@ export default function Home() {
             Designing the decentralized future.
           </div>
           <div className="description font-text">
-            We build usable apps for Solana.
+            We make art in form of apps.
           </div>
           {/* Updated Buttons */}
           <div className="buttons flex-row-center-center">

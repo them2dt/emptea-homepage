@@ -3,23 +3,11 @@ import Link from "next/link";
 export default function ProductCatalog() {
   const products = [
     {
-      title: "Preda",
-      description: "Create any token on Solana.",
+      title: "Votables",
+      description: "Vote on anything.",
       status: "Coming Soon",
-      link: "/preda"
+      link: "/votables"
     },
-    {
-      title: "Blocky",
-      description: "Learn Blockchain, easy like never before!",
-      status: "Coming Soon",
-      link: "/blocky"
-    },
-    {
-      title: "DeTier",
-      description: "Rank projects on Solana.",
-      status: "Live",
-      link: "/detier"
-    }
   ];
 
   return (

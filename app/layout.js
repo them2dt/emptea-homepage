@@ -4,38 +4,87 @@ import "./styles/home.css";
 
 export const metadata = {
   title: "Emptea Studios",
-  description: "Building usable apps for Solana.",
+  description: "Building art in form of apps.",
+  keywords: ["web3", "Solana", "Apps", "Blockchain"],
+  authors: [{ name: "Emptea Studios", url: "https://emptea.xyz" }],
+  creator: "Emptea Studios",
+  publisher: "Emptea Studios",
+  robots: "index, follow",
+  
+  // Updated OpenGraph metadata with correct paths
   openGraph: {
     title: "Emptea Studios",
-    description: "Building usable apps for Solana.",
+    description: "Building art in form of apps.",
     url: "https://emptea.xyz",
     siteName: "Emptea Studios",
+    locale: "en_US",
+    type: "website",
     images: [
       {
-        url: "https://raw.githubusercontent.com/them2dt/emptea-seo-resources/76debb23e6028f9a6c2512f3f410723f0ab837ae/og-image.png.png",
-        width: "1000",
-        height: "500",
-        alt: "Emptea Studios - Building usable apps for Solana"
+        url: "/og-image.png", // Updated path to actual file location
+        width: 1200,
+        height: 630,
+        alt: "Emptea Studios - Building art in form of apps"
       },
+      {
+        url: "/android-chrome-512x512.png", // Using existing square image
+        width: 512,
+        height: 512,
+        alt: "Emptea Studios Logo"
+      }
     ],
-    type: "website",
   },
+  
+  // Updated Twitter metadata with correct paths
   twitter: {
     card: "summary_large_image",
     title: "Emptea Studios",
-    description: "Building usable apps for Solana.",
+    description: "Building art in form of apps.",
     creator: "@them2dt",
     site: "@empteastudios",
-    images: ["https://raw.githubusercontent.com/them2dt/emptea-seo-resources/76debb23e6028f9a6c2512f3f410723f0ab837ae/og-image.png.png"],
+    images: ["/og-image.png"], // Using OG image for Twitter
   },
+  
+  // Updated icons with correct paths
   icons: {
-    icon: "/favicon.ico",
+    icon: [
+      { url: "/favicon.ico" },
+      { url: "/favicon-16x16.png", sizes: "16x16", type: "image/png" },
+      { url: "/favicon-32x32.png", sizes: "32x32", type: "image/png" }
+    ],
+    apple: [
+      { url: "/apple-touch-icon.png" }
+    ],
+    other: [
+      { 
+        rel: "manifest", 
+        url: "/site.webmanifest" 
+      }
+    ]
   },
+  
+  // Canonical URL
+  alternates: {
+    canonical: "https://emptea.xyz"
+  },
+  
+  // Verification for search engines (mock values)
+  verification: {
+    google: "google-site-verification-code",
+    yandex: "yandex-verification-code",
+    yahoo: "yahoo-verification-code"
+  }
 };
 
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
+      <head>
+        {/* Additional meta tags that aren't part of Next.js metadata API */}
+        <meta charSet="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="canonical" href="https://emptea.xyz" />
+      </head>
       <body>{children}</body>
     </html>
   );
