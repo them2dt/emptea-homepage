@@ -1,0 +1,262 @@
+.main{
+    background-color: #5C7587;
+}
+.navigation {
+    width: 60vw;
+    padding: 20px;
+    margin-top: 20px;
+    position: fixed;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 100;
+    background-color: rgba(255, 255, 255, 0.4);
+    border-radius: 100px;
+    backdrop-filter: blur(10px);
+}
+
+.random-app-opener-button {
+    background: linear-gradient(to bottom, #8CD0F0, #50788A);
+    border-radius: 50%;
+    padding: 10px;
+    cursor: pointer;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25), 
+                inset 0 -2px 2px rgba(0, 0, 0, 0.25),
+                inset 0 -6px 6px rgba(255, 255, 255, 0.25),
+                inset 0 4px 4px rgba(255, 255, 255, 0.25);
+    transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.3s ease;
+}
+.random-app-opener-button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.3), 
+                inset 0 -2px 2px rgba(0, 0, 0, 0.25),
+                inset 0 -6px 6px rgba(255, 255, 255, 0.25),
+                inset 0 4px 4px rgba(255, 255, 255, 0.25);
+}
+.random-app-opener-button:active {
+    transform: scale(0.95);
+    box-shadow: 0 2px 3px rgba(0, 0, 0, 0.2), 
+                inset 0 -1px 1px rgba(0, 0, 0, 0.3),
+                inset 0 -3px 3px rgba(255, 255, 255, 0.2),
+                inset 0 2px 2px rgba(255, 255, 255, 0.2);
+}
+.random-app-opener-button .icon {
+    background: linear-gradient(to bottom, #96DEFF, #D5F2FF);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+    transition: transform 0.2s ease;
+    user-select: none;
+}
+.random-app-opener-button:hover .icon {
+    transform: scale(1.1);
+    -webkit-background-clip: text;
+    background-clip: text;
+}
+.random-app-opener-button:active .icon {
+    transform: scale(0.9);
+}
+
+.background-image {
+    width: 100%;
+    position: absolute;
+    height: 50vw; /* This maintains the 2:1 aspect ratio (4096:2048) */
+    overflow: hidden;
+    z-index: 0;
+    user-select: none;
+}
+
+.background-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    user-select: none;
+    pointer-events: none;
+}
+
+.hero {
+    position: relative;
+    width: 100%;
+    height: 50vw;
+    text-align: center;
+    color: white;
+    z-index: 2;
+}
+
+.hero-title {
+    margin-bottom: 1rem;
+    line-height: 1.2;
+    position: relative;
+    z-index: 2;
+}
+
+.hero-subtitle {
+    margin-bottom: 2rem;
+    opacity: 0.9;
+    position: relative;
+    z-index: 2;
+}
+
+.explore-button {
+    background: linear-gradient(to bottom, #8CD0F0, #50788A);
+    border: 0px solid black;
+    border-radius: 100px;
+    padding: 20px 40px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25), 
+                inset 0 -2px 2px rgba(0, 0, 0, 0.25),
+                inset 0 -6px 6px rgba(255, 255, 255, 0.25),
+                inset 0 4px 4px rgba(255, 255, 255, 0.25);
+    transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.3s ease;
+    color: white;
+    position: relative;
+    z-index: 2;
+}
+
+.explore-button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.3), 
+                inset 0 -2px 2px rgba(0, 0, 0, 0.25),
+                inset 0 -6px 6px rgba(255, 255, 255, 0.25),
+                inset 0 4px 4px rgba(255, 255, 255, 0.25);
+}
+
+.explore-button:active {
+    transform: scale(0.95);
+    box-shadow: 0 2px 3px rgba(0, 0, 0, 0.2), 
+                inset 0 -1px 1px rgba(0, 0, 0, 0.3),
+                inset 0 -3px 3px rgba(255, 255, 255, 0.2),
+                inset 0 2px 2px rgba(255, 255, 255, 0.2);
+}
+.explore-button-text {
+    background: linear-gradient(to bottom, #96DEFF, #D5F2FF);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+    transition: transform 0.2s ease;
+    user-select: none;
+}
+
+.section {
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    padding: 100px 0;
+}
+
+.section-gradient {
+    width: 100%;
+    height: 100px;
+    z-index: 1;
+}
+
+.gradient-to-app1 {
+    background: linear-gradient(to bottom, transparent, #5C7587);
+    top: 0;
+}
+
+.gradient-to-app2 {
+    background: linear-gradient(to bottom, #5C7587, #C89BA5);
+    top: 0;
+}
+
+.gradient-to-footer {
+    background: linear-gradient(to bottom, #C89BA5, #E1BC87);
+    top: 0;
+}
+
+.app-1 {
+    background-color: #5C7587;
+    color: white;
+}
+
+.app-2 {
+    background-color: #C89BA5;
+    color: white;
+}
+
+.app-details h2 {
+    color: white;
+}
+
+.app-details p {
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.footer {
+    background-color: #E1BC87;
+}
+
+.app-container {
+    width: 60vw;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 4rem;
+}
+
+.app-container.reverse {
+    flex-direction: row-reverse;
+}
+
+.app-details {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.app-image {
+    width: 400px;
+    height: 400px;
+    background-color: white;
+    border-radius: 20px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.app-button {
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0.2), rgba(0, 0, 0, 0.1));
+    border: 0px solid black;
+    border-radius: 100px;
+    padding: 20px 40px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25), 
+                inset 0 -2px 2px rgba(0, 0, 0, 0.25),
+                inset 0 -6px 6px rgba(255, 255, 255, 0.25),
+                inset 0 4px 4px rgba(255, 255, 255, 0.25);
+    transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.3s ease;
+    color: white;
+    position: relative;
+    z-index: 2;
+    width: fit-content;
+}
+
+.app-button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.3), 
+                inset 0 -2px 2px rgba(0, 0, 0, 0.25),
+                inset 0 -6px 6px rgba(255, 255, 255, 0.25),
+                inset 0 4px 4px rgba(255, 255, 255, 0.25);
+}
+
+.app-button:active {
+    transform: scale(0.95);
+    box-shadow: 0 2px 3px rgba(0, 0, 0, 0.2), 
+                inset 0 -1px 1px rgba(0, 0, 0, 0.3),
+                inset 0 -3px 3px rgba(255, 255, 255, 0.2),
+                inset 0 2px 2px rgba(255, 255, 255, 0.2);
+}
