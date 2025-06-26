@@ -23,6 +23,10 @@
   src: url(./fonts/Satoshi-Black.otf);
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 html,
 body {
   margin: 0;

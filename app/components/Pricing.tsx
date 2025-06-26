@@ -1,4 +1,5 @@
 import styles from '../styles/Page.module.css';
+import Link from 'next/link';
 
 const CheckmarkIcon = () => (
   <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -55,7 +56,7 @@ const Pricing = () => {
                 </li>
               ))}
             </ul>
-            <button className={styles.priceButton}>Start today</button>
+            <Link href="#contact" className={styles.priceButton}>Start today</Link>
           </div>
         ))}
       </div>
@@ -66,7 +67,7 @@ const Pricing = () => {
         </div>
         <div className={styles.maintenanceAction}>
           <p className={styles.maintenancePrice}>$199</p>
-          <button className={styles.priceButton}>Start today</button>
+          <Link href="#contact" className={styles.priceButton}>Start today</Link>
         </div>
       </div>
     </section>
