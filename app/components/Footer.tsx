@@ -24,9 +24,6 @@ const Footer = () => {
           <h4>EMPTEA STUDIOS®</h4>
         </div>
       </div>
-      <div className={styles.footerBottom}>
-        <p>Made with ❤️</p>
-      </div>
     </footer>
   );
 };
