@@ -568,7 +568,7 @@
 
 .loaderText {
   font-family: 'satoshi-black';
-  font-size: 3rem;
+  font-size: 3rem; /* This is the default size for desktop */
   color: white;
   display: flex;
   overflow: hidden;
@@ -700,4 +700,17 @@
   .placeholderImageLarge {
       height: 250px;
   }
+
+  .loaderText {
+    font-size: 2rem; /* Add this for mobile screens */
+  }
+}
+
+@media (max-width: 768px) {
+  /* ... other existing mobile styles ... */
+
+  .heroTitle {
+    font-size: 3rem;
+  }
+  /* ... existing styles ... */
 } 
