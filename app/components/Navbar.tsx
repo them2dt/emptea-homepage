@@ -46,6 +46,7 @@ const Navbar = () => {
             <div className={styles.navLinks}>
                 <Link href="#services">Services</Link>
                 <Link href="#pricing">Pricing</Link>
+                <Link href="#testimonials">Testimonials</Link>
                 <Link href="#faq">FAQ</Link>
             </div>
             <Link href="#contact" className={styles.contactButton}>
@@ -73,6 +74,7 @@ const Navbar = () => {
           >
             <motion.div variants={menuItemVariants}><Link href="#services" onClick={toggleMobileNav}>Services</Link></motion.div>
             <motion.div variants={menuItemVariants}><Link href="#pricing" onClick={toggleMobileNav}>Pricing</Link></motion.div>
+            <motion.div variants={menuItemVariants}><Link href="#testimonials" onClick={toggleMobileNav}>Testimonials</Link></motion.div>
             <motion.div variants={menuItemVariants}><Link href="#faq" onClick={toggleMobileNav}>FAQ</Link></motion.div>
             <motion.div variants={menuItemVariants}>
                 <Link href="#contact" className={styles.mobileContactButton} onClick={toggleMobileNav}>

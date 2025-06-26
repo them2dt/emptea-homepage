@@ -67,6 +67,8 @@
   min-height: 50vh;
   text-align: center;
   padding-top: 120px; /* Adjusted for new header height */
+  background-color: #fafafa;
+  border-bottom: 1px solid #eaeaea;
 }
 
 .heroTitle {
@@ -462,6 +464,91 @@
     display: inline-block;
 }
 
+.testimonialsSection {
+  padding: 6rem 0;
+  text-align: center;
+  position: relative; /* Needed for pseudo-elements */
+}
+
+.testimonialsSection::before,
+.testimonialsSection::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 100px; /* Width of the fade */
+  z-index: 2;
+  pointer-events: none; /* Allows dragging through the fade */
+}
+
+.testimonialsSection::before {
+  left: 0;
+  background: linear-gradient(to right, white, rgba(255, 255, 255, 0));
+}
+
+.testimonialsSection::after {
+  right: 0;
+  background: linear-gradient(to left, white, rgba(255, 255, 255, 0));
+}
+
+.testimonialsTitle {
+  font-family: 'satoshi-bold';
+  font-size: 2.5rem;
+  margin-bottom: 3rem;
+}
+
+.testimonialsOuterContainer {
+  max-width: 1200px;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+.testimonialsContainer {
+  display: flex;
+  gap: 2rem;
+  padding: 1rem 2rem; /* Add some padding for shadow */
+  cursor: grab;
+  width: max-content;
+}
+
+.testimonialCard {
+  background-color: #fff;
+  border-radius: 16px;
+  padding: 2.5rem;
+  width: 350px; /* Slightly wider cards */
+  text-align: left;
+  flex-shrink: 0;
+  border: 1px solid #e5e5ea;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  position: relative;
+}
+
+.testimonialCard::before {
+  content: '“';
+  position: absolute;
+  top: -10px;
+  left: 15px;
+  font-size: 5rem;
+  color: #e5e5ea;
+  z-index: 0;
+  font-family: 'satoshi-bold';
+}
+
+.testimonialComment {
+  font-family: 'satoshi-regular';
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+  position: relative; /* To appear above the quote mark */
+  z-index: 1;
+}
+
+.testimonialAuthor {
+  font-family: 'satoshi-medium';
+  position: relative;
+  z-index: 1;
+}
+
 .divider {
   height: 1px;
   width: 70%;
@@ -718,13 +805,33 @@
   .loaderText {
     font-size: 2rem; /* Add this for mobile screens */
   }
-}
 
-@media (max-width: 768px) {
-  /* ... other existing mobile styles ... */
+  .testimonialsSection {
+    padding: 4rem 0;
+  }
+
+  .testimonialsTitle {
+    font-size: 2rem;
+    padding: 0 1rem;
+  }
+
+  .testimonialsSection::before,
+  .testimonialsSection::after {
+    width: 30px; /* Narrower fade on mobile */
+  }
+
+  .testimonialsContainer {
+    padding: 1rem; /* Less horizontal padding */
+    gap: 1rem;
+  }
+  
+  .testimonialCard {
+    width: 80vw; /* Use viewport width for responsive cards */
+    max-width: 300px; /* But don't let them get too big */
+    padding: 2rem;
+  }
 
   .heroTitle {
     font-size: 3rem;
   }
-  /* ... existing styles ... */
 } 
