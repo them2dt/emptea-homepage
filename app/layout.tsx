@@ -1,5 +1,4 @@
 import "./styles/globals.css";
-import "./styles/home.css";
 
 export const metadata = {
   title: "Emptea Studios",
@@ -78,12 +77,6 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <head>
-        {/* Additional meta tags that aren't part of Next.js metadata API */}
-        <meta charSet="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <link rel="canonical" href="https://emptea.xyz" />
-      </head>
       <body>{children}</body>
     </html>
   );
