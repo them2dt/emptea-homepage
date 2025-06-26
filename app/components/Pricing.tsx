@@ -64,9 +64,9 @@ const Pricing = () => {
         <div className={styles.maintenanceDetails}>
             <h4 className={styles.maintenanceTitle}>Service & Maintenance</h4>
             <p>We'll take care of everything to keep your app up-to-date.</p>
+            <p className={styles.maintenancePrice}>$199</p>
         </div>
         <div className={styles.maintenanceAction}>
-          <p className={styles.maintenancePrice}>$199</p>
           <Link href="#contact" className={styles.priceButton}>Start today</Link>
         </div>
       </div>

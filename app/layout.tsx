@@ -1,9 +1,13 @@
 import "./styles/globals.css";
 
 export const metadata = {
-  title: "Emptea Studios",
-  description: "Building art in form of apps.",
-  keywords: ["web3", "Solana", "Apps", "Blockchain"],
+  metadataBase: new URL('https://emptea.xyz'),
+  title: {
+    template: '%s | Emptea Studios',
+    default: 'Emptea Studios | Custom Software Development & Design',
+  },
+  description: "Emptea Studios is a software agency specializing in crafting high-performance, scalable web and mobile applications with precision and transparent communication.",
+  keywords: ["software agency", "web development", "mobile app development", "UI/UX design", "custom software", "product design", "React", "Next.js"],
   authors: [{ name: "Emptea Studios", url: "https://emptea.xyz" }],
   creator: "Emptea Studios",
   publisher: "Emptea Studios",
@@ -11,8 +15,8 @@ export const metadata = {
   
   // Updated OpenGraph metadata with correct paths
   openGraph: {
-    title: "Emptea Studios",
-    description: "Building art in form of apps.",
+    title: "Emptea Studios | Custom Software Development & Design",
+    description: "Emptea Studios is a software agency specializing in crafting high-performance, scalable web and mobile applications with precision and transparent communication.",
     url: "https://emptea.xyz",
     siteName: "Emptea Studios",
     locale: "en_US",
@@ -22,7 +26,7 @@ export const metadata = {
         url: "/og-image.png", // Updated path to actual file location
         width: 1200,
         height: 630,
-        alt: "Emptea Studios - Building art in form of apps"
+        alt: "Emptea Studios - Custom Software Development"
       },
       {
         url: "/android-chrome-512x512.png", // Using existing square image
@@ -36,8 +40,8 @@ export const metadata = {
   // Updated Twitter metadata with correct paths
   twitter: {
     card: "summary_large_image",
-    title: "Emptea Studios",
-    description: "Building art in form of apps.",
+    title: "Emptea Studios | Custom Software Development & Design",
+    description: "Emptea Studios is a software agency specializing in crafting high-performance, scalable web and mobile applications with precision and transparent communication.",
     creator: "@them2dt",
     site: "@empteastudios",
     images: ["/og-image.png"], // Using OG image for Twitter
