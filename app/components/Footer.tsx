@@ -25,7 +25,7 @@ const Footer = () => {
         </div>
       </div>
       <div className={styles.footerBottom}>
-        <p>Made with ❤️ in Next.js</p>
+        <p>Made with ❤️</p>
       </div>
     </footer>
   );

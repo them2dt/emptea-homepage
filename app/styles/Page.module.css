@@ -69,7 +69,7 @@
   padding-top: 120px; /* Adjusted for new header height */
 }
 
-.hero h1 {
+.heroTitle {
   font-family: "satoshi-bold";
   font-size: 4rem;
   margin-bottom: 1rem;
@@ -664,7 +664,7 @@
     padding: 2rem;
   }
 
-  .hero h1 {
+  .heroTitle {
     font-size: 3rem;
   }
 
