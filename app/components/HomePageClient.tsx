@@ -7,6 +7,7 @@ import Hero from "./Hero";
 import Services from "./Services";
 import Features from "./Features";
 import Pricing from "./Pricing";
+import CustomPricing from "./CustomPricing";
 import FAQ from "./FAQ";
 import Testimonials from "./Testimonials";
 import CallToAction from "./CallToAction";
@@ -39,6 +40,8 @@ export default function HomePageClient() {
           <Features />
           <Divider />
           <Pricing />
+          <Divider />
+          <CustomPricing />
           <Divider />
           <FAQ />
           <Divider />

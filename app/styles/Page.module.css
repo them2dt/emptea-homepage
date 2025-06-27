@@ -834,4 +834,234 @@
   .heroTitle {
     font-size: 3rem;
   }
+}
+
+.pricingFeature {
+  margin-bottom: 0.5rem;
+  color: #555;
+}
+
+.pricingButton {
+  margin-top: 2rem;
+  padding: 1rem 2rem;
+  background-color: #0070f3;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+  border: none;
+  cursor: pointer;
+  font-size: 1rem;
+  font-family: var(--font-satoshi);
+  font-weight: 500;
+}
+
+.customPricingSection {
+  display: grid;
+  grid-template-columns: minmax(auto, 1fr) auto;
+  gap: 3rem;
+  padding: 4rem 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  align-items: flex-start;
+}
+
+.customizer {
+  padding: 2.5rem;
+  border-radius: 12px;
+  background-color: #ffffff;
+  border: 1px solid #eaeaea;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.05);
+  width: 100%;
+}
+
+.customizerTitle {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  text-align: left;
+  font-family: 'satoshi-bold', sans-serif;
+}
+
+.customizerSubtitle {
+  font-size: 0.95rem;
+  color: #666;
+  margin-bottom: 2.5rem;
+  text-align: left;
+  font-family: 'satoshi-regular', sans-serif;
+}
+
+.customizerScrollable {
+  max-height: 450px;
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding-right: 1rem;
+}
+
+.timespanSelector,
+.featureSelector {
+  margin-bottom: 2rem;
+}
+
+.timespanSelector > label,
+.featureSelector > label {
+  display: block;
+  font-size: 1rem;
+  font-weight: 500;
+  margin-bottom: 1.5rem;
+  color: #333;
+  font-family: 'satoshi-medium', sans-serif;
+}
+
+.sliderContainer {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.timespanSlider {
+  width: 100%;
+  -webkit-appearance: none;
+  appearance: none;
+  height: 8px;
+  background: #ddd;
+  border-radius: 5px;
+  outline: none;
+  opacity: 0.7;
+  transition: opacity .2s;
+}
+
+.timespanSlider:hover {
+  opacity: 1;
+}
+
+.timespanSlider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  background: #0070f3;
+  cursor: pointer;
+  border-radius: 50%;
+}
+
+.timespanSlider::-moz-range-thumb {
+  width: 20px;
+  height: 20px;
+  background: #0070f3;
+  cursor: pointer;
+  border-radius: 50%;
+}
+
+.sliderValue {
+  font-weight: 500;
+  color: #333;
+  min-width: 70px;
+  text-align: right;
+  font-family: 'satoshi-regular', sans-serif;
+}
+
+.featureCheckboxes {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+}
+
+.checkboxWrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  background-color: #f9f9f9;
+  padding: 1rem;
+  border-radius: 8px;
+  border: 1px solid #eaeaea;
+  transition: all 0.2s ease-in-out;
+}
+
+.checkboxWrapper:hover {
+  border-color: #0070f3;
+}
+
+.checkboxWrapper input {
+  opacity: 0;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+}
+
+.checkboxWrapper label {
+  font-size: 0.9rem;
+  padding-left: 28px;
+  position: relative;
+  cursor: pointer;
+  color: #333;
+  font-family: 'satoshi-regular', sans-serif;
+}
+
+.checkboxWrapper label::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 20px;
+  height: 20px;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  background-color: #fff;
+  transition: all 0.2s ease-in-out;
+}
+
+.checkboxWrapper label::after {
+  content: '✓';
+  position: absolute;
+  left: 4px;
+  top: 50%;
+  transform: translateY(-50%) scale(0);
+  font-size: 16px;
+  font-weight: bold;
+  color: #fff;
+  transition: all 0.2s ease-in-out;
+}
+
+.checkboxWrapper input:checked + label::before {
+  background-color: #0070f3;
+  border-color: #0070f3;
+}
+
+.checkboxWrapper input:checked + label::after {
+  transform: translateY(-50%) scale(1);
+}
+
+.planCard {
+  width: 400px; /* Give the card a fixed width */
+}
+
+.planCard .priceCard.customCard {
+  border: 2px solid #0070f3;
+  box-shadow: 0 10px 40px rgba(0, 112, 243, 0.2);
+}
+
+@media (max-width: 992px) {
+  .customPricingSection {
+    grid-template-columns: 1fr;
+  }
+  .planCard {
+    width: 100%; /* Allow card to be full width on smaller screens */
+  }
+}
+
+@media (max-width: 768px) {
+  .customizerScrollable {
+    max-height: none;
+  }
+  .featureCheckboxes {
+    grid-template-columns: 1fr;
+  }
+}
+
+.faqSection {
+  padding: 4rem 2rem;
+  max-width: 800px;
 } 
