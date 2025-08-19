@@ -26,7 +26,6 @@
   text-decoration: none;
   color: #ffffff;
   font-size: 1.1rem;
-  letter-spacing: -0.02em;
 }
 
 .navLinks {
@@ -129,7 +128,6 @@
   margin-bottom: 2rem;
   color: #ffffff;
   line-height: 1.1;
-  letter-spacing: -0.02em;
   position: relative;
   z-index: 1;
 }
@@ -137,17 +135,6 @@
 .highlight {
   color: #ff5000;
   position: relative;
-}
-
-.highlight::after {
-  content: '';
-  position: absolute;
-  bottom: -8px;
-  left: 0;
-  right: 0;
-  height: 4px;
-  background: #ff5000;
-  opacity: 0.6;
 }
 
 .ctaButton {
@@ -212,7 +199,6 @@
   margin-bottom: 0.5rem;
   color: #ffffff;
   text-transform: uppercase;
-  letter-spacing: 0.1em;
 }
 
 .subtitle {
@@ -263,21 +249,17 @@
   opacity: 1;
 }
 
-.serviceImage {
-  width: 100%;
-  height: 200px;
-  object-fit: contain;
+.serviceIconContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 120px;
   margin-bottom: 1.5rem;
-  border-radius: 4px;
-  filter: brightness(0.9) contrast(1.1);
-  transition: all 0.4s ease;
-  position: relative;
-  z-index: 1;
+  transition: all 0.3s ease-in-out;
 }
 
-.serviceCard:hover .serviceImage {
-  filter: brightness(1.1) contrast(1.2);
-  transform: scale(1.02);
+.serviceCard:hover .serviceIconContainer {
+  transform: scale(1.05);
 }
 
 .serviceCard h3 {
@@ -385,7 +367,6 @@
   margin-bottom: 0.5rem;
   color: #ffffff;
   text-transform: uppercase;
-  letter-spacing: 0.1em;
 }
 
 .pricingSubtitle {
@@ -516,10 +497,12 @@
 
 .startingFrom {
   font-family: 'satoshi-regular';
-  color: #ffffff;
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 0.75rem;
   margin-bottom: 0.5rem;
   position: relative;
   z-index: 1;
+  text-align: center;
 }
 
 .planPrice {
@@ -729,7 +712,6 @@
   color: #ffffff;
   position: relative;
   z-index: 1;
-  letter-spacing: -0.02em;
 }
 
 .ctaEmail {
@@ -923,16 +905,13 @@
   gap: 2rem;
 }
 
-.footerColumn li {
-  /* No margin needed for horizontal list */
-}
+
 
 .footerColumn a {
   font-family: 'satoshi-regular';
   color: #ffffff;
   text-decoration: none;
   transition: color 0.3s ease;
-  letter-spacing: -0.02em;
 }
 
 .footerColumn a:hover {
@@ -944,7 +923,6 @@
   font-family: 'satoshi-bold';
   color: #ffffff;
   font-size: 1.2rem;
-  letter-spacing: -0.02em;
 }
 
 .footerBottom {
@@ -982,7 +960,6 @@
   color: white;
   display: flex;
   overflow: hidden;
-  letter-spacing: -0.02em;
   margin-bottom: 2rem;
 }
 
@@ -1286,25 +1263,78 @@
   padding-right: 1rem;
 }
 
-.timespanSelector,
 .featureSelector {
-  margin-bottom: 2rem;
+  margin-bottom: 1rem;
 }
 
-.timespanSelector > label,
-.featureSelector > label {
-  display: block;
-  font-size: 1rem;
-  font-weight: 500;
-  margin-bottom: 1.5rem;
+.collapsibleHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 0.75rem;
+  background: rgba(255, 255, 255, 0.02);
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.collapsibleHeader:hover {
+  background: rgba(255, 80, 0, 0.05);
+  border-color: rgba(255, 80, 0, 0.2);
+}
+
+.collapsibleHeader label {
+  font-size: 1.1rem;
+  font-family: 'satoshi-bold', sans-serif;
   color: #ffffff;
-  font-family: 'satoshi-medium', sans-serif;
+}
+
+.chevronIcon {
+  color: #ff5000;
+  transition: transform 0.3s ease;
+}
+
+.chevronIcon.open {
+  transform: rotate(180deg);
+}
+
+.collapsibleContent {
+  overflow: hidden;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+  border-left: 1px solid rgba(255, 80, 0, 0.1);
+  border-right: 1px solid rgba(255, 80, 0, 0.1);
+  border-bottom: 1px solid rgba(255, 80, 0, 0.1);
+  border-bottom-left-radius: 12px;
+  border-bottom-right-radius: 12px;
+}
+.timespanSelector{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  width: 100%;
+}
+.timespanSelector > label{
+  padding-bottom: 1rem;
+  margin-bottom: 1rem;
+  color: #ffffff;
+  font-family: 'satoshi-bold', sans-serif;
+  border-bottom: 1px solid rgba(255, 80, 0, 0.1);
 }
 
 .sliderContainer {
   display: flex;
   align-items: center;
-  gap: 1rem;
+  gap: 1.5rem;
+  padding: 0;
+  background: transparent;
+  border-radius: 0;
+  border: none;
+  width: 100%;
 }
 
 .timespanSlider {
@@ -1342,32 +1372,41 @@
 }
 
 .sliderValue {
-  font-weight: 500;
-  color: #ffffff;
-  min-width: 70px;
-  text-align: right;
-  font-family: 'satoshi-regular', sans-serif;
+  font-family: 'satoshi-bold';
+  color: #ff5000;
+  font-size: 1.1rem;
+  min-width: 100px;
+  text-align: center;
+  background: transparent;
+  padding: 0;
+  border-radius: 0;
+  border: none;
 }
 
 .featureCheckboxes {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 1rem;
+  gap: 1.2rem;
+  padding: 1rem 0;
 }
 
 .checkboxWrapper {
   position: relative;
   display: flex;
   align-items: center;
-  background-color: #000000;
-  padding: 1rem;
-  border-radius: 4px;
-  border: 1px solid rgba(255, 80, 0, 0.3);
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.02), rgba(255, 255, 255, 0.01));
+  padding: 1.2rem;
+  border-radius: 8px;
+  border: 1px solid rgba(255, 80, 0, 0.2);
   transition: all 0.2s ease-in-out;
+  backdrop-filter: blur(4px);
 }
 
 .checkboxWrapper:hover {
   border-color: #ff5000;
+  background: linear-gradient(135deg, rgba(255, 80, 0, 0.05), rgba(255, 80, 0, 0.02));
+  transform: translateY(-1px);
+  box-shadow: 0 4px 8px rgba(255, 80, 0, 0.1);
 }
 
 .checkboxWrapper input {
@@ -1379,12 +1418,13 @@
 }
 
 .checkboxWrapper label {
-  font-size: 0.9rem;
-  padding-left: 28px;
+  font-size: 1rem;
+  padding-left: 32px;
   position: relative;
   cursor: pointer;
   color: #ffffff;
-  font-family: 'satoshi-regular', sans-serif;
+  font-family: 'satoshi-medium', sans-serif;
+  line-height: 1.4;
 }
 
 .checkboxWrapper label::before {
@@ -1429,6 +1469,215 @@
 
 .planCard .priceCard.customCard {
   border: 2px solid #ff5000;
+}
+
+.modalOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.85);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2000;
+  backdrop-filter: blur(12px);
+  padding: 2rem;
+}
+
+.modalContent {
+  background: linear-gradient(145deg, #0d0d0d, #1a1a1a);
+  border-radius: 16px;
+  width: 100%;
+  max-width: 900px;
+  max-height: 85vh;
+  overflow: hidden;
+  border: 1px solid rgba(255, 80, 0, 0.2);
+  box-shadow: 
+    0 25px 50px rgba(0, 0, 0, 0.7),
+    0 0 0 1px rgba(255, 255, 255, 0.05),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  display: flex;
+  flex-direction: column;
+}
+
+.modalHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2.5rem 3rem 1.5rem 3rem;
+  border-bottom: 1px solid rgba(255, 80, 0, 0.1);
+  background: linear-gradient(135deg, rgba(255, 80, 0, 0.03), rgba(255, 80, 0, 0.01));
+  position: relative;
+  flex-shrink: 0;
+}
+
+.modalHeader h3 {
+  font-family: 'satoshi-bold';
+  font-size: 2rem;
+  color: #ffffff;
+  margin: 0;
+  background: linear-gradient(135deg, #ffffff, #cccccc);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.closeButton {
+  background: transparent;
+  border: none;
+  color: #ffffff;
+  font-size: 1.5rem;
+  cursor: pointer;
+  padding: 0;
+  border-radius: 12px;
+  transition: all 0.2s ease;
+  width: 2.5rem;
+  height: 2.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  backdrop-filter: none;
+}
+
+.closeButton:hover {
+  background: transparent;
+  border-color: transparent;
+  transform: scale(1.05);
+  color: #ff5000;
+}
+
+.modalBody {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 2rem 3rem;
+  overflow-y: auto;
+  background: rgba(0, 0, 0, 0.2);
+  flex-grow: 1;
+}
+
+.customizerContent {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+/* Custom scrollbar for modal */
+.modalBody::-webkit-scrollbar {
+  width: 8px;
+}
+
+.modalBody::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 4px;
+}
+
+.modalBody::-webkit-scrollbar-thumb {
+  background: rgba(255, 80, 0, 0.6);
+  border-radius: 4px;
+  transition: background 0.2s ease;
+}
+
+.modalBody::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 80, 0, 0.8);
+}
+
+/* Firefox scrollbar */
+.modalBody {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(255, 80, 0, 0.6) rgba(255, 255, 255, 0.05);
+}
+
+.timespanSelector {
+  padding-top: 2rem;
+  border-top: 1px solid rgba(255, 80, 0, 0.1);
+}
+
+.modalFooter {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  border-top: 1px solid rgba(255, 80, 0, 0.1);
+  background: linear-gradient(135deg, rgba(255, 80, 0, 0.02), rgba(0, 0, 0, 0.3));
+  backdrop-filter: blur(8px);
+  min-height: 6rem;
+  flex-shrink: 0;
+}
+
+.priceDisplay {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.priceDisplay .startingFrom {
+  margin-bottom: 0.5rem;
+}
+
+.totalPrice {
+  font-family: 'satoshi-bold';
+  font-size: 1.75rem;
+  color: #ff5000;
+  text-shadow: 0 2px 4px rgba(255, 80, 0, 0.3);
+}
+
+.modalFooter .priceButton {
+  background: linear-gradient(180deg, #ff8033, #ff5000);
+  color: #ffffff;
+  border: 1px solid #e64500;
+  padding: 1rem 2.5rem;
+  border-radius: 9999px;
+  font-size: 1.1rem;
+  cursor: pointer;
+  text-decoration: none;
+  transition: all 0.2s ease-in-out;
+  box-shadow: 
+    inset 0 1px 1px rgba(255, 255, 255, 0.3),
+    0 3px 5px rgba(0, 0, 0, 0.4);
+  text-shadow: 0 -1px 1px rgba(0,0,0,0.3);
+  font-family: 'satoshi-bold';
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: auto;
+  min-width: 140px;
+}
+
+.modalFooter .priceButton:hover {
+  background: linear-gradient(180deg, #ff904d, #ff601a);
+  transform: translateY(-1px);
+  box-shadow: 
+    inset 0 1px 1px rgba(255, 255, 255, 0.4),
+    0 5px 8px rgba(0, 0, 0, 0.5);
+}
+
+.modalFooter .priceButton:active {
+  transform: translateY(1px);
+  background: linear-gradient(180deg, #ff5000, #e64500);
+  box-shadow: inset 0 2px 3px rgba(0, 0, 0, 0.4);
+}
+
+@media (max-width: 768px) {
+  .modalFooter {
+    padding: 2rem 2rem;
+    flex-direction: column;
+    gap: 2rem;
+    align-items: center;
+    text-align: center;
+  }
+  
+  .priceDisplay {
+    align-items: center;
+  }
+  
+  .modalFooter .priceButton {
+    width: 100%;
+    max-width: 200px;
+  }
 }
 
 @media (max-width: 992px) {

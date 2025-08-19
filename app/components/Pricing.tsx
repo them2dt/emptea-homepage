@@ -98,7 +98,7 @@ const Pricing = () => {
             <h3 className={styles.planName}>{plan.name}</h3>
             <p className={styles.startingFrom}>{plan.startingFrom}</p>
             <div className={styles.planPrice}>
-              $<AnimatedNumber value={plan.price} />
+              <AnimatedNumber value={plan.price} /> CHF
             </div>
             <ul className={styles.featureList}>
               {plan.features.map((feature, i) => (
@@ -118,7 +118,7 @@ const Pricing = () => {
             <p>We'll take care of everything to keep your app up-to-date.</p>
         </div>
         <div className={styles.maintenanceAction}>
-          <p className={styles.maintenancePrice}>$199/month</p>
+          <p className={styles.maintenancePrice}>199 CHF/month</p>
           <Link href="#contact" className={styles.priceButton}>Start today</Link>
         </div>
       </div>
