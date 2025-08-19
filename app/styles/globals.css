@@ -84,14 +84,14 @@
      TYPOGRAPHY CONFIGURATION
      ---------------------------------------------------------------------------
      Define font families that will be available as Tailwind utilities.
-     Example usage: font-sans, font-clash, font-mono
+     Example usage: font-sans, font-satoshi, font-mono
      --------------------------------------------------------------------------- */
   
-  /* Primary sans-serif font stack with ClashGrotesk as the main font */
-  --font-sans: 'ClashGrotesk', ui-sans-serif, system-ui, sans-serif;
+  /* Primary sans-serif font stack with Satoshi as the main font */
+  --font-sans: 'Satoshi', ui-sans-serif, system-ui, sans-serif;
   
-  /* Direct access to ClashGrotesk font */
-  --font-clash: 'ClashGrotesk', sans-serif;
+  /* Direct access to Satoshi font */
+  --font-satoshi: 'Satoshi', sans-serif;
   
   /* Monospace font stack for code and technical content */
   --font-mono: ui-monospace, 'SFMono-Regular', 'Menlo', 'Monaco', monospace;
@@ -248,7 +248,7 @@
 body {
   background: var(--background);  /* Dynamic background color */
   color: var(--foreground);       /* Dynamic text color */
-  font-family: var(--font-sans);  /* ClashGrotesk font stack */
+  font-family: var(--font-sans);  /* Satoshi font stack */
 }
 
 /* =============================================================================

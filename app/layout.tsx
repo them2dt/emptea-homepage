@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./styles/globals.css";
 
-// Load the Clash Grotesk font as specified in the style guide.
+// Load the Satoshi font as specified in the style guide.
 const satoshi = localFont({
   src: "./styles/fonts/Satoshi-Variable.ttf",
   variable: "--font-satoshi",
