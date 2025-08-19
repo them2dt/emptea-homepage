@@ -3,10 +3,11 @@
 import { useState, useMemo } from 'react';
 import styles from '../styles/Page.module.css';
 import Link from 'next/link';
+import AnimatedNumber from './AnimatedNumber';
 
 const CheckmarkIcon = () => (
   <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <path d="M5 13l4 4L19 7" stroke="#0070f3" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+    <path d="M5 13l4 4L19 7" stroke="#ff5000" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
   </svg>
 );
 
@@ -45,11 +46,27 @@ const CustomPricing = () => {
     let price = 0;
     const baseWeeklyRate = 250; 
     const featureCost = 800;
+    let weeklyCost = 0;
 
-    price += weeks * baseWeeklyRate;
+    if (weeks <= 8) {
+      weeklyCost = weeks * baseWeeklyRate;
+    } else if (weeks <= 26) {
+      const standardWeeks = 8;
+      const discountedWeeks = weeks - standardWeeks;
+      weeklyCost = (standardWeeks * baseWeeklyRate) + (discountedWeeks * baseWeeklyRate * 0.85); // 15% discount
+    } else {
+      const standardWeeks = 8;
+      const midTierWeeks = 18;
+      const longTermWeeks = weeks - standardWeeks - midTierWeeks;
+      weeklyCost = (standardWeeks * baseWeeklyRate) + 
+                   (midTierWeeks * baseWeeklyRate * 0.85) + // 15% discount
+                   (longTermWeeks * baseWeeklyRate * 0.75); // 25% discount
+    }
+
+    price += weeklyCost;
     price += includedFeatureLabels.length * featureCost;
 
-    return price;
+    return Math.round(price);
   }, [weeks, includedFeatureLabels]);
 
   const handleFeatureChange = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -117,7 +134,7 @@ const CustomPricing = () => {
         <div className={`${styles.priceCard} ${styles.customCard}`}>
             <h3 className={styles.planName}>Your Custom Plan</h3>
             <p className={styles.startingFrom}>Starting from</p>
-            <p className={styles.planPrice}>${startingPrice.toLocaleString()}</p>
+            <p className={styles.planPrice}>$<AnimatedNumber value={startingPrice} /></p>
             <ul className={styles.featureList}>
                 <li>
                   <CheckmarkIcon />

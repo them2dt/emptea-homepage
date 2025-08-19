@@ -53,15 +53,16 @@ const Navbar = () => {
                 Get started
             </Link>
           </div>
-          <button className={styles.hamburgerButton} onClick={toggleMobileNav} aria-label="Menu">
-             <svg width="24" height="24" viewBox="0 0 24 24">
-                <motion.path stroke="#000" strokeWidth="2" animate={mobileNavOpen ? "open" : "closed"} variants={{ closed: { d: "M 2 4 L 22 4" }, open: { d: "M 4 18 L 20 2" } }}/>
-                <motion.path stroke="#000" strokeWidth="2" d="M 2 12 L 22 12" animate={mobileNavOpen ? "open" : "closed"} variants={{ closed: { opacity: 1 }, open: { opacity: 0 } }}/>
-                <motion.path stroke="#000" strokeWidth="2" animate={mobileNavOpen ? "open" : "closed"} variants={{ closed: { d: "M 2 20 L 22 20" }, open: { d: "M 4 2 L 20 18" } }}/>
-            </svg>
-          </button>
         </nav>
       </motion.header>
+
+      <button className={styles.hamburgerButton} onClick={toggleMobileNav} aria-label="Menu">
+         <svg width="24" height="24" viewBox="0 0 24 24">
+            <motion.path stroke="#ffffff" strokeWidth="2" animate={mobileNavOpen ? "open" : "closed"} variants={{ closed: { d: "M 2 4 L 22 4" }, open: { d: "M 4 18 L 20 2" } }}/>
+            <motion.path stroke="#ffffff" strokeWidth="2" d="M 2 12 L 22 12" animate={mobileNavOpen ? "open" : "closed"} variants={{ closed: { opacity: 1 }, open: { opacity: 0 } }}/>
+            <motion.path stroke="#ffffff" strokeWidth="2" animate={mobileNavOpen ? "open" : "closed"} variants={{ closed: { d: "M 2 20 L 22 20" }, open: { d: "M 4 2 L 20 18" } }}/>
+        </svg>
+      </button>
 
       <AnimatePresence>
         {mobileNavOpen && (
