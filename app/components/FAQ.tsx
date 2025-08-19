@@ -1,6 +1,5 @@
 'use client';
 import { useState } from 'react';
-import styles from '../styles/Page.module.css';
 import { motion, AnimatePresence } from 'framer-motion';
 
 const FAQ = () => {
@@ -25,15 +24,15 @@ const FAQ = () => {
     },
   ];
 
-  const toggleFAQ = (index) => {
-    setActiveIndex(activeIndex === index ? null : index);
+  const toggleFAQ = (index: number) => {
+    setActiveIndex(activeIndex === index ? -1 : index);
   };
 
   const answerVariants = {
     hidden: { opacity: 0, filter: 'blur(5px)', height: 0, marginTop: 0, paddingTop: 0, paddingBottom: 0 },
-    visible: { 
-      opacity: 1, 
-      filter: 'blur(0px)', 
+    visible: {
+      opacity: 1,
+      filter: 'blur(0px)',
       height: 'auto',
       marginTop: '0.5rem',
       paddingTop: '0.75rem',
@@ -43,13 +42,13 @@ const FAQ = () => {
   };
 
   return (
-    <section id="faq" className={styles.faq}>
-      <div className={styles.chatContainer}>
-        <div className={styles.chatBody}>
+    <section id="faq" className="py-24 px-8 flex justify-center bg-black">
+      <div className="w-full max-w-2xl border-none p-8 bg-black rounded-lg">
+        <div>
           {faqs.map((faq, index) => (
-            <div key={index} className={styles.chatMessageWrapper}>
-              <div 
-                className={`${styles.questionBubble} ${activeIndex === index ? styles.darkQuestionBubble : styles.lightQuestionBubble}`}
+            <div key={index} className="flex flex-col mb-4">
+              <div
+                className={`px-5 py-3 rounded-t-2xl rounded-br-2xl cursor-pointer font-medium leading-snug relative max-w-[85%] self-start mb-2 ${activeIndex === index ? 'bg-gray-800 text-white' : 'bg-gray-900 text-white'}`}
                 onClick={() => toggleFAQ(index)}
               >
                 {faq.question}
@@ -58,7 +57,7 @@ const FAQ = () => {
                 {activeIndex === index && (
                   <motion.div
                     key="answer"
-                    className={styles.answerBubble}
+                    className="bg-orange-500 text-white px-5 py-3 rounded-t-2xl rounded-bl-2xl max-w-[85%] self-end relative leading-snug overflow-hidden"
                     initial="hidden"
                     animate="visible"
                     exit="hidden"

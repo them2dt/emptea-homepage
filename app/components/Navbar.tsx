@@ -1,5 +1,4 @@
 'use client';
-import styles from '../styles/Page.module.css';
 import Link from 'next/link';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useState, useEffect } from 'react';
@@ -32,55 +31,55 @@ const Navbar = () => {
 
   return (
     <>
-      <motion.header 
-        className={styles.header}
+      <motion.header
+        className="fixed top-0 left-0 w-full z-50 py-4 bg-black/75 backdrop-blur-sm border-b border-white/10"
         initial={{ y: -100, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.5, ease: 'easeOut', delay: 1.5 }}
       >
-        <nav className={styles.navbar}>
-          <div className={styles.logo}>
-              <Link href="/">EMPTEA STUDIOS®</Link>
+        <nav className="flex justify-between items-center max-w-6xl mx-auto px-8">
+          <div className="font-bold text-white text-lg">
+            <Link href="/">EMPTEA STUDIOS®</Link>
           </div>
-          <div className={styles.desktopNav}>
-            <div className={styles.navLinks}>
-                <Link href="#services">Services</Link>
-                <Link href="#pricing">Pricing</Link>
-                <Link href="#testimonials">Testimonials</Link>
-                <Link href="#faq">FAQ</Link>
+          <div className="hidden md:flex items-center gap-12">
+            <div className="flex gap-12 font-medium">
+              <Link href="#services" className="text-white transition-all duration-300 ease-in-out text-lg relative hover:text-orange-500 hover:-translate-y-px after:content-[''] after:absolute after:-bottom-1 after:left-0 after:w-0 after:h-0.5 after:bg-orange-500 after:transition-all after:duration-300 after:ease-in-out hover:after:w-full">Services</Link>
+              <Link href="#pricing" className="text-white transition-all duration-300 ease-in-out text-lg relative hover:text-orange-500 hover:-translate-y-px after:content-[''] after:absolute after:-bottom-1 after:left-0 after:w-0 after:h-0.5 after:bg-orange-500 after:transition-all after:duration-300 after:ease-in-out hover:after:w-full">Pricing</Link>
+              <Link href="#testimonials" className="text-white transition-all duration-300 ease-in-out text-lg relative hover:text-orange-500 hover:-translate-y-px after:content-[''] after:absolute after:-bottom-1 after:left-0 after:w-0 after:h-0.5 after:bg-orange-500 after:transition-all after:duration-300 after:ease-in-out hover:after:w-full">Testimonials</Link>
+              <Link href="#faq" className="text-white transition-all duration-300 ease-in-out text-lg relative hover:text-orange-500 hover:-translate-y-px after:content-[''] after:absolute after:-bottom-1 after:left-0 after:w-0 after:h-0.5 after:bg-orange-500 after:transition-all after:duration-300 after:ease-in-out hover:after:w-full">FAQ</Link>
             </div>
-            <Link href="#contact" className={styles.contactButton}>
-                Get started
+            <Link href="#contact" className="font-bold bg-gradient-to-b from-orange-400 to-orange-600 text-white border border-orange-700 px-6 py-3 rounded-full text-base cursor-pointer transition-all duration-200 ease-in-out hover:from-orange-500 hover:to-orange-700 hover:-translate-y-px">
+              Get started
             </Link>
           </div>
         </nav>
       </motion.header>
 
-      <button className={styles.hamburgerButton} onClick={toggleMobileNav} aria-label="Menu">
-         <svg width="24" height="24" viewBox="0 0 24 24">
-            <motion.path stroke="#ffffff" strokeWidth="2" animate={mobileNavOpen ? "open" : "closed"} variants={{ closed: { d: "M 2 4 L 22 4" }, open: { d: "M 4 18 L 20 2" } }}/>
-            <motion.path stroke="#ffffff" strokeWidth="2" d="M 2 12 L 22 12" animate={mobileNavOpen ? "open" : "closed"} variants={{ closed: { opacity: 1 }, open: { opacity: 0 } }}/>
-            <motion.path stroke="#ffffff" strokeWidth="2" animate={mobileNavOpen ? "open" : "closed"} variants={{ closed: { d: "M 2 20 L 22 20" }, open: { d: "M 4 2 L 20 18" } }}/>
+      <button className="md:hidden bg-none border-none cursor-pointer z-[1001] fixed top-8 right-8" onClick={toggleMobileNav} aria-label="Menu">
+        <svg width="24" height="24" viewBox="0 0 24 24">
+          <motion.path stroke="#ffffff" strokeWidth="2" animate={mobileNavOpen ? 'open' : 'closed'} variants={{ closed: { d: 'M 2 4 L 22 4' }, open: { d: 'M 4 18 L 20 2' } }} />
+          <motion.path stroke="#ffffff" strokeWidth="2" d="M 2 12 L 22 12" animate={mobileNavOpen ? 'open' : 'closed'} variants={{ closed: { opacity: 1 }, open: { opacity: 0 } }} />
+          <motion.path stroke="#ffffff" strokeWidth="2" animate={mobileNavOpen ? 'open' : 'closed'} variants={{ closed: { d: 'M 2 20 L 22 20' }, open: { d: 'M 4 2 L 20 18' } }} />
         </svg>
       </button>
 
       <AnimatePresence>
         {mobileNavOpen && (
-          <motion.div 
-            className={styles.mobileNavMenu}
+          <motion.div
+            className="fixed inset-0 w-full h-screen bg-black/95 backdrop-blur-lg z-[1000] flex flex-col justify-center items-center gap-8"
             initial="hidden"
             animate="visible"
             exit="hidden"
             variants={menuVariants}
           >
-            <motion.div variants={menuItemVariants}><Link href="#services" onClick={toggleMobileNav}>Services</Link></motion.div>
-            <motion.div variants={menuItemVariants}><Link href="#pricing" onClick={toggleMobileNav}>Pricing</Link></motion.div>
-            <motion.div variants={menuItemVariants}><Link href="#testimonials" onClick={toggleMobileNav}>Testimonials</Link></motion.div>
-            <motion.div variants={menuItemVariants}><Link href="#faq" onClick={toggleMobileNav}>FAQ</Link></motion.div>
+            <motion.div variants={menuItemVariants}><Link href="#services" onClick={toggleMobileNav} className="font-bold text-3xl text-white transition-all duration-300 ease-in-out hover:text-orange-500 hover:-translate-y-0.5">Services</Link></motion.div>
+            <motion.div variants={menuItemVariants}><Link href="#pricing" onClick={toggleMobileNav} className="font-bold text-3xl text-white transition-all duration-300 ease-in-out hover:text-orange-500 hover:-translate-y-0.5">Pricing</Link></motion.div>
+            <motion.div variants={menuItemVariants}><Link href="#testimonials" onClick={toggleMobileNav} className="font-bold text-3xl text-white transition-all duration-300 ease-in-out hover:text-orange-500 hover:-translate-y-0.5">Testimonials</Link></motion.div>
+            <motion.div variants={menuItemVariants}><Link href="#faq" onClick={toggleMobileNav} className="font-bold text-3xl text-white transition-all duration-300 ease-in-out hover:text-orange-500 hover:-translate-y-0.5">FAQ</Link></motion.div>
             <motion.div variants={menuItemVariants}>
-                <Link href="#contact" className={styles.mobileContactButton} onClick={toggleMobileNav}>
-                    Get started
-                </Link>
+              <Link href="#contact" className="text-2xl text-orange-500 mt-4 px-8 py-4 border-2 border-orange-500 rounded-lg bg-transparent transition-all duration-300 ease-in-out hover:bg-orange-500 hover:text-white hover:-translate-y-0.5" onClick={toggleMobileNav}>
+                Get started
+              </Link>
             </motion.div>
           </motion.div>
         )}

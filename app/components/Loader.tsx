@@ -1,7 +1,6 @@
 'use client';
 import { motion } from 'framer-motion';
 import { useState, useEffect } from 'react';
-import styles from '../styles/Page.module.css';
 
 const Loader = () => {
   const [progress, setProgress] = useState(0);
@@ -26,7 +25,7 @@ const Loader = () => {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
-      transition: { 
+      transition: {
         duration: 0.6,
         ease: 'easeOut'
       },
@@ -52,10 +51,10 @@ const Loader = () => {
     visible: {
       opacity: 1,
       y: 0,
-      transition: { 
-        type: 'spring', 
-        damping: 20, 
-        stiffness: 100 
+      transition: {
+        type: 'spring' as const,
+        damping: 20,
+        stiffness: 100
       },
     },
   };
@@ -75,22 +74,21 @@ const Loader = () => {
 
   return (
     <motion.div
-      className={styles.loaderContainer}
+      className="fixed inset-0 w-screen h-screen flex flex-col justify-center items-center bg-black z-[9999]"
       variants={containerVariants}
       initial="hidden"
       animate="visible"
-      exit={{ 
-        opacity: 0, 
+      exit={{
+        opacity: 0,
         scale: 1.05,
-        transition: { 
-          duration: 0.6, 
-          ease: 'easeOut' 
-        } 
+        transition: {
+          duration: 0.6,
+          ease: 'easeOut'
+        }
       }}
     >
-      {/* Company Name */}
       <motion.div
-        className={styles.loaderText}
+        className="font-black text-5xl text-white flex overflow-hidden mb-8"
         variants={textVariants}
       >
         <motion.div
@@ -99,8 +97,8 @@ const Loader = () => {
           transition={{ delay: 0.4, duration: 0.6 }}
         >
           {letters.map((letter, index) => (
-            <motion.span 
-              key={index} 
+            <motion.span
+              key={index}
               variants={letterVariants}
               initial="hidden"
               animate="visible"
@@ -113,28 +111,26 @@ const Loader = () => {
         </motion.div>
       </motion.div>
 
-      {/* Progress Bar */}
       <motion.div
-        className={styles.loaderProgress}
+        className="w-52 h-0.5 bg-white/10 rounded-sm overflow-hidden relative"
         variants={progressVariants}
       >
         <motion.div
-          className={styles.loaderProgressBar}
+          className="h-full bg-white rounded-sm absolute top-0 left-0"
           initial={{ width: 0 }}
           animate={{ width: `${progress}%` }}
           transition={{ duration: 0.1, ease: 'easeOut' }}
         />
       </motion.div>
 
-      {/* Loading Dots */}
       <motion.div
-        className={styles.loaderDots}
+        className="flex gap-2 mt-4"
         variants={progressVariants}
       >
         {[0, 1, 2].map((index) => (
           <motion.div
             key={index}
-            className={`${styles.loaderDot} ${progress > (index + 1) * 30 ? styles.loaderDotActive : ''}`}
+            className={`w-2 h-2 rounded-full ${progress > (index + 1) * 30 ? 'bg-white' : 'bg-white/30'}`}
             animate={{
               scale: progress > (index + 1) * 30 ? [1, 1.2, 1] : 1,
               opacity: progress > (index + 1) * 30 ? [0.7, 1, 0.7] : 0.3,

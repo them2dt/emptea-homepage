@@ -1,7 +1,6 @@
 'use client';
 import { motion } from 'framer-motion';
 import { useState, useEffect, useRef } from 'react';
-import styles from '../styles/Page.module.css';
 
 const testimonials = [
   {
@@ -46,18 +45,18 @@ const Testimonials = () => {
   }, []);
 
   return (
-    <section id="testimonials" className={styles.testimonialsSection}>
-      <h2 className={styles.testimonialsTitle}>What Our Clients Say</h2>
-      <motion.div ref={carouselRef} className={styles.testimonialsOuterContainer} whileTap={{ cursor: "grabbing" }}>
-        <motion.div 
-          className={styles.testimonialsContainer} 
-          drag="x" 
+    <section id="testimonials" className="py-24 text-center relative bg-black">
+      <h2 className="font-bold text-5xl mb-16 text-orange-500 leading-tight">What Our Clients Say</h2>
+      <motion.div ref={carouselRef} className="max-w-6xl mx-auto overflow-hidden" whileTap={{ cursor: "grabbing" }}>
+        <motion.div
+          className="flex gap-8 px-8 py-4 cursor-grab w-max"
+          drag="x"
           dragConstraints={{ right: 0, left: -width }}
         >
           {testimonials.map((testimonial, index) => (
-            <motion.div key={index} className={styles.testimonialCard}>
-              <p className={styles.testimonialComment}>"{testimonial.comment}"</p>
-              <p className={styles.testimonialAuthor}>
+            <motion.div key={index} className="bg-gray-900 rounded-lg p-10 w-96 text-left flex-shrink-0 relative transition-all duration-400 ease-in-out">
+              <p className="text-lg leading-relaxed mb-6 relative z-10 text-white">&ldquo;{testimonial.comment}&rdquo;</p>
+              <p className="font-medium relative z-10 text-white">
                 <strong>{testimonial.name}</strong>, {testimonial.company}
               </p>
             </motion.div>
