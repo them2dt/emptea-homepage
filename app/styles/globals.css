@@ -277,12 +277,12 @@ body {
  */
 @keyframes slide-up {
   0% { 
-    transform: translateY(10px);  /* Start 10px below final position */
-    opacity: 0;                   /* Start invisible */
+    transform: translateY(0.625rem);  /* Start 0.625rem below final position */
+    opacity: 0;                       /* Start invisible */
   }
   100% { 
-    transform: translateY(0);     /* End at natural position */
-    opacity: 1;                   /* End fully visible */
+    transform: translateY(0);         /* End at natural position */
+    opacity: 1;                       /* End fully visible */
   }
 }
 
@@ -294,12 +294,12 @@ body {
  */
 @keyframes slide-down {
   0% { 
-    transform: translateY(-10px); /* Start 10px above final position */
-    opacity: 0;                   /* Start invisible */
+    transform: translateY(-0.625rem); /* Start 0.625rem above final position */
+    opacity: 0;                       /* Start invisible */
   }
   100% { 
-    transform: translateY(0);     /* End at natural position */
-    opacity: 1;                   /* End fully visible */
+    transform: translateY(0);         /* End at natural position */
+    opacity: 1;                       /* End fully visible */
   }
 }
 

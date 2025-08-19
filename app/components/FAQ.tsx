@@ -42,13 +42,13 @@ const FAQ = () => {
   };
 
   return (
-    <section id="faq" className="py-24 px-8 flex justify-center bg-black">
-      <div className="w-full max-w-2xl border-none p-8 bg-black rounded-lg">
+    <section id="faq" className="py-16 md:py-24 px-4 md:px-8 flex justify-center bg-black">
+      <div className="w-full max-w-2xl border-none p-4 md:p-8 bg-black rounded-lg">
         <div>
           {faqs.map((faq, index) => (
             <div key={index} className="flex flex-col mb-4">
               <div
-                className={`px-5 py-3 rounded-t-2xl rounded-br-2xl cursor-pointer font-medium leading-snug relative max-w-[85%] self-start mb-2 ${activeIndex === index ? 'bg-gray-800 text-white' : 'bg-gray-900 text-white'}`}
+                className={`px-4 md:px-5 py-2 md:py-3 rounded-t-2xl rounded-br-2xl cursor-pointer font-medium leading-snug relative max-w-[90%] md:max-w-[85%] self-start mb-2 text-sm md:text-base ${activeIndex === index ? 'bg-gray-800 text-white' : 'bg-gray-900 text-white'}`}
                 onClick={() => toggleFAQ(index)}
               >
                 {faq.question}
@@ -57,7 +57,7 @@ const FAQ = () => {
                 {activeIndex === index && (
                   <motion.div
                     key="answer"
-                    className="bg-orange-500 text-white px-5 py-3 rounded-t-2xl rounded-bl-2xl max-w-[85%] self-end relative leading-snug overflow-hidden"
+                    className="bg-orange-500 text-white px-4 md:px-5 py-2 md:py-3 rounded-t-2xl rounded-bl-2xl max-w-[90%] md:max-w-[85%] self-end relative leading-snug overflow-hidden text-sm md:text-base"
                     initial="hidden"
                     animate="visible"
                     exit="hidden"

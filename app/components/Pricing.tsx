@@ -70,55 +70,177 @@ const Pricing = () => {
   const currentPlans = pricingData[activeService as keyof typeof pricingData];
 
   return (
-    <section id="pricing" className="text-center py-24 px-8 bg-black">
-      <h2 className="font-bold text-2xl mb-2 text-white uppercase">Pricing</h2>
-      <p className="font-bold text-5xl mb-12 text-orange-500">Simple & <span className="text-orange-500">transparent.</span></p>
+    <section
+      id="pricing"
+      className="text-center px-4 md:px-8 bg-black"
+    >
+      <h2 className="font-bold text-xl md:text-2xl mb-2 text-white uppercase">
+        Pricing
+      </h2>
+      <p className="font-bold text-3xl md:text-5xl mb-8 md:mb-12 text-orange-500 px-4">
+        Simple & <span className="text-orange-500">transparent.</span>
+      </p>
 
-      <div className="flex justify-center mb-12">
-        <div className="flex bg-black rounded-lg p-1 relative border border-orange-500/30">
+      <div className="flex justify-center mb-8 sm:mb-10 lg:mb-12">
+        <div className="relative inline-flex bg-gray-900/80 backdrop-blur-sm rounded-full p-1 border border-gray-700/50 shadow-lg shadow-black/20">
+          {/* Sliding background indicator */}
+          <div
+            className={`absolute top-1 bottom-1 bg-gradient-to-r from-orange-500 to-orange-600 rounded-full transition-all duration-300 ease-in-out shadow-md shadow-orange-500/30 ${
+              activeService === "web"
+                ? "left-1 right-[50%]"
+                : "left-[50%] right-1"
+            }`}
+          />
+
           <button
-            className={`px-6 py-3 border-none rounded-md bg-transparent font-medium text-base cursor-pointer transition-all duration-300 ease-in-out text-white relative z-10 ${activeService === 'web' ? 'bg-orange-500 text-white' : ''}`}
-            onClick={() => setActiveService('web')}
+            className={`relative z-10 px-6 sm:px-8 lg:px-10 py-3 sm:py-3.5 lg:py-4 border-none rounded-full bg-transparent font-semibold text-sm sm:text-base lg:text-lg cursor-pointer transition-all duration-300 ease-in-out min-w-[5rem] sm:min-w-[6rem] lg:min-w-[7rem] ${
+              activeService === "web"
+                ? "text-white"
+                : "text-gray-300 hover:text-white"
+            }`}
+            onClick={() => setActiveService("web")}
+            aria-pressed={activeService === "web"}
+            role="tab"
           >
             Web
           </button>
+
           <button
-            className={`px-6 py-3 border-none rounded-md bg-transparent font-medium text-base cursor-pointer transition-all duration-300 ease-in-out text-white relative z-10 ${activeService === 'mobile' ? 'bg-orange-500 text-white' : ''}`}
-            onClick={() => setActiveService('mobile')}
+            className={`relative z-10 px-6 sm:px-8 lg:px-10 py-3 sm:py-3.5 lg:py-4 border-none rounded-lg bg-transparent font-semibold text-sm sm:text-base lg:text-lg cursor-pointer transition-all duration-300 ease-in-out min-w-[5rem] sm:min-w-[6rem] lg:min-w-[7rem] ${
+              activeService === "mobile"
+                ? "text-white"
+                : "text-gray-300 hover:text-white"
+            }`}
+            onClick={() => setActiveService("mobile")}
+            aria-pressed={activeService === "mobile"}
+            role="tab"
           >
             Mobile
           </button>
         </div>
       </div>
 
-      <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto mt-12 items-stretch">
-        {currentPlans.map((plan) => (
-          <div key={plan.name} className={`border p-10 rounded-lg bg-black text-left flex flex-col transition-all duration-400 ease-in-out ${plan.type === 'pro' ? 'bg-orange-500 text-white border-none' : plan.type === 'essential' ? 'border-orange-500/50' : 'border-orange-500/30'}`}>
-            <h3 className={`font-medium text-2xl mb-1 ${plan.type === 'pro' ? 'text-white' : 'text-orange-500'}`}>{plan.name}</h3>
-            <p className="text-white/70 text-xs mb-2 text-center">{plan.startingFrom}</p>
-            <div className="font-black text-5xl mb-8 text-white flex-grow flex items-center">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 max-w-6xl mx-auto mt-8 md:mt-12 items-stretch">
+        {currentPlans.slice(0, 2).map((plan) => (
+          <div
+            key={plan.name}
+            className={`border p-6 md:p-10 rounded-lg bg-black text-left flex flex-col transition-all duration-400 ease-in-out ${
+              plan.type === "pro"
+                ? "bg-orange-500 text-white border-none"
+                : plan.type === "essential"
+                ? "border-orange-500/50"
+                : "border-orange-500/30"
+            }`}
+          >
+            <h3
+              className={`font-medium text-xl md:text-2xl mb-1 ${
+                plan.type === "pro" ? "text-white" : "text-orange-500"
+              }`}
+            >
+              {plan.name}
+            </h3>
+            <p className="text-white/70 text-xs mb-2 text-start">
+              {plan.startingFrom}
+            </p>
+            <div className="font-black text-3xl md:text-5xl mb-6 md:mb-8 text-white flex-grow flex items-center">
               <AnimatedNumber value={plan.price} /> CHF
             </div>
             <ul className="list-none p-0 m-0">
               {plan.features.map((feature, i) => (
-                <li key={i} className="mb-4 flex items-center gap-2 text-white">
-                  {plan.type === 'pro' ? <ProCheckmarkIcon /> : <CheckmarkIcon />}
+                <li
+                  key={i}
+                  className="mb-3 md:mb-4 flex items-center gap-2 text-white text-sm md:text-base"
+                >
+                  {plan.type === "pro" ? (
+                    <ProCheckmarkIcon />
+                  ) : (
+                    <CheckmarkIcon />
+                  )}
                   <span>{feature}</span>
                 </li>
               ))}
             </ul>
-            <Link href="#contact" className={`block w-full p-4 rounded-md border text-white font-bold text-base cursor-pointer text-center mt-auto transition-all duration-300 ease-in-out ${plan.type === 'pro' ? 'bg-white text-orange-500' : 'border-orange-500/30 bg-orange-500/10 hover:bg-orange-500 hover:border-orange-500'}`}>Start today</Link>
+            <Link
+              href="#contact"
+              className={`block w-full p-3 md:p-4 rounded-md border text-white font-bold text-sm md:text-base cursor-pointer text-center mt-auto transition-all duration-300 ease-in-out ${
+                plan.type === "pro"
+                  ? "bg-white text-orange-500"
+                  : "border-orange-500/30 bg-orange-500/10 hover:bg-orange-500 hover:border-orange-500"
+              }`}
+            >
+              Start today
+            </Link>
           </div>
-        ))}
-      </div>
-      <div className="flex justify-between items-center max-w-6xl mx-auto mt-8 p-6 border border-orange-500/30 rounded-lg bg-black text-left">
-        <div className="text-left">
-          <h4 className="font-bold text-orange-500 text-xl mb-1">Service & Maintenance</h4>
-          <p className="text-white m-0">We&apos;ll take care of everything to keep your app up-to-date.</p>
+        ))}{" "}
+        <div
+          key={currentPlans[2].name}
+          className={`border p-6 md:p-10 rounded-lg bg-black text-left flex flex-col transition-all duration-400 ease-in-out ${
+            currentPlans[2].type === "pro"
+              ? "bg-orange-500 text-white border-none"
+              : currentPlans[2].type === "essential"
+              ? "border-orange-500/50"
+              : "border-orange-500/30"
+          }`}
+        >
+          <h3
+            className={`font-medium text-xl md:text-2xl mb-1 ${
+              currentPlans[2].type === "pro" ? "text-white" : "text-orange-500"
+            }`}
+          >
+            {currentPlans[2].name}
+          </h3>
+          <p className="text-white/70 text-xs mb-2 text-start">
+            {currentPlans[2].startingFrom}
+          </p>
+          <div className="font-black text-3xl md:text-5xl mb-6 md:mb-8 text-white flex-grow flex items-center">
+            <AnimatedNumber value={currentPlans[2].price} /> CHF
+          </div>
+          <ul className="list-none p-0 m-0">
+            {currentPlans[2].features.map((feature, i) => (
+              <li
+                key={i}
+                className="mb-3 md:mb-4 flex items-center gap-2 text-white text-sm md:text-base"
+              >
+                {currentPlans[2].type === "pro" ? (
+                  <ProCheckmarkIcon />
+                ) : (
+                  <CheckmarkIcon />
+                )}
+                <span>{feature}</span>
+              </li>
+            ))}
+          </ul>
+          <Link
+            href="#contact"
+            className={`block w-full p-3 md:p-4 rounded-md border text-black font-bold text-sm md:text-base cursor-pointer text-center mt-auto transition-all duration-300 ease-in-out ${
+              currentPlans[2].type === "pro"
+                ? "bg-white text-orange-500"
+                : "border-orange-500/30 bg-orange-500/10 hover:bg-orange-500 hover:border-orange-500"
+            }`}
+          >
+            Start today
+          </Link>
         </div>
-        <div className="flex items-center gap-6">
-          <p className="font-black text-2xl leading-none text-white">199 CHF/month</p>
-          <Link href="#contact" className="block w-full p-4 rounded-md border border-orange-500/30 bg-orange-500/10 text-white font-bold text-base cursor-pointer text-center mt-auto transition-all duration-300 ease-in-out hover:bg-orange-500 hover:border-orange-500">Start today</Link>
+      </div>
+      <div className="flex flex-col md:flex-row justify-between items-start md:items-center max-w-6xl mx-auto mt-6 md:mt-8 p-4 md:p-6 border border-white/10 rounded-lg bg-black text-left gap-4 md:gap-0">
+        <div className="text-left">
+          <h4 className="font-bold text-orange-500 text-xl mb-1">
+            Service & Maintenance
+          </h4>
+          <p className="text-white m-0">
+            We&apos;ll take care of everything to keep your app up-to-date.
+          </p>
+        </div>
+        <div className="flex flex-col md:flex-row items-start md:items-center gap-4 md:gap-6">
+          <p className="font-black text-xl md:text-2xl leading-none text-white hidden md:block">
+            199 CHF/month
+          </p>
+          <Link
+            href="#contact"
+            className="block w-full md:w-auto p-3 md:p-4 rounded-md border border-orange-500/30 bg-orange-500/10 text-white font-bold text-sm md:text-base cursor-pointer text-center transition-all duration-300 ease-in-out hover:bg-orange-500 hover:border-orange-500"
+          >
+            Start today
+          </Link>
         </div>
       </div>
     </section>

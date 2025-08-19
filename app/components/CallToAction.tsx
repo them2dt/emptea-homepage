@@ -23,9 +23,9 @@ const CallToAction = () => {
   };
 
   return (
-    <section id="contact" className="py-32 px-8 text-center bg-black relative">
+    <section id="contact" className="py-20 md:py-32 px-4 md:px-8 text-center bg-black relative">
       <motion.h2
-        className="font-bold text-6xl leading-tight text-white relative z-10"
+        className="font-bold text-3xl md:text-6xl leading-tight text-white relative z-10"
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5 }}

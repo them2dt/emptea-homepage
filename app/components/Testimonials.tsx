@@ -45,18 +45,18 @@ const Testimonials = () => {
   }, []);
 
   return (
-    <section id="testimonials" className="py-24 text-center relative bg-black">
-      <h2 className="font-bold text-5xl mb-16 text-orange-500 leading-tight">What Our Clients Say</h2>
+    <section id="testimonials" className="py-16 md:py-24 text-center relative bg-black">
+      <h2 className="font-bold text-3xl md:text-5xl mb-12 md:mb-16 text-orange-500 leading-tight px-4">What Our Clients Say</h2>
       <motion.div ref={carouselRef} className="max-w-6xl mx-auto overflow-hidden" whileTap={{ cursor: "grabbing" }}>
         <motion.div
-          className="flex gap-8 px-8 py-4 cursor-grab w-max"
+          className="flex gap-4 md:gap-8 px-4 md:px-8 py-4 cursor-grab w-max"
           drag="x"
           dragConstraints={{ right: 0, left: -width }}
         >
           {testimonials.map((testimonial, index) => (
-            <motion.div key={index} className="bg-gray-900 rounded-lg p-10 w-96 text-left flex-shrink-0 relative transition-all duration-400 ease-in-out">
-              <p className="text-lg leading-relaxed mb-6 relative z-10 text-white">&ldquo;{testimonial.comment}&rdquo;</p>
-              <p className="font-medium relative z-10 text-white">
+            <motion.div key={index} className="bg-gray-900 rounded-lg p-6 md:p-10 w-80 md:w-96 text-left flex-shrink-0 relative transition-all duration-400 ease-in-out">
+              <p className="text-base md:text-lg leading-relaxed mb-4 md:mb-6 relative z-10 text-white">&ldquo;{testimonial.comment}&rdquo;</p>
+              <p className="font-medium relative z-10 text-white text-sm md:text-base">
                 <strong>{testimonial.name}</strong>, {testimonial.company}
               </p>
             </motion.div>

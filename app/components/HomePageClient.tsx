@@ -40,7 +40,6 @@ export default function HomePageClient() {
           <Features />
           <Divider />
           <Pricing />
-          <Divider />
           <CustomPricing />
           <Divider />
           <FAQ />
