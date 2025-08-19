@@ -62,6 +62,10 @@
   --foreground: #ffffff;  /* Primary text color (white) */
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 /* =============================================================================
    TAILWIND CSS v4 THEME CONFIGURATION
    =============================================================================

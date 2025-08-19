@@ -42,13 +42,18 @@ const FAQ = () => {
   };
 
   return (
-    <section id="faq" className="py-16 md:py-24 px-4 md:px-8 flex justify-center bg-black">
-      <div className="w-full max-w-2xl border-none p-4 md:p-8 bg-black rounded-lg">
-        <div>
+    <section id="faq" className="py-8 md:py-12 px-4 md:px-6 flex justify-center bg-black">
+      <div className="w-full max-w-4xl">
+        <div className="text-center mb-6 md:mb-8">
+          <h2 className="font-bold text-lg md:text-xl mb-2 text-white uppercase tracking-wide">FAQ</h2>
+          <p className="font-bold text-2xl md:text-3xl lg:text-4xl text-orange-500 leading-tight">Frequently Asked Questions</p>
+        </div>
+        
+        <div className="max-w-2xl mx-auto">
           {faqs.map((faq, index) => (
-            <div key={index} className="flex flex-col mb-4">
+            <div key={index} className="flex flex-col mb-3 md:mb-4">
               <div
-                className={`px-4 md:px-5 py-2 md:py-3 rounded-t-2xl rounded-br-2xl cursor-pointer font-medium leading-snug relative max-w-[90%] md:max-w-[85%] self-start mb-2 text-sm md:text-base ${activeIndex === index ? 'bg-gray-800 text-white' : 'bg-gray-900 text-white'}`}
+                className={`px-4 md:px-5 py-2.5 md:py-3 rounded-t-2xl rounded-br-2xl cursor-pointer font-medium leading-snug relative max-w-[90%] md:max-w-[85%] self-start mb-1.5 text-sm md:text-base transition-colors duration-200 ${activeIndex === index ? 'bg-gray-700 text-white' : 'bg-gray-900 text-white hover:bg-gray-800'}`}
                 onClick={() => toggleFAQ(index)}
               >
                 {faq.question}
@@ -57,7 +62,7 @@ const FAQ = () => {
                 {activeIndex === index && (
                   <motion.div
                     key="answer"
-                    className="bg-orange-500 text-white px-4 md:px-5 py-2 md:py-3 rounded-t-2xl rounded-bl-2xl max-w-[90%] md:max-w-[85%] self-end relative leading-snug overflow-hidden text-sm md:text-base"
+                    className="bg-orange-500 text-white px-4 md:px-5 py-2.5 md:py-3 rounded-t-2xl rounded-bl-2xl max-w-[90%] md:max-w-[85%] self-end relative leading-snug overflow-hidden text-sm md:text-base"
                     initial="hidden"
                     animate="visible"
                     exit="hidden"

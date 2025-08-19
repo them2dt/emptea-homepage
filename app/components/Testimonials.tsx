@@ -45,24 +45,32 @@ const Testimonials = () => {
   }, []);
 
   return (
-    <section id="testimonials" className="py-16 md:py-24 text-center relative bg-black">
-      <h2 className="font-bold text-3xl md:text-5xl mb-12 md:mb-16 text-orange-500 leading-tight px-4">What Our Clients Say</h2>
-      <motion.div ref={carouselRef} className="max-w-6xl mx-auto overflow-hidden" whileTap={{ cursor: "grabbing" }}>
-        <motion.div
-          className="flex gap-4 md:gap-8 px-4 md:px-8 py-4 cursor-grab w-max"
-          drag="x"
-          dragConstraints={{ right: 0, left: -width }}
-        >
-          {testimonials.map((testimonial, index) => (
-            <motion.div key={index} className="bg-gray-900 rounded-lg p-6 md:p-10 w-80 md:w-96 text-left flex-shrink-0 relative transition-all duration-400 ease-in-out">
-              <p className="text-base md:text-lg leading-relaxed mb-4 md:mb-6 relative z-10 text-white">&ldquo;{testimonial.comment}&rdquo;</p>
-              <p className="font-medium relative z-10 text-white text-sm md:text-base">
-                <strong>{testimonial.name}</strong>, {testimonial.company}
-              </p>
-            </motion.div>
-          ))}
+    <section id="testimonials" className="py-8 md:py-12 text-center relative bg-black">
+      <div className="max-w-5xl mx-auto px-4 md:px-6">
+        <h2 className="font-bold text-lg md:text-xl mb-2 text-white uppercase tracking-wide">Testimonials</h2>
+        <p className="font-bold text-2xl md:text-3xl lg:text-4xl mb-6 md:mb-8 text-orange-500 leading-tight">What Our Clients Say</p>
+        
+        <motion.div ref={carouselRef} className="overflow-hidden" whileTap={{ cursor: "grabbing" }}>
+          <motion.div
+            className="flex gap-4 md:gap-6 py-2 cursor-grab w-max"
+            drag="x"
+            dragConstraints={{ right: 0, left: -width }}
+          >
+            {testimonials.map((testimonial, index) => (
+              <motion.div 
+                key={index} 
+                className="bg-gradient-to-br from-gray-900/50 to-gray-900/30 rounded-lg p-5 md:p-6 w-72 md:w-80 text-left flex-shrink-0 relative transition-all duration-300 ease-in-out border border-gray-800/40 hover:border-orange-500/20 hover:bg-gradient-to-br hover:from-gray-900/70 hover:to-gray-900/40"
+              >
+                <p className="text-sm md:text-base leading-relaxed mb-3 md:mb-4 relative z-10 text-gray-300">&ldquo;{testimonial.comment}&rdquo;</p>
+                <p className="font-medium relative z-10 text-white text-xs md:text-sm">
+                  <strong className="text-orange-500">{testimonial.name}</strong><br />
+                  <span className="text-gray-400">{testimonial.company}</span>
+                </p>
+              </motion.div>
+            ))}
+          </motion.div>
         </motion.div>
-      </motion.div>
+      </div>
     </section>
   );
 };

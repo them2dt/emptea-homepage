@@ -124,13 +124,16 @@ const CustomPricing = () => {
 
   return (
     <>
-      <div className="flex flex-col md:flex-row justify-between items-start md:items-center max-w-6xl mx-auto mt-6 md:mt-8 p-4 md:p-6 border border-white/10 rounded-lg bg-black text-left gap-4 md:gap-0">
+      <div className="flex flex-col md:flex-row justify-between items-start md:items-center max-w-5xl mx-auto mt-4 md:mt-6 p-4 md:p-5 border border-white/10 rounded-lg bg-black text-left gap-3 md:gap-0">
         <div className="text-left">
-          <h4 className="font-bold text-orange-500 text-xl mb-1">Custom Plan</h4>
-          <p className="text-white m-0">Need something specific? Let&apos;s build a plan tailored to your exact needs.</p>
+          <h4 className="font-bold text-orange-500 text-lg md:text-xl mb-1">Custom Plan</h4>
+          <p className="text-white text-sm md:text-base m-0">Need something specific? Let&apos;s build a plan tailored to your exact needs.</p>
         </div>
-        <div className="flex flex-col md:flex-row items-start md:items-center gap-4 md:gap-6">
-          <button onClick={() => setIsModalOpen(true)} className="block w-full md:w-auto p-3 md:p-4 rounded-md border border-orange-500/30 bg-orange-500/10 text-white font-bold text-sm md:text-base cursor-pointer text-center transition-all duration-300 ease-in-out hover:bg-orange-500 hover:border-orange-500">
+        <div className="flex flex-col md:flex-row items-start md:items-center gap-3 md:gap-4">
+          <button 
+            onClick={() => setIsModalOpen(true)} 
+            className="inline-flex items-center justify-center w-full md:w-auto px-4 md:px-6 py-2.5 md:py-3 rounded-md border border-orange-500/30 bg-orange-500/10 text-white font-bold text-sm md:text-base cursor-pointer text-center transition-all duration-300 ease-in-out hover:bg-orange-500 hover:border-orange-500 focus:outline-none focus:ring-2 focus:ring-orange-500/50 focus:ring-offset-2 focus:ring-offset-black"
+          >
             Build Plan
           </button>
         </div>
@@ -146,18 +149,23 @@ const CustomPricing = () => {
             onClick={() => setIsModalOpen(false)}
           >
             <motion.div
-              className="bg-gradient-to-br from-gray-900 to-gray-800 rounded-2xl w-full max-w-4xl max-h-[90vh] md:max-h-[85vh] overflow-hidden border border-orange-500/20 flex flex-col mx-4 md:mx-0"
+              className="bg-gradient-to-br from-gray-900 to-gray-800 rounded-xl w-full max-w-3xl max-h-[90vh] md:max-h-[85vh] overflow-hidden border border-orange-500/20 flex flex-col mx-4 md:mx-0"
               initial={{ scale: 0.8, opacity: 0 }}
               animate={{ scale: 1, opacity: 1 }}
               exit={{ scale: 0.8, opacity: 0 }}
               onClick={(e) => e.stopPropagation()}
             >
-              <div className="flex justify-between items-center py-6 md:py-10 px-6 md:px-12 border-b border-orange-500/10">
-                <h3 className="font-bold text-xl md:text-3xl text-white">Build Your Custom Plan</h3>
-                <button onClick={() => setIsModalOpen(false)} className="bg-transparent border-none text-white text-xl md:text-2xl cursor-pointer">×</button>
+              <div className="flex justify-between items-center py-4 md:py-6 px-5 md:px-8 border-b border-orange-500/10">
+                <h3 className="font-bold text-lg md:text-2xl text-white">Build Your Custom Plan</h3>
+                <button 
+                  onClick={() => setIsModalOpen(false)} 
+                  className="bg-transparent border-none text-white text-xl md:text-2xl cursor-pointer hover:text-orange-500 transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-orange-500/50 focus:ring-offset-2 focus:ring-offset-gray-900 rounded-sm p-1"
+                >
+                  ×
+                </button>
               </div>
 
-              <div className="p-4 md:p-8 overflow-y-auto flex-grow">
+              <div className="p-4 md:p-6 overflow-y-auto flex-grow">
                 <div className="flex flex-col gap-4">
                   <div>
                     <button className="flex justify-between items-center w-full p-3 bg-white/5 rounded-lg border border-white/10 cursor-pointer" onClick={() => toggleSection('web')}>
@@ -178,9 +186,9 @@ const CustomPricing = () => {
                           transition={{ duration: 0.3, ease: [0.04, 0.62, 0.23, 0.98] }}
                           className="overflow-hidden"
                         >
-                          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-5 py-4">
+                          <div className="grid grid-cols-1 md:grid-cols-2 gap-3 md:gap-4 py-3">
                             {webFeatureOptions.map(({ key, label }) => (
-                              <div key={key} className="relative flex items-center bg-gradient-to-br from-white/5 to-white/10 p-5 rounded-lg border border-orange-500/20">
+                              <div key={key} className="relative flex items-center bg-gradient-to-br from-white/5 to-white/10 p-3 md:p-4 rounded-lg border border-orange-500/20 hover:border-orange-500/30 transition-colors duration-200">
                                 <input
                                   type="checkbox"
                                   id={key}
@@ -189,7 +197,7 @@ const CustomPricing = () => {
                                   onChange={handleFeatureChange}
                                   className="opacity-0 absolute w-full h-full cursor-pointer"
                                 />
-                                <label htmlFor={key} className="text-base pl-8 relative cursor-pointer text-white font-medium leading-snug before:content-[''] before:absolute before:left-0 before:top-1/2 before:-translate-y-1/2 before:w-5 before:h-5 before:border-2 before:border-orange-500/30 before:rounded-sm before:bg-black before:transition-all before:duration-200 after:content-['✓'] after:absolute after:left-2.5 after:top-1/2 after:-translate-y-1/2 after:scale-0 after:text-lg after:font-bold after:text-white after:transition-all after:duration-200">{label}</label>
+                                <label htmlFor={key} className="text-sm md:text-base pl-7 relative cursor-pointer text-white font-medium leading-snug before:content-[''] before:absolute before:left-0 before:top-1/2 before:-translate-y-1/2 before:w-4 before:h-4 before:border-2 before:border-orange-500/30 before:rounded-sm before:bg-black before:transition-all before:duration-200 after:content-['✓'] after:absolute after:left-1.5 after:top-1/2 after:-translate-y-1/2 after:scale-0 after:text-sm after:font-bold after:text-white after:transition-all after:duration-200">{label}</label>
                               </div>
                             ))}
                           </div>
@@ -217,9 +225,9 @@ const CustomPricing = () => {
                           transition={{ duration: 0.3, ease: [0.04, 0.62, 0.23, 0.98] }}
                           className="overflow-hidden"
                         >
-                          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-5 py-4">
+                          <div className="grid grid-cols-1 md:grid-cols-2 gap-3 md:gap-4 py-3">
                             {mobileFeatureOptions.map(({ key, label }) => (
-                              <div key={key} className="relative flex items-center bg-gradient-to-br from-white/5 to-white/10 p-5 rounded-lg border border-orange-500/20">
+                              <div key={key} className="relative flex items-center bg-gradient-to-br from-white/5 to-white/10 p-3 md:p-4 rounded-lg border border-orange-500/20 hover:border-orange-500/30 transition-colors duration-200">
                                 <input
                                   type="checkbox"
                                   id={key}
@@ -228,7 +236,7 @@ const CustomPricing = () => {
                                   onChange={handleFeatureChange}
                                   className="opacity-0 absolute w-full h-full cursor-pointer"
                                 />
-                                <label htmlFor={key} className="text-base pl-8 relative cursor-pointer text-white font-medium leading-snug before:content-[''] before:absolute before:left-0 before:top-1/2 before:-translate-y-1/2 before:w-5 before:h-5 before:border-2 before:border-orange-500/30 before:rounded-sm before:bg-black before:transition-all before:duration-200 after:content-['✓'] after:absolute after:left-2.5 after:top-1/2 after:-translate-y-1/2 after:scale-0 after:text-lg after:font-bold after:text-white after:transition-all after:duration-200">{label}</label>
+                                <label htmlFor={key} className="text-sm md:text-base pl-7 relative cursor-pointer text-white font-medium leading-snug before:content-[''] before:absolute before:left-0 before:top-1/2 before:-translate-y-1/2 before:w-4 before:h-4 before:border-2 before:border-orange-500/30 before:rounded-sm before:bg-black before:transition-all before:duration-200 after:content-['✓'] after:absolute after:left-1.5 after:top-1/2 after:-translate-y-1/2 after:scale-0 after:text-sm after:font-bold after:text-white after:transition-all after:duration-200">{label}</label>
                               </div>
                             ))}
                           </div>
@@ -256,12 +264,16 @@ const CustomPricing = () => {
                 </div>
               </div>
 
-              <div className="flex flex-col md:flex-row justify-between items-start md:items-center p-4 md:p-5 border-t border-orange-500/10 gap-4 md:gap-0">
+              <div className="flex flex-col md:flex-row justify-between items-start md:items-center p-4 md:p-5 border-t border-orange-500/10 gap-3 md:gap-0">
                 <div className="flex flex-col items-start justify-center">
-                  <p className="mb-2 text-white/70 text-sm md:text-base">Starting from</p>
-                  <span className="font-bold text-2xl md:text-3xl text-orange-500"><AnimatedNumber value={startingPrice} /> CHF</span>
+                  <p className="mb-1 text-white/70 text-xs md:text-sm">Starting from</p>
+                  <span className="font-bold text-xl md:text-2xl text-orange-500"><AnimatedNumber value={startingPrice} /> CHF</span>
                 </div>
-                <Link href="#contact" className="block w-full md:w-auto p-3 md:p-4 rounded-md border border-orange-500/30 bg-orange-500/10 text-white font-bold text-sm md:text-base cursor-pointer text-center transition-all duration-300 ease-in-out hover:bg-orange-500 hover:border-orange-500" onClick={() => setIsModalOpen(false)}>
+                <Link 
+                  href="#contact" 
+                  className="inline-flex items-center justify-center w-full md:w-auto px-4 md:px-6 py-2.5 md:py-3 rounded-md border border-orange-500/30 bg-orange-500/10 text-white font-bold text-sm md:text-base cursor-pointer text-center transition-all duration-300 ease-in-out hover:bg-orange-500 hover:border-orange-500 focus:outline-none focus:ring-2 focus:ring-orange-500/50 focus:ring-offset-2 focus:ring-offset-gray-900" 
+                  onClick={() => setIsModalOpen(false)}
+                >
                   Get Quote
                 </Link>
               </div>

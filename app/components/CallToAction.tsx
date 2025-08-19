@@ -23,30 +23,33 @@ const CallToAction = () => {
   };
 
   return (
-    <section id="contact" className="py-20 md:py-32 px-4 md:px-8 text-center bg-black relative">
-      <motion.h2
-        className="font-bold text-3xl md:text-6xl leading-tight text-white relative z-10"
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5 }}
-        viewport={{ once: true }}
-      >
-        Send us an email at{' '}
-        <motion.a
-          href="mailto:contact@emptea.xyz"
-          className="inline-block text-orange-500 no-underline cursor-pointer transition-all duration-300 ease-in-out relative"
-          variants={containerVariants}
-          initial="hidden"
-          whileInView="visible"
+    <section id="contact" className="py-12 md:py-16 px-4 md:px-6 text-center bg-black relative">
+      <div className="max-w-4xl mx-auto">
+        <h2 className="font-bold text-lg md:text-xl mb-2 text-white uppercase tracking-wide">Contact</h2>
+        <motion.div
+          className="font-bold text-2xl md:text-3xl lg:text-4xl leading-tight text-white relative z-10"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5 }}
           viewport={{ once: true }}
         >
-          {letters.map((letter, index) => (
-            <motion.span key={index} variants={letterVariants}>
-              {letter}
-            </motion.span>
-          ))}
-        </motion.a>
-      </motion.h2>
+          Send us an email at{' '}
+          <motion.a
+            href="mailto:contact@emptea.xyz"
+            className="inline-block text-orange-500 no-underline cursor-pointer transition-all duration-300 ease-in-out relative hover:text-orange-400"
+            variants={containerVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+          >
+            {letters.map((letter, index) => (
+              <motion.span key={index} variants={letterVariants}>
+                {letter}
+              </motion.span>
+            ))}
+          </motion.a>
+        </motion.div>
+      </div>
     </section>
   );
 };

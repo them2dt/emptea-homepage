@@ -72,7 +72,7 @@ const Pricing = () => {
   return (
     <section
       id="pricing"
-      className="text-center px-4 md:px-8 bg-black"
+      className="text-center pt-16 px-4 md:px-8 bg-black"
     >
       <h2 className="font-bold text-xl md:text-2xl mb-2 text-white uppercase">
         Pricing

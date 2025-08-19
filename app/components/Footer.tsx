@@ -2,21 +2,44 @@ import Link from 'next/link';
 
 const Footer = () => {
   return (
-    <footer className="bg-black py-12 md:py-16 px-4 md:px-8 border-t border-white/10">
-      <div className="flex flex-col md:flex-row justify-between items-center max-w-6xl mx-auto gap-6 md:gap-0">
-        <div>
-          <ul className="list-none p-0 m-0 flex flex-col md:flex-row gap-4 md:gap-8 text-center md:text-left">
-            <li><Link href="/" className="text-white no-underline transition-colors duration-300 ease-in-out hover:text-orange-500 text-sm md:text-base">Home</Link></li>
-            <li><Link href="/privacy" className="text-white no-underline transition-colors duration-300 ease-in-out hover:text-orange-500 text-sm md:text-base">Privacy</Link></li>
-            <li><Link href="/imprint" className="text-white no-underline transition-colors duration-300 ease-in-out hover:text-orange-500 text-sm md:text-base">Imprint</Link></li>
-          </ul>
+    <footer className="bg-black py-8 md:py-10 px-4 md:px-6 border-t border-white/10">
+      <div className="max-w-5xl mx-auto">
+        <div className="flex flex-col md:flex-row justify-between items-center gap-4 md:gap-0">
+          <div>
+            <ul className="list-none p-0 m-0 flex flex-col md:flex-row gap-3 md:gap-6 text-center md:text-left">
+              <li>
+                <Link 
+                  href="/" 
+                  className="text-white no-underline transition-colors duration-300 ease-in-out hover:text-orange-500 text-sm focus:outline-none focus:ring-2 focus:ring-orange-500/50 focus:ring-offset-2 focus:ring-offset-black rounded-sm"
+                >
+                  Home
+                </Link>
+              </li>
+              <li>
+                <Link 
+                  href="/privacy" 
+                  className="text-white no-underline transition-colors duration-300 ease-in-out hover:text-orange-500 text-sm focus:outline-none focus:ring-2 focus:ring-orange-500/50 focus:ring-offset-2 focus:ring-offset-black rounded-sm"
+                >
+                  Privacy
+                </Link>
+              </li>
+              <li>
+                <Link 
+                  href="/imprint" 
+                  className="text-white no-underline transition-colors duration-300 ease-in-out hover:text-orange-500 text-sm focus:outline-none focus:ring-2 focus:ring-orange-500/50 focus:ring-offset-2 focus:ring-offset-black rounded-sm"
+                >
+                  Imprint
+                </Link>
+              </li>
+            </ul>
+          </div>
+          <div className="text-center md:text-right font-bold text-white text-base md:text-lg">
+            <h4>EMPTEA STUDIOS®</h4>
+          </div>
         </div>
-        <div className="text-center md:text-right font-bold text-white text-lg md:text-xl">
-          <h4>EMPTEA STUDIOS®</h4>
+        <div className="mt-6 md:mt-8 pt-4 md:pt-6 border-t border-white/10 text-center text-xs text-gray-400">
+          <p>&copy; {new Date().getFullYear()} Emptea Studios. All rights reserved.</p>
         </div>
-      </div>
-      <div className="max-w-6xl mx-auto mt-8 md:mt-12 pt-6 md:pt-8 border-t border-white/10 text-center text-xs md:text-sm text-gray-400">
-        <p>&copy; {new Date().getFullYear()} Emptea Studios. All rights reserved.</p>
       </div>
     </footer>
   );
