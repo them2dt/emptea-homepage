@@ -76,7 +76,7 @@ const CustomPricing = () => {
 
   return (
     <>
-      <div className="flex flex-col md:flex-row justify-between items-start md:items-center max-w-6xl mx-auto mt-6 md:mt-8 p-4 md:p-6 border border-white/10 rounded-lg bg-gradient-to-br from-gray-800/80 to-gray-900/60 text-left gap-4 md:gap-0">
+      <div className="flex flex-col md:flex-row justify-between items-start md:items-center max-w-6xl mx-auto mt-6 md:mt-8 p-4 md:p-6 border border-white/10 rounded-lg bg-gray-800/80 text-left gap-4 md:gap-0">
         <div className="text-left">
           <h4 className="font-bold text-accent text-xl mb-1">
             Custom Plan
@@ -91,7 +91,7 @@ const CustomPricing = () => {
           </p>
           <button 
             onClick={() => setIsModalOpen(true)} 
-            className="inline-flex items-center justify-center w-full md:w-auto px-4 md:px-6 py-2.5 md:py-3 rounded-md border border-accent/30 bg-accent/10 text-accent-foreground font-bold text-sm md:text-base cursor-pointer text-center transition-all duration-300 ease-in-out hover:bg-accent hover:border-accent focus:outline-none focus:ring-2 focus:ring-accent focus:ring-offset-2 focus:ring-offset-obsidian"
+            className="inline-flex items-center justify-center w-full md:w-auto px-4 md:px-6 py-2.5 md:py-3 rounded-md border border-accent/30 bg-accent/10 text-white font-bold text-sm md:text-base cursor-pointer text-center transition-all duration-300 ease-in-out hover:bg-accent hover:border-accent focus:outline-none focus:ring-2 focus:ring-accent focus:ring-offset-2 focus:ring-offset-obsidian"
           >
             Build Plan
           </button>

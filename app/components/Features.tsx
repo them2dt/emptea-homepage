@@ -5,17 +5,17 @@ const Features = () => {
     {
       title: 'Direct communication',
       description: 'No middleman. We work closely with our clients to ensure an amazing product you\'ll be happy to pay for.',
-      icon: <Headset size={80} color="#ddff00" weight="duotone" />
+      icon: <Headset size={80} className="text-accent" weight="duotone" />
     },
     {
       title: 'Fast iteration.',
       description: 'You\'ll get your own team of engineers, so no time will be wasted with waiting.',
-      icon: <Lightning size={80} color="#ddff00" weight="duotone" />
+      icon: <Lightning size={80} className="text-accent" weight="duotone" />
     },
     {
       title: 'Locked in.',
       description: 'Your team will focus only on your project to get a tunnel vision, ensuring 100% attention for your needs.',
-      icon: <Target size={80} color="#ddff00" weight="duotone" />
+      icon: <Target size={80} className="text-accent" weight="duotone" />
     },
   ];
 

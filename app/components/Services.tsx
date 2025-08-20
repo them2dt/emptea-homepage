@@ -12,14 +12,12 @@ const Services = () => {
             <div className="flex justify-center items-center h-16 md:h-20 mb-3 md:mb-4 transition-all duration-300 ease-in-out group-hover:scale-105">
               <GlobeHemisphereWest 
                 size={48} 
-                className="md:hidden" 
-                color="#ddff00" 
+                className="md:hidden text-accent" 
                 weight="duotone" 
               />
               <GlobeHemisphereWest 
                 size={56} 
-                className="hidden md:block" 
-                color="#ddff00" 
+                className="hidden md:block text-accent" 
                 weight="duotone" 
               />
             </div>
@@ -31,14 +29,12 @@ const Services = () => {
             <div className="flex justify-center items-center h-16 md:h-20 mb-3 md:mb-4 transition-all duration-300 ease-in-out group-hover:scale-105">
               <DeviceMobileCamera 
                 size={48} 
-                className="md:hidden" 
-                color="#ddff00" 
+                className="md:hidden text-accent" 
                 weight="duotone" 
               />
               <DeviceMobileCamera 
                 size={56} 
-                className="hidden md:block" 
-                color="#ddff00" 
+                className="hidden md:block text-accent" 
                 weight="duotone" 
               />
             </div>

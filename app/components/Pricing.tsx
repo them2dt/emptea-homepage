@@ -11,7 +11,7 @@ const CheckmarkIcon = () => (
 
 const ProCheckmarkIcon = () => (
   <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <path d="M5 13l4 4L19 7" stroke="#859900" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+    <path d="M5 13l4 4L19 7" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-accent" />
   </svg>
 );
 
@@ -125,7 +125,7 @@ const Pricing = () => {
             key={plan.name}
             className={`border p-6 md:p-10 rounded-lg bg-obsidian text-left flex flex-col transition-all duration-400 ease-in-out ${
               plan.type === "pro"
-                ? "bg-accent text-white border-none"
+                ? "bg-accent text-accent-foreground border-none"
                 : plan.type === "essential"
                 ? "border-accent/50"
                 : "border-accent/30"
@@ -181,7 +181,7 @@ const Pricing = () => {
           key={currentPlans[2].name}
           className={`border p-6 md:p-10 rounded-lg bg-obsidian text-left flex flex-col transition-all duration-400 ease-in-out ${
             currentPlans[2].type === "pro"
-              ? "bg-primary-500 text-white border-none"
+              ? "bg-accent text-accent-foreground border-none"
               : currentPlans[2].type === "essential"
               ? "border-accent/50"
               : "border-accent/30"
