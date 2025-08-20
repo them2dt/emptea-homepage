@@ -5,7 +5,7 @@ import AnimatedNumber from './AnimatedNumber';
 
 const CheckmarkIcon = () => (
   <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <path d="M5 13l4 4L19 7" stroke="#ddff00" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+    <path d="M5 13l4 4L19 7" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-accent" />
   </svg>
 );
 
@@ -77,15 +77,15 @@ const Pricing = () => {
       <h2 className="font-bold text-xl md:text-2xl mb-2 text-white uppercase">
         Pricing
       </h2>
-      <p className="font-bold text-3xl md:text-5xl mb-8 md:mb-12 text-primary-500 px-4">
-        Simple & <span className="text-primary-500">transparent.</span>
+      <p className="font-bold text-3xl md:text-5xl mb-8 md:mb-12 text-accent px-4">
+        Simple & <span className="text-accent">transparent.</span>
       </p>
 
       <div className="flex justify-center mb-8 sm:mb-10 lg:mb-12">
         <div className="relative inline-flex bg-gray-900/80 backdrop-blur-sm rounded-full p-1 border border-gray-700/50 shadow-lg shadow-black/20">
           {/* Sliding background indicator */}
           <div
-            className={`absolute top-1 bottom-1 bg-gradient-to-r from-primary-500 to-primary-600 rounded-full transition-all duration-300 ease-in-out shadow-md shadow-primary-500/30 ${
+            className={`absolute top-1 bottom-1 bg-accent rounded-full transition-all duration-300 ease-in-out shadow-md shadow-accent/30 ${
               activeService === "web"
                 ? "left-1 right-[50%]"
                 : "left-[50%] right-1"
@@ -125,15 +125,15 @@ const Pricing = () => {
             key={plan.name}
             className={`border p-6 md:p-10 rounded-lg bg-obsidian text-left flex flex-col transition-all duration-400 ease-in-out ${
               plan.type === "pro"
-                ? "bg-primary-500 text-white border-none"
+                ? "bg-accent text-white border-none"
                 : plan.type === "essential"
-                ? "border-primary-500/50"
-                : "border-primary-500/30"
+                ? "border-accent/50"
+                : "border-accent/30"
             }`}
           >
             <h3
               className={`font-medium text-xl md:text-2xl mb-1 ${
-                plan.type === "pro" ? "text-black" : "text-primary-500"
+                plan.type === "pro" ? "text-black" : "text-accent"
               }`}
             >
               {plan.name}
@@ -169,8 +169,8 @@ const Pricing = () => {
               href="#contact"
               className={`block w-full p-3 md:p-4 rounded-md border text-white font-bold text-sm md:text-base cursor-pointer text-center mt-auto transition-all duration-300 ease-in-out ${
                 plan.type === "pro"
-                  ? "bg-white text-primary-500"
-                  : "border-primary-500/30 bg-primary-500/10 hover:bg-primary-500 hover:border-primary-500"
+                  ? "bg-white text-accent-foreground"
+                  : "border-accent/30 bg-accent/10 hover:bg-accent hover:border-accent"
               }`}
             >
               Start today
@@ -183,13 +183,13 @@ const Pricing = () => {
             currentPlans[2].type === "pro"
               ? "bg-primary-500 text-white border-none"
               : currentPlans[2].type === "essential"
-              ? "border-primary-500/50"
-              : "border-primary-500/30"
+              ? "border-accent/50"
+              : "border-accent/30"
           }`}
         >
           <h3
             className={`font-medium text-xl md:text-2xl mb-1 ${
-              currentPlans[2].type === "pro" ? "text-black" : "text-primary-500"
+              currentPlans[2].type === "pro" ? "text-black" : "text-accent"
             }`}
           >
             {currentPlans[2].name}
@@ -225,8 +225,8 @@ const Pricing = () => {
             href="#contact"
             className={`block w-full p-3 md:p-4 rounded-md border text-black font-bold text-sm md:text-base cursor-pointer text-center mt-auto transition-all duration-300 ease-in-out ${
               currentPlans[2].type === "pro"
-                ? "bg-white text-primary-500"
-                : "border-primary-500/30 bg-primary-500/10 hover:bg-primary-500 hover:border-primary-500"
+                ? "bg-white text-accent-foreground"
+                : "border-accent/30 bg-accent/10 hover:bg-accent hover:border-accent"
             }`}
           >
             Start today
@@ -235,7 +235,7 @@ const Pricing = () => {
       </div>
       <div className="flex flex-col md:flex-row justify-between items-start md:items-center max-w-6xl mx-auto mt-6 md:mt-8 p-4 md:p-6 border border-white/10 rounded-lg bg-obsidian text-left gap-4 md:gap-0">
         <div className="text-left">
-          <h4 className="font-bold text-primary-500 text-xl mb-1">
+          <h4 className="font-bold text-accent text-xl mb-1">
             Service & Maintenance
           </h4>
           <p className="text-white m-0">
@@ -248,7 +248,7 @@ const Pricing = () => {
           </p>
           <Link
             href="#contact"
-            className="block w-full md:w-auto p-3 md:p-4 rounded-md border border-primary-500/30 bg-primary-500/10 text-white font-bold text-sm md:text-base cursor-pointer text-center transition-all duration-300 ease-in-out hover:bg-primary-500 hover:border-primary-500"
+            className="block w-full md:w-auto p-3 md:p-4 rounded-md border border-accent/30 bg-accent/10 text-white font-bold text-sm md:text-base cursor-pointer text-center transition-all duration-300 ease-in-out hover:bg-accent hover:border-accent"
           >
             Start today
           </Link>

@@ -36,7 +36,7 @@ const CallToAction = () => {
           Send us an email at{' '}
           <motion.a
             href="mailto:contact@emptea.xyz"
-            className="inline-block text-primary-500 no-underline cursor-pointer transition-all duration-300 ease-in-out relative hover:text-primary-400"
+            className="inline-block text-accent no-underline cursor-pointer transition-all duration-300 ease-in-out relative hover:text-accent/80"
             variants={containerVariants}
             initial="hidden"
             whileInView="visible"

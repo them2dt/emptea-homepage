@@ -13,7 +13,13 @@ module.exports = {
         sans: ["var(--font-satoshi)", ...fontFamily.sans],
       },
       colors: {
+        // Dynamic accent color from CSS variables (for color picker)
         accent: {
+          DEFAULT: 'rgb(var(--accent-color) / <alpha-value>)',
+          foreground: 'rgb(var(--accent-foreground) / <alpha-value>)',
+        },
+        // Legacy primary color scale (lime green theme)
+        primary: {
           50: '#f7ffd9',
           100: '#efff99',
           200: '#e7ff66',

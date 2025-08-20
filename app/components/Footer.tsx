@@ -10,7 +10,7 @@ const Footer = () => {
               <li>
                 <Link 
                   href="/" 
-                  className="text-white no-underline transition-colors duration-300 ease-in-out hover:text-primary-500 text-sm focus:outline-none focus:ring-2 focus:ring-primary-500/50 focus:ring-offset-2 focus:ring-offset-obsidian rounded-sm"
+                  className="text-white no-underline transition-colors duration-300 ease-in-out hover:text-accent text-sm focus:outline-none focus:ring-2 focus:ring-primary-500/50 focus:ring-offset-2 focus:ring-offset-obsidian rounded-sm"
                 >
                   Home
                 </Link>
@@ -18,7 +18,7 @@ const Footer = () => {
               <li>
                 <Link 
                   href="/privacy" 
-                  className="text-white no-underline transition-colors duration-300 ease-in-out hover:text-primary-500 text-sm focus:outline-none focus:ring-2 focus:ring-primary-500/50 focus:ring-offset-2 focus:ring-offset-obsidian rounded-sm"
+                  className="text-white no-underline transition-colors duration-300 ease-in-out hover:text-accent text-sm focus:outline-none focus:ring-2 focus:ring-primary-500/50 focus:ring-offset-2 focus:ring-offset-obsidian rounded-sm"
                 >
                   Privacy
                 </Link>
@@ -26,7 +26,7 @@ const Footer = () => {
               <li>
                 <Link 
                   href="/imprint" 
-                  className="text-white no-underline transition-colors duration-300 ease-in-out hover:text-primary-500 text-sm focus:outline-none focus:ring-2 focus:ring-primary-500/50 focus:ring-offset-2 focus:ring-offset-obsidian rounded-sm"
+                  className="text-white no-underline transition-colors duration-300 ease-in-out hover:text-accent text-sm focus:outline-none focus:ring-2 focus:ring-primary-500/50 focus:ring-offset-2 focus:ring-offset-obsidian rounded-sm"
                 >
                   Imprint
                 </Link>
