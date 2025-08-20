@@ -124,7 +124,7 @@ const CustomPricing = () => {
 
   return (
     <>
-      <div className="flex flex-col md:flex-row justify-between items-start md:items-center max-w-5xl mx-auto mt-4 md:mt-6 p-4 md:p-5 border border-white/10 rounded-lg bg-black text-left gap-3 md:gap-0">
+      <div className="flex flex-col md:flex-row justify-between items-start md:items-center max-w-6xl mx-auto mt-6 md:mt-8 md:p-6 border border-white/10 rounded-lg bg-black text-left gap-4 md:gap-0 my-16">
         <div className="text-left">
           <h4 className="font-bold text-orange-500 text-lg md:text-xl mb-1">Custom Plan</h4>
           <p className="text-white text-sm md:text-base m-0">Need something specific? Let&apos;s build a plan tailored to your exact needs.</p>
