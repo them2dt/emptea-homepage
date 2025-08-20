@@ -65,6 +65,9 @@
   /* Accent color system for dynamic color picker */
   --accent-color: 221 255 0; /* Default: Lime green (current brand color) */
   --accent-foreground: 0 0 0; /* Black text on bright accent backgrounds */
+  
+  /* Grid pattern color for Hero section */
+  --grid-color: rgba(221, 255, 0, 0.1); /* Default grid color matching accent */
 }
 
 html {

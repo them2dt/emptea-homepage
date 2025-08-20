@@ -15,7 +15,7 @@ import Footer from "./Footer";
 import Loader from "./Loader";
 import Divider from "./Divider";
 import AccentPicker from "./AccentPicker";
-import AccentDemo from "./AccentDemo";
+
 
 export default function HomePageClient() {
   const [loading, setLoading] = useState(true);
@@ -37,7 +37,6 @@ export default function HomePageClient() {
         <>
           <Navbar />
           <Hero />
-          <AccentDemo />
           <Divider />
           <Services />
           <Divider />

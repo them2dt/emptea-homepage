@@ -99,7 +99,6 @@ const Pricing = () => {
                 : "text-gray-300 hover:text-white"
             }`}
             onClick={() => setActiveService("web")}
-            aria-pressed={activeService === "web"}
             role="tab"
           >
             Web

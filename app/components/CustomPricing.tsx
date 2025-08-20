@@ -76,7 +76,7 @@ const CustomPricing = () => {
 
   return (
     <>
-      <div className="flex flex-col md:flex-row justify-between items-start md:items-center max-w-6xl mx-auto mt-6 md:mt-8 p-4 md:p-6 border border-white/10 rounded-lg bg-gray-800/80 text-left gap-4 md:gap-0">
+      <div className="flex flex-col md:flex-row justify-between items-start md:items-center max-w-6xl mx-auto mt-6 md:mt-8 p-4 md:p-6 border border-white/10 rounded-lg bg-gray-800/80 text-left gap-4 md:gap-0 mb-16">
         <div className="text-left">
           <h4 className="font-bold text-accent text-xl mb-1">
             Custom Plan
@@ -217,7 +217,7 @@ const CustomPricing = () => {
                       max="52"
                       value={weeks}
                       onChange={(e) => setWeeks(Number(e.target.value))}
-                      className="w-full h-2 bg-accent/30 rounded-lg appearance-none cursor-pointer"
+                      className="w-full h-2 bg-accent/30 rounded-lg appearance-none cursor-pointer [&::-webkit-slider-thumb]:appearance-none [&::-webkit-slider-thumb]:w-6 [&::-webkit-slider-thumb]:h-6 [&::-webkit-slider-thumb]:rounded-full [&::-webkit-slider-thumb]:bg-accent [&::-webkit-slider-thumb]:cursor-pointer [&::-webkit-slider-thumb]:shadow-lg [&::-moz-range-thumb]:appearance-none [&::-moz-range-thumb]:w-6 [&::-moz-range-thumb]:h-6 [&::-moz-range-thumb]:rounded-full [&::-moz-range-thumb]:bg-accent [&::-moz-range-thumb]:cursor-pointer [&::-moz-range-thumb]:border-none"
                     />
                     <span className="font-bold text-accent text-lg min-w-[100px] text-center">{weeks} week{weeks > 1 ? 's' : ''}</span>
                   </div>

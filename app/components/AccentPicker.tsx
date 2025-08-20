@@ -65,6 +65,12 @@ export default function AccentPicker() {
     const root = document.documentElement;
     root.style.setProperty('--accent-color', color.rgb);
     root.style.setProperty('--accent-foreground', color.foreground);
+    
+    // Update grid color to match accent with 10% opacity
+    const rgbValues = color.rgb.split(' ').map(Number);
+    const gridColor = `rgba(${rgbValues[0]}, ${rgbValues[1]}, ${rgbValues[2]}, 0.1)`;
+    root.style.setProperty('--grid-color', gridColor);
+    
     setSelectedColor(color);
   };
 
@@ -81,20 +87,20 @@ export default function AccentPicker() {
   return (
     <div className="fixed bottom-6 left-6 z-50">
       {/* Pill-shaped color picker container */}
-      <div className="flex items-center gap-1 p-2 bg-white/95 backdrop-blur-md rounded-full shadow-xl border border-white/20">
+      <div className="flex items-center gap-1 p-2 bg-obsidian/95 backdrop-blur-md rounded-full shadow-2xl border border-gray-700/50 shadow-black/30">
         {colorPalette.map((color) => (
           <button
             key={color.name}
             onClick={() => updateAccentColor(color)}
             onKeyDown={(e) => handleKeyDown(e, color)}
-            className="relative w-12 h-12 rounded-full transition-all duration-200 hover:scale-110 focus:outline-none focus:ring-2 focus:ring-gray-400 focus:ring-offset-2 focus:ring-offset-white group"
+            className="relative w-12 h-12 rounded-full transition-all duration-200 hover:scale-110 focus:outline-none focus:ring-2 focus:ring-accent focus:ring-offset-2 focus:ring-offset-obsidian group"
             style={{ backgroundColor: color.hex }}
             aria-label={`Set accent to ${color.name}`}
             title={color.name}
           >
             {/* Selected indicator */}
             {selectedColor.name === color.name && (
-              <div className="absolute inset-0 rounded-full border-4 border-white shadow-lg" />
+              <div className="absolute inset-0 rounded-full border-3 border-black shadow-lg" />
             )}
             
             {/* Inner circle for depth effect */}
@@ -104,7 +110,7 @@ export default function AccentPicker() {
             />
             
             {/* Hover tooltip */}
-            <span className="absolute -top-10 left-1/2 -translate-x-1/2 bg-gray-800 text-white text-xs px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none whitespace-nowrap z-10">
+            <span className="absolute -top-10 left-1/2 -translate-x-1/2 bg-obsidian text-white text-xs px-2 py-1 rounded border border-gray-700/50 shadow-lg opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none whitespace-nowrap z-10">
               {color.name}
             </span>
           </button>
