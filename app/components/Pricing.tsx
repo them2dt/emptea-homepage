@@ -1,6 +1,6 @@
 'use client';
 import { useState } from 'react';
-import Link from 'next/link';
+
 import AnimatedNumber from './AnimatedNumber';
 
 const CheckmarkIcon = () => (
@@ -17,6 +17,33 @@ const ProCheckmarkIcon = () => (
 
 const Pricing = () => {
   const [activeService, setActiveService] = useState('web');
+
+  /**
+   * Generates a pre-filled email for package inquiries
+   * @param planName - Name of the selected plan
+   * @param planType - Type of plan (basic, essential, pro)
+   * @param price - Price of the plan
+   * @param service - Service type (web or mobile)
+   * @returns Formatted email content
+   */
+  const generatePackageEmail = (planName: string, planType: string, price: number, service: string) => {
+    const subject = `Inquiry for ${planName} ${service} package`;
+    const body = `Hi EMPTEA Studios,
+
+I'm interested in your ${planName} ${service} development package.
+
+Package Details:
+- Plan: ${planName} (${planType})
+- Service: ${service} development
+- Price: Starting from ${price} CHF
+
+Please provide more information about this package and next steps.
+
+Best regards,
+[Your Name]`;
+
+    return `mailto:contact@emptea.xyz?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+  };
 
   const pricingData = {
     web: [
@@ -164,8 +191,8 @@ const Pricing = () => {
                 </li>
               ))}
             </ul>
-            <Link
-              href="#contact"
+            <a
+              href={generatePackageEmail(plan.name, plan.type, plan.price, activeService)}
               className={`block w-full p-3 md:p-4 rounded-md border text-white font-bold text-sm md:text-base cursor-pointer text-center mt-auto transition-all duration-300 ease-in-out ${
                 plan.type === "pro"
                   ? "bg-white text-accent-foreground"
@@ -173,7 +200,7 @@ const Pricing = () => {
               }`}
             >
               Start today
-            </Link>
+            </a>
           </div>
         ))}{" "}
         <div
@@ -220,8 +247,8 @@ const Pricing = () => {
               </li>
             ))}
           </ul>
-          <Link
-            href="#contact"
+          <a
+            href={generatePackageEmail(currentPlans[2].name, currentPlans[2].type, currentPlans[2].price, activeService)}
             className={`block w-full p-3 md:p-4 rounded-md border text-black font-bold text-sm md:text-base cursor-pointer text-center mt-auto transition-all duration-300 ease-in-out ${
               currentPlans[2].type === "pro"
                 ? "bg-white text-accent-foreground"
@@ -229,7 +256,7 @@ const Pricing = () => {
             }`}
           >
             Start today
-          </Link>
+          </a>
         </div>
       </div>
       <div className="flex flex-col md:flex-row justify-between items-start md:items-center max-w-6xl mx-auto mt-6 md:mt-8 p-4 md:p-6 border border-white/10 rounded-lg bg-obsidian text-left gap-4 md:gap-0">
@@ -245,12 +272,23 @@ const Pricing = () => {
           <p className="font-black text-xl md:text-2xl leading-none text-white hidden md:block">
             199 CHF/month
           </p>
-          <Link
-            href="#contact"
+          <a
+            href={`mailto:contact@emptea.xyz?subject=${encodeURIComponent('Service & Maintenance Inquiry')}&body=${encodeURIComponent(`Hi EMPTEA Studios,
+
+I'm interested in your Service & Maintenance package.
+
+Package Details:
+- Service: Monthly maintenance and support
+- Price: 199 CHF/month
+
+Please provide more information about what's included and how to get started.
+
+Best regards,
+[Your Name]`)}`}
             className="block w-full md:w-auto p-3 md:p-4 rounded-md border border-accent/30 bg-accent/10 text-white font-bold text-sm md:text-base cursor-pointer text-center transition-all duration-300 ease-in-out hover:bg-accent hover:border-accent"
           >
             Start today
-          </Link>
+          </a>
         </div>
       </div>
     </section>

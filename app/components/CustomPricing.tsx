@@ -1,7 +1,7 @@
 'use client';
 
 import { useState } from 'react';
-import Link from 'next/link';
+
 import AnimatedNumber from './AnimatedNumber';
 import { motion, AnimatePresence } from 'framer-motion';
 import { CaretDown } from '@phosphor-icons/react';
@@ -229,13 +229,42 @@ const CustomPricing = () => {
                   <p className="mb-1 text-gray-300 text-xs md:text-sm">Starting from</p>
                   <span className="font-bold text-xl md:text-2xl text-accent"><AnimatedNumber value={startingPrice} /> CHF</span>
                 </div>
-                <Link 
-                  href="#contact" 
+                <a 
+                  href={`mailto:contact@emptea.xyz?subject=${encodeURIComponent('Custom Plan Quote Request')}&body=${encodeURIComponent(`Hi EMPTEA Studios,
+
+I'm interested in a custom development plan.
+
+Custom Plan Details:
+- Estimated Duration: ${weeks} week${weeks > 1 ? 's' : ''}
+- Estimated Price: Starting from ${startingPrice} CHF
+
+Selected Features:
+${Object.entries(features)
+  .filter(([_, hasFeature]) => hasFeature)
+  .map(([key, _]) => {
+    const featureMap: { [key: string]: string } = {
+      responsiveDesign: 'Responsive Design',
+      seoOptimization: 'SEO Optimization', 
+      contentManagement: 'Content Management System',
+      ecommerce: 'E-commerce Functionality',
+      userAuthentication: 'User Authentication',
+      apiIntegration: 'API Integration',
+      analytics: 'Analytics & Reporting',
+      crossPlatform: 'Cross-platform Development'
+    };
+    return `- ${featureMap[key] || key}`;
+  })
+  .join('\n')}
+
+Please provide a detailed quote and next steps.
+
+Best regards,
+[Your Name]`)}`}
                   className="inline-flex items-center justify-center w-full md:w-auto px-4 md:px-6 py-2.5 md:py-3 rounded-md border border-accent/30 bg-accent/10 text-accent-foreground font-bold text-sm md:text-base cursor-pointer text-center transition-all duration-300 ease-in-out hover:bg-accent hover:border-accent focus:outline-none focus:ring-2 focus:ring-accent focus:ring-offset-2 focus:ring-offset-gray-900" 
                   onClick={() => setIsModalOpen(false)}
                 >
                   Get Quote
-                </Link>
+                </a>
               </div>
             </motion.div>
           </motion.div>
