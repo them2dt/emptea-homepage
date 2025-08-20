@@ -37,16 +37,16 @@ const FAQ = () => {
       marginTop: '0.5rem',
       paddingTop: '0.75rem',
       paddingBottom: '0.75rem',
-      transition: { duration: 0.4, ease: "easeOut" }
+      transition: { duration: 0.4, ease: "easeOut" as const }
     },
   };
 
   return (
-    <section id="faq" className="py-8 md:py-12 px-4 md:px-6 flex justify-center bg-black">
+    <section id="faq" className="py-8 md:py-12 px-4 md:px-6 flex justify-center bg-obsidian">
       <div className="w-full max-w-4xl">
         <div className="text-center mb-6 md:mb-8">
           <h2 className="font-bold text-lg md:text-xl mb-2 text-white uppercase tracking-wide">FAQ</h2>
-          <p className="font-bold text-2xl md:text-3xl lg:text-4xl text-orange-500 leading-tight">Frequently Asked Questions</p>
+          <p className="font-bold text-2xl md:text-3xl lg:text-4xl text-primary-500 leading-tight">Frequently Asked Questions</p>
         </div>
         
         <div className="max-w-2xl mx-auto">
@@ -62,7 +62,7 @@ const FAQ = () => {
                 {activeIndex === index && (
                   <motion.div
                     key="answer"
-                    className="bg-orange-500 text-white px-4 md:px-5 py-2.5 md:py-3 rounded-t-2xl rounded-bl-2xl max-w-[90%] md:max-w-[85%] self-end relative leading-snug overflow-hidden text-sm md:text-base"
+                    className="bg-primary-500 text-black px-4 md:px-5 py-2.5 md:py-3 rounded-t-2xl rounded-bl-2xl max-w-[90%] md:max-w-[85%] self-end relative leading-snug overflow-hidden text-sm md:text-base"
                     initial="hidden"
                     animate="visible"
                     exit="hidden"

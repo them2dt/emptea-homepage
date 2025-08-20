@@ -32,25 +32,25 @@ const Navbar = () => {
   return (
     <>
       <motion.header
-        className="fixed top-0 left-0 w-full z-50 py-3 sm:py-4 bg-black/85 backdrop-blur-md border-b border-white/10 supports-[backdrop-filter]:bg-black/60"
+        className="fixed top-0 left-0 w-full z-50 py-3 sm:py-4 bg-obsidian/85 backdrop-blur-md border-b border-white/10 supports-[backdrop-filter]:bg-obsidian/60"
         initial={{ y: -100, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.5, ease: 'easeOut', delay: 1.5 }}
       >
         <nav className="flex justify-between items-center max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="font-bold text-white text-sm sm:text-base lg:text-lg">
-            <Link href="/" className="hover:text-orange-500 transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-orange-500/50 focus:ring-offset-2 focus:ring-offset-black rounded-sm">
+            <Link href="/" className="hover:text-primary-500 transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-primary-500/50 focus:ring-offset-2 focus:ring-offset-obsidian rounded-sm">
               EMPTEA STUDIOS®
             </Link>
           </div>
           <div className="hidden lg:flex items-center gap-8 xl:gap-12">
             <div className="flex gap-6 xl:gap-8 font-medium">
-              <Link href="#services" className="text-white transition-all duration-300 ease-in-out text-sm xl:text-base relative hover:text-orange-500 hover:-translate-y-px after:content-[''] after:absolute after:-bottom-1 after:left-0 after:w-0 after:h-0.5 after:bg-orange-500 after:transition-all after:duration-300 after:ease-in-out hover:after:w-full focus:outline-none focus:ring-2 focus:ring-orange-500/50 focus:ring-offset-2 focus:ring-offset-black rounded-sm">Services</Link>
-              <Link href="#pricing" className="text-white transition-all duration-300 ease-in-out text-sm xl:text-base relative hover:text-orange-500 hover:-translate-y-px after:content-[''] after:absolute after:-bottom-1 after:left-0 after:w-0 after:h-0.5 after:bg-orange-500 after:transition-all after:duration-300 after:ease-in-out hover:after:w-full focus:outline-none focus:ring-2 focus:ring-orange-500/50 focus:ring-offset-2 focus:ring-offset-black rounded-sm">Pricing</Link>
-              <Link href="#testimonials" className="text-white transition-all duration-300 ease-in-out text-sm xl:text-base relative hover:text-orange-500 hover:-translate-y-px after:content-[''] after:absolute after:-bottom-1 after:left-0 after:w-0 after:h-0.5 after:bg-orange-500 after:transition-all after:duration-300 after:ease-in-out hover:after:w-full focus:outline-none focus:ring-2 focus:ring-orange-500/50 focus:ring-offset-2 focus:ring-offset-black rounded-sm">Testimonials</Link>
-              <Link href="#faq" className="text-white transition-all duration-300 ease-in-out text-sm xl:text-base relative hover:text-orange-500 hover:-translate-y-px after:content-[''] after:absolute after:-bottom-1 after:left-0 after:w-0 after:h-0.5 after:bg-orange-500 after:transition-all after:duration-300 after:ease-in-out hover:after:w-full focus:outline-none focus:ring-2 focus:ring-orange-500/50 focus:ring-offset-2 focus:ring-offset-black rounded-sm">FAQ</Link>
+              <Link href="#services" className="text-white transition-all duration-300 ease-in-out text-sm xl:text-base relative hover:text-primary-500 hover:-translate-y-px after:content-[''] after:absolute after:-bottom-1 after:left-0 after:w-0 after:h-0.5 after:bg-primary-500 after:transition-all after:duration-300 after:ease-in-out hover:after:w-full focus:outline-none focus:ring-2 focus:ring-primary-500/50 focus:ring-offset-2 focus:ring-offset-obsidian rounded-sm">Services</Link>
+              <Link href="#pricing" className="text-white transition-all duration-300 ease-in-out text-sm xl:text-base relative hover:text-primary-500 hover:-translate-y-px after:content-[''] after:absolute after:-bottom-1 after:left-0 after:w-0 after:h-0.5 after:bg-primary-500 after:transition-all after:duration-300 after:ease-in-out hover:after:w-full focus:outline-none focus:ring-2 focus:ring-primary-500/50 focus:ring-offset-2 focus:ring-offset-obsidian rounded-sm">Pricing</Link>
+              <Link href="#testimonials" className="text-white transition-all duration-300 ease-in-out text-sm xl:text-base relative hover:text-primary-500 hover:-translate-y-px after:content-[''] after:absolute after:-bottom-1 after:left-0 after:w-0 after:h-0.5 after:bg-primary-500 after:transition-all after:duration-300 after:ease-in-out hover:after:w-full focus:outline-none focus:ring-2 focus:ring-primary-500/50 focus:ring-offset-2 focus:ring-offset-obsidian rounded-sm">Testimonials</Link>
+              <Link href="#faq" className="text-white transition-all duration-300 ease-in-out text-sm xl:text-base relative hover:text-primary-500 hover:-translate-y-px after:content-[''] after:absolute after:-bottom-1 after:left-0 after:w-0 after:h-0.5 after:bg-primary-500 after:transition-all after:duration-300 after:ease-in-out hover:after:w-full focus:outline-none focus:ring-2 focus:ring-primary-500/50 focus:ring-offset-2 focus:ring-offset-obsidian rounded-sm">FAQ</Link>
             </div>
-            <Link href="#contact" className="inline-flex items-center justify-center font-bold bg-gradient-to-b from-orange-400 to-orange-600 text-white border border-orange-700 px-4 xl:px-6 py-2 xl:py-3 rounded-full text-sm xl:text-base cursor-pointer transition-all duration-300 ease-in-out hover:from-orange-500 hover:to-orange-700 hover:-translate-y-px hover:shadow-lg hover:shadow-orange-500/25 focus:outline-none focus:ring-2 focus:ring-orange-500/50 focus:ring-offset-2 focus:ring-offset-black">
+            <Link href="#contact" className="inline-flex items-center justify-center font-bold bg-gradient-to-b from-primary-400 to-primary-600 text-black border border-primary-700 px-4 xl:px-6 py-2 xl:py-3 rounded-full text-sm xl:text-base cursor-pointer transition-all duration-300 ease-in-out hover:from-primary-500 hover:to-primary-700 hover:-translate-y-px hover:shadow-lg hover:shadow-primary-500/25 focus:outline-none focus:ring-2 focus:ring-primary-500/50 focus:ring-offset-2 focus:ring-offset-obsidian">
               Get started
             </Link>
           </div>
@@ -58,7 +58,7 @@ const Navbar = () => {
       </motion.header>
 
       <button 
-        className="lg:hidden bg-transparent border-none cursor-pointer z-[1001] fixed top-4 sm:top-5 right-4 sm:right-6 p-2 rounded-md hover:bg-white/10 transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-orange-500/50 focus:ring-offset-2 focus:ring-offset-black" 
+        className="lg:hidden bg-transparent border-none cursor-pointer z-[1001] fixed top-4 sm:top-5 right-4 sm:right-6 p-2 rounded-md hover:bg-white/10 transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-primary-500/50 focus:ring-offset-2 focus:ring-offset-obsidian" 
         onClick={toggleMobileNav} 
         aria-label="Toggle navigation menu"
         aria-expanded={mobileNavOpen}
@@ -73,7 +73,7 @@ const Navbar = () => {
       <AnimatePresence>
         {mobileNavOpen && (
           <motion.div
-            className="fixed inset-0 w-full h-screen bg-black/95 backdrop-blur-lg z-[1000] flex flex-col justify-center items-center gap-6 sm:gap-8 px-4"
+            className="fixed inset-0 w-full h-screen bg-obsidian/95 backdrop-blur-lg z-[1000] flex flex-col justify-center items-center gap-6 sm:gap-8 px-4"
             initial="hidden"
             animate="visible"
             exit="hidden"
@@ -83,7 +83,7 @@ const Navbar = () => {
               <Link 
                 href="#services" 
                 onClick={toggleMobileNav} 
-                className="font-bold text-2xl sm:text-3xl text-white transition-all duration-300 ease-in-out hover:text-orange-500 hover:-translate-y-0.5 focus:outline-none focus:ring-2 focus:ring-orange-500/50 focus:ring-offset-2 focus:ring-offset-black rounded-sm"
+                className="font-bold text-2xl sm:text-3xl text-white transition-all duration-300 ease-in-out hover:text-primary-500 hover:-translate-y-0.5 focus:outline-none focus:ring-2 focus:ring-primary-500/50 focus:ring-offset-2 focus:ring-offset-obsidian rounded-sm"
               >
                 Services
               </Link>
@@ -92,7 +92,7 @@ const Navbar = () => {
               <Link 
                 href="#pricing" 
                 onClick={toggleMobileNav} 
-                className="font-bold text-2xl sm:text-3xl text-white transition-all duration-300 ease-in-out hover:text-orange-500 hover:-translate-y-0.5 focus:outline-none focus:ring-2 focus:ring-orange-500/50 focus:ring-offset-2 focus:ring-offset-black rounded-sm"
+                className="font-bold text-2xl sm:text-3xl text-white transition-all duration-300 ease-in-out hover:text-primary-500 hover:-translate-y-0.5 focus:outline-none focus:ring-2 focus:ring-primary-500/50 focus:ring-offset-2 focus:ring-offset-obsidian rounded-sm"
               >
                 Pricing
               </Link>
@@ -101,7 +101,7 @@ const Navbar = () => {
               <Link 
                 href="#testimonials" 
                 onClick={toggleMobileNav} 
-                className="font-bold text-2xl sm:text-3xl text-white transition-all duration-300 ease-in-out hover:text-orange-500 hover:-translate-y-0.5 focus:outline-none focus:ring-2 focus:ring-orange-500/50 focus:ring-offset-2 focus:ring-offset-black rounded-sm"
+                className="font-bold text-2xl sm:text-3xl text-white transition-all duration-300 ease-in-out hover:text-primary-500 hover:-translate-y-0.5 focus:outline-none focus:ring-2 focus:ring-primary-500/50 focus:ring-offset-2 focus:ring-offset-obsidian rounded-sm"
               >
                 Testimonials
               </Link>
@@ -110,7 +110,7 @@ const Navbar = () => {
               <Link 
                 href="#faq" 
                 onClick={toggleMobileNav} 
-                className="font-bold text-2xl sm:text-3xl text-white transition-all duration-300 ease-in-out hover:text-orange-500 hover:-translate-y-0.5 focus:outline-none focus:ring-2 focus:ring-orange-500/50 focus:ring-offset-2 focus:ring-offset-black rounded-sm"
+                className="font-bold text-2xl sm:text-3xl text-white transition-all duration-300 ease-in-out hover:text-primary-500 hover:-translate-y-0.5 focus:outline-none focus:ring-2 focus:ring-primary-500/50 focus:ring-offset-2 focus:ring-offset-obsidian rounded-sm"
               >
                 FAQ
               </Link>
@@ -118,7 +118,7 @@ const Navbar = () => {
             <motion.div variants={menuItemVariants}>
               <Link 
                 href="#contact" 
-                className="inline-flex items-center justify-center text-xl sm:text-2xl text-orange-500 mt-4 px-6 sm:px-8 py-3 sm:py-4 border-2 border-orange-500 rounded-lg bg-transparent transition-all duration-300 ease-in-out hover:bg-orange-500 hover:text-white hover:-translate-y-0.5 hover:shadow-lg hover:shadow-orange-500/25 focus:outline-none focus:ring-2 focus:ring-orange-500/50 focus:ring-offset-2 focus:ring-offset-black" 
+                className="inline-flex items-center justify-center text-xl sm:text-2xl text-primary-500 mt-4 px-6 sm:px-8 py-3 sm:py-4 border-2 border-primary-500 rounded-lg bg-transparent transition-all duration-300 ease-in-out hover:bg-primary-500 hover:text-white hover:-translate-y-0.5 hover:shadow-lg hover:shadow-primary-500/25 focus:outline-none focus:ring-2 focus:ring-primary-500/50 focus:ring-offset-2 focus:ring-offset-obsidian" 
                 onClick={toggleMobileNav}
               >
                 Get started

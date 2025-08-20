@@ -2,7 +2,7 @@ import Link from 'next/link';
 
 const Footer = () => {
   return (
-    <footer className="bg-black py-8 md:py-10 px-4 md:px-6 border-t border-white/10">
+    <footer className="bg-obsidian py-8 md:py-10 px-4 md:px-6 border-t border-white/10">
       <div className="max-w-5xl mx-auto">
         <div className="flex flex-col md:flex-row justify-between items-center gap-4 md:gap-0">
           <div>
@@ -10,7 +10,7 @@ const Footer = () => {
               <li>
                 <Link 
                   href="/" 
-                  className="text-white no-underline transition-colors duration-300 ease-in-out hover:text-orange-500 text-sm focus:outline-none focus:ring-2 focus:ring-orange-500/50 focus:ring-offset-2 focus:ring-offset-black rounded-sm"
+                  className="text-white no-underline transition-colors duration-300 ease-in-out hover:text-primary-500 text-sm focus:outline-none focus:ring-2 focus:ring-primary-500/50 focus:ring-offset-2 focus:ring-offset-obsidian rounded-sm"
                 >
                   Home
                 </Link>
@@ -18,7 +18,7 @@ const Footer = () => {
               <li>
                 <Link 
                   href="/privacy" 
-                  className="text-white no-underline transition-colors duration-300 ease-in-out hover:text-orange-500 text-sm focus:outline-none focus:ring-2 focus:ring-orange-500/50 focus:ring-offset-2 focus:ring-offset-black rounded-sm"
+                  className="text-white no-underline transition-colors duration-300 ease-in-out hover:text-primary-500 text-sm focus:outline-none focus:ring-2 focus:ring-primary-500/50 focus:ring-offset-2 focus:ring-offset-obsidian rounded-sm"
                 >
                   Privacy
                 </Link>
@@ -26,7 +26,7 @@ const Footer = () => {
               <li>
                 <Link 
                   href="/imprint" 
-                  className="text-white no-underline transition-colors duration-300 ease-in-out hover:text-orange-500 text-sm focus:outline-none focus:ring-2 focus:ring-orange-500/50 focus:ring-offset-2 focus:ring-offset-black rounded-sm"
+                  className="text-white no-underline transition-colors duration-300 ease-in-out hover:text-primary-500 text-sm focus:outline-none focus:ring-2 focus:ring-primary-500/50 focus:ring-offset-2 focus:ring-offset-obsidian rounded-sm"
                 >
                   Imprint
                 </Link>

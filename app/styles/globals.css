@@ -58,8 +58,9 @@
  * dynamically updated for theme switching.
  */
 :root {
-  --background: #000000;  /* Primary background color (pure black) */
+  --background: #212121;  /* Primary background color (obsidian grey) */
   --foreground: #ffffff;  /* Primary text color (white) */
+  --accent: #ddff00;      /* Accent color (lime green) */
 }
 
 html {
@@ -111,17 +112,17 @@ html {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   
-  /* Primary Color Scale - Blue theme for main interactive elements */
-  --color-primary-50: #f0f9ff;   /* Lightest blue - backgrounds, hover states */
-  --color-primary-100: #e0f2fe;  /* Very light blue - subtle backgrounds */
-  --color-primary-200: #bae6fd;  /* Light blue - disabled states, borders */
-  --color-primary-300: #7dd3fc;  /* Medium light blue - secondary elements */
-  --color-primary-400: #38bdf8;  /* Medium blue - hover states */
-  --color-primary-500: #0ea5e9;  /* Base primary blue - main brand color */
-  --color-primary-600: #0284c7;  /* Dark blue - active states, emphasis */
-  --color-primary-700: #0369a1;  /* Darker blue - headers, important elements */
-  --color-primary-800: #075985;  /* Very dark blue - high contrast text */
-  --color-primary-900: #0c4a6e;  /* Darkest blue - maximum contrast */
+  /* Primary Color Scale - Lime green theme for main interactive elements */
+  --color-primary-50: #f7ffd9;   /* Lightest lime - backgrounds, hover states */
+  --color-primary-100: #efff99;  /* Very light lime - subtle backgrounds */
+  --color-primary-200: #e7ff66;  /* Light lime - disabled states, borders */
+  --color-primary-300: #dfff33;  /* Medium light lime - secondary elements */
+  --color-primary-400: #d7ff00;  /* Medium lime - hover states */
+  --color-primary-500: #ddff00;  /* Base primary lime - main brand color */
+  --color-primary-600: #c7e600;  /* Dark lime - active states, emphasis */
+  --color-primary-700: #b1cc00;  /* Darker lime - headers, important elements */
+  --color-primary-800: #9bb300;  /* Very dark lime - high contrast text */
+  --color-primary-900: #859900;  /* Darkest lime - maximum contrast */
 
   /* Secondary Color Scale - Neutral grays for text and UI elements */
   --color-secondary-50: #f8fafc;   /* Lightest gray - page backgrounds */
@@ -231,7 +232,7 @@ html {
  */
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #000000;  /* Dark background - pure black */
+    --background: #212121;  /* Dark background - obsidian grey */
     --foreground: #ffffff;  /* Light foreground - pure white */
   }
 }

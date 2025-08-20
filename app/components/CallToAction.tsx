@@ -23,7 +23,7 @@ const CallToAction = () => {
   };
 
   return (
-    <section id="contact" className="py-12 md:py-16 px-4 md:px-6 text-center bg-black relative">
+    <section id="contact" className="py-12 md:py-16 px-4 md:px-6 text-center bg-obsidian relative">
       <div className="max-w-4xl mx-auto">
         <h2 className="font-bold text-lg md:text-xl mb-2 text-white uppercase tracking-wide">Contact</h2>
         <motion.div
@@ -36,7 +36,7 @@ const CallToAction = () => {
           Send us an email at{' '}
           <motion.a
             href="mailto:contact@emptea.xyz"
-            className="inline-block text-orange-500 no-underline cursor-pointer transition-all duration-300 ease-in-out relative hover:text-orange-400"
+            className="inline-block text-primary-500 no-underline cursor-pointer transition-all duration-300 ease-in-out relative hover:text-primary-400"
             variants={containerVariants}
             initial="hidden"
             whileInView="visible"

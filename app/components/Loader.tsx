@@ -27,7 +27,7 @@ const Loader = () => {
       opacity: 1,
       transition: {
         duration: 0.6,
-        ease: 'easeOut'
+        ease: 'easeOut' as const
       },
     },
   };
@@ -40,7 +40,7 @@ const Loader = () => {
       scale: 1,
       transition: {
         duration: 0.8,
-        ease: 'easeOut',
+        ease: 'easeOut' as const,
         delay: 0.2
       },
     },
@@ -67,14 +67,14 @@ const Loader = () => {
       transition: {
         delay: 0.8,
         duration: 0.5,
-        ease: 'easeOut'
+        ease: 'easeOut' as const
       },
     },
   };
 
   return (
     <motion.div
-      className="fixed inset-0 w-screen h-screen flex flex-col justify-center items-center bg-black z-[9999]"
+      className="fixed inset-0 w-screen h-screen flex flex-col justify-center items-center bg-obsidian z-[9999]"
       variants={containerVariants}
       initial="hidden"
       animate="visible"
@@ -83,7 +83,7 @@ const Loader = () => {
         scale: 1.05,
         transition: {
           duration: 0.6,
-          ease: 'easeOut'
+          ease: 'easeOut' as const
         }
       }}
     >
@@ -119,7 +119,7 @@ const Loader = () => {
           className="h-full bg-white rounded-sm absolute top-0 left-0"
           initial={{ width: 0 }}
           animate={{ width: `${progress}%` }}
-          transition={{ duration: 0.1, ease: 'easeOut' }}
+          transition={{ duration: 0.1, ease: 'easeOut' as const }}
         />
       </motion.div>
 

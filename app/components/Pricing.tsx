@@ -5,13 +5,13 @@ import AnimatedNumber from './AnimatedNumber';
 
 const CheckmarkIcon = () => (
   <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <path d="M5 13l4 4L19 7" stroke="#ff5000" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+    <path d="M5 13l4 4L19 7" stroke="#ddff00" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
   </svg>
 );
 
 const ProCheckmarkIcon = () => (
   <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <path d="M5 13l4 4L19 7" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+    <path d="M5 13l4 4L19 7" stroke="#859900" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
   </svg>
 );
 
@@ -72,20 +72,20 @@ const Pricing = () => {
   return (
     <section
       id="pricing"
-      className="text-center pt-16 px-4 md:px-8 bg-black"
+      className="text-center pt-16 px-4 md:px-8 bg-obsidian"
     >
       <h2 className="font-bold text-xl md:text-2xl mb-2 text-white uppercase">
         Pricing
       </h2>
-      <p className="font-bold text-3xl md:text-5xl mb-8 md:mb-12 text-orange-500 px-4">
-        Simple & <span className="text-orange-500">transparent.</span>
+      <p className="font-bold text-3xl md:text-5xl mb-8 md:mb-12 text-primary-500 px-4">
+        Simple & <span className="text-primary-500">transparent.</span>
       </p>
 
       <div className="flex justify-center mb-8 sm:mb-10 lg:mb-12">
         <div className="relative inline-flex bg-gray-900/80 backdrop-blur-sm rounded-full p-1 border border-gray-700/50 shadow-lg shadow-black/20">
           {/* Sliding background indicator */}
           <div
-            className={`absolute top-1 bottom-1 bg-gradient-to-r from-orange-500 to-orange-600 rounded-full transition-all duration-300 ease-in-out shadow-md shadow-orange-500/30 ${
+            className={`absolute top-1 bottom-1 bg-gradient-to-r from-primary-500 to-primary-600 rounded-full transition-all duration-300 ease-in-out shadow-md shadow-primary-500/30 ${
               activeService === "web"
                 ? "left-1 right-[50%]"
                 : "left-[50%] right-1"
@@ -95,7 +95,7 @@ const Pricing = () => {
           <button
             className={`relative z-10 px-6 sm:px-8 lg:px-10 py-3 sm:py-3.5 lg:py-4 border-none rounded-full bg-transparent font-semibold text-sm sm:text-base lg:text-lg cursor-pointer transition-all duration-300 ease-in-out min-w-[5rem] sm:min-w-[6rem] lg:min-w-[7rem] ${
               activeService === "web"
-                ? "text-white"
+                ? "text-black font-bold"
                 : "text-gray-300 hover:text-white"
             }`}
             onClick={() => setActiveService("web")}
@@ -106,13 +106,12 @@ const Pricing = () => {
           </button>
 
           <button
-            className={`relative z-10 px-6 sm:px-8 lg:px-10 py-3 sm:py-3.5 lg:py-4 border-none rounded-lg bg-transparent font-semibold text-sm sm:text-base lg:text-lg cursor-pointer transition-all duration-300 ease-in-out min-w-[5rem] sm:min-w-[6rem] lg:min-w-[7rem] ${
+            className={`relative z-10 px-6 sm:px-8 lg:px-10 py-3 sm:py-3.5 lg:py-4 border-none rounded-full bg-transparent font-semibold text-sm sm:text-base lg:text-lg cursor-pointer transition-all duration-300 ease-in-out min-w-[5rem] sm:min-w-[6rem] lg:min-w-[7rem] ${
               activeService === "mobile"
-                ? "text-white"
+                ? "text-black font-bold"
                 : "text-gray-300 hover:text-white"
             }`}
             onClick={() => setActiveService("mobile")}
-            aria-pressed={activeService === "mobile"}
             role="tab"
           >
             Mobile
@@ -124,32 +123,38 @@ const Pricing = () => {
         {currentPlans.slice(0, 2).map((plan) => (
           <div
             key={plan.name}
-            className={`border p-6 md:p-10 rounded-lg bg-black text-left flex flex-col transition-all duration-400 ease-in-out ${
+            className={`border p-6 md:p-10 rounded-lg bg-obsidian text-left flex flex-col transition-all duration-400 ease-in-out ${
               plan.type === "pro"
-                ? "bg-orange-500 text-white border-none"
+                ? "bg-primary-500 text-white border-none"
                 : plan.type === "essential"
-                ? "border-orange-500/50"
-                : "border-orange-500/30"
+                ? "border-primary-500/50"
+                : "border-primary-500/30"
             }`}
           >
             <h3
               className={`font-medium text-xl md:text-2xl mb-1 ${
-                plan.type === "pro" ? "text-white" : "text-orange-500"
+                plan.type === "pro" ? "text-black" : "text-primary-500"
               }`}
             >
               {plan.name}
             </h3>
-            <p className="text-white/70 text-xs mb-2 text-start">
+            <p className={`text-xs mb-2 text-start ${
+              plan.type === "pro" ? "text-black/70" : "text-white/70"
+            }`}>
               {plan.startingFrom}
             </p>
-            <div className="font-black text-3xl md:text-5xl mb-6 md:mb-8 text-white flex-grow flex items-center">
+            <div className={`font-black text-3xl md:text-5xl mb-6 md:mb-8 flex-grow flex items-center ${
+              plan.type === "pro" ? "text-black" : "text-white"
+            }`}>
               <AnimatedNumber value={plan.price} /> CHF
             </div>
             <ul className="list-none p-0 m-0">
               {plan.features.map((feature, i) => (
                 <li
                   key={i}
-                  className="mb-3 md:mb-4 flex items-center gap-2 text-white text-sm md:text-base"
+                  className={`mb-3 md:mb-4 flex items-center gap-2 text-sm md:text-base ${
+                    plan.type === "pro" ? "text-black" : "text-white"
+                  }`}
                 >
                   {plan.type === "pro" ? (
                     <ProCheckmarkIcon />
@@ -164,8 +169,8 @@ const Pricing = () => {
               href="#contact"
               className={`block w-full p-3 md:p-4 rounded-md border text-white font-bold text-sm md:text-base cursor-pointer text-center mt-auto transition-all duration-300 ease-in-out ${
                 plan.type === "pro"
-                  ? "bg-white text-orange-500"
-                  : "border-orange-500/30 bg-orange-500/10 hover:bg-orange-500 hover:border-orange-500"
+                  ? "bg-white text-primary-500"
+                  : "border-primary-500/30 bg-primary-500/10 hover:bg-primary-500 hover:border-primary-500"
               }`}
             >
               Start today
@@ -174,32 +179,38 @@ const Pricing = () => {
         ))}{" "}
         <div
           key={currentPlans[2].name}
-          className={`border p-6 md:p-10 rounded-lg bg-black text-left flex flex-col transition-all duration-400 ease-in-out ${
+          className={`border p-6 md:p-10 rounded-lg bg-obsidian text-left flex flex-col transition-all duration-400 ease-in-out ${
             currentPlans[2].type === "pro"
-              ? "bg-orange-500 text-white border-none"
+              ? "bg-primary-500 text-white border-none"
               : currentPlans[2].type === "essential"
-              ? "border-orange-500/50"
-              : "border-orange-500/30"
+              ? "border-primary-500/50"
+              : "border-primary-500/30"
           }`}
         >
           <h3
             className={`font-medium text-xl md:text-2xl mb-1 ${
-              currentPlans[2].type === "pro" ? "text-white" : "text-orange-500"
+              currentPlans[2].type === "pro" ? "text-black" : "text-primary-500"
             }`}
           >
             {currentPlans[2].name}
           </h3>
-          <p className="text-white/70 text-xs mb-2 text-start">
+          <p className={`text-xs mb-2 text-start ${
+            currentPlans[2].type === "pro" ? "text-black/70" : "text-white/70"
+          }`}>
             {currentPlans[2].startingFrom}
           </p>
-          <div className="font-black text-3xl md:text-5xl mb-6 md:mb-8 text-white flex-grow flex items-center">
+          <div className={`font-black text-3xl md:text-5xl mb-6 md:mb-8 flex-grow flex items-center ${
+            currentPlans[2].type === "pro" ? "text-black" : "text-white"
+          }`}>
             <AnimatedNumber value={currentPlans[2].price} /> CHF
           </div>
           <ul className="list-none p-0 m-0">
             {currentPlans[2].features.map((feature, i) => (
               <li
                 key={i}
-                className="mb-3 md:mb-4 flex items-center gap-2 text-white text-sm md:text-base"
+                className={`mb-3 md:mb-4 flex items-center gap-2 text-sm md:text-base ${
+                  currentPlans[2].type === "pro" ? "text-black" : "text-white"
+                }`}
               >
                 {currentPlans[2].type === "pro" ? (
                   <ProCheckmarkIcon />
@@ -214,17 +225,17 @@ const Pricing = () => {
             href="#contact"
             className={`block w-full p-3 md:p-4 rounded-md border text-black font-bold text-sm md:text-base cursor-pointer text-center mt-auto transition-all duration-300 ease-in-out ${
               currentPlans[2].type === "pro"
-                ? "bg-white text-orange-500"
-                : "border-orange-500/30 bg-orange-500/10 hover:bg-orange-500 hover:border-orange-500"
+                ? "bg-white text-primary-500"
+                : "border-primary-500/30 bg-primary-500/10 hover:bg-primary-500 hover:border-primary-500"
             }`}
           >
             Start today
           </Link>
         </div>
       </div>
-      <div className="flex flex-col md:flex-row justify-between items-start md:items-center max-w-6xl mx-auto mt-6 md:mt-8 p-4 md:p-6 border border-white/10 rounded-lg bg-black text-left gap-4 md:gap-0">
+      <div className="flex flex-col md:flex-row justify-between items-start md:items-center max-w-6xl mx-auto mt-6 md:mt-8 p-4 md:p-6 border border-white/10 rounded-lg bg-obsidian text-left gap-4 md:gap-0">
         <div className="text-left">
-          <h4 className="font-bold text-orange-500 text-xl mb-1">
+          <h4 className="font-bold text-primary-500 text-xl mb-1">
             Service & Maintenance
           </h4>
           <p className="text-white m-0">
@@ -237,7 +248,7 @@ const Pricing = () => {
           </p>
           <Link
             href="#contact"
-            className="block w-full md:w-auto p-3 md:p-4 rounded-md border border-orange-500/30 bg-orange-500/10 text-white font-bold text-sm md:text-base cursor-pointer text-center transition-all duration-300 ease-in-out hover:bg-orange-500 hover:border-orange-500"
+            className="block w-full md:w-auto p-3 md:p-4 rounded-md border border-primary-500/30 bg-primary-500/10 text-white font-bold text-sm md:text-base cursor-pointer text-center transition-all duration-300 ease-in-out hover:bg-primary-500 hover:border-primary-500"
           >
             Start today
           </Link>
