@@ -123,26 +123,7 @@ const Loader = () => {
         />
       </motion.div>
 
-      <motion.div
-        className="flex gap-2 mt-4"
-        variants={progressVariants}
-      >
-        {[0, 1, 2].map((index) => (
-          <motion.div
-            key={index}
-            className={`w-2 h-2 rounded-full ${progress > (index + 1) * 30 ? 'bg-white' : 'bg-white/30'}`}
-            animate={{
-              scale: progress > (index + 1) * 30 ? [1, 1.2, 1] : 1,
-              opacity: progress > (index + 1) * 30 ? [0.7, 1, 0.7] : 0.3,
-            }}
-            transition={{
-              duration: 1,
-              repeat: progress > (index + 1) * 30 ? Infinity : 0,
-              ease: 'easeInOut',
-            }}
-          />
-        ))}
-      </motion.div>
+
     </motion.div>
   );
 };

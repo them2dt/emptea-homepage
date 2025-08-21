@@ -11,7 +11,7 @@ const CheckmarkIcon = () => (
 
 const ProCheckmarkIcon = () => (
   <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <path d="M5 13l4 4L19 7" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-accent" />
+    <path d="M5 13l4 4L19 7" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-black/70" />
   </svg>
 );
 
@@ -193,10 +193,10 @@ Best regards,
             </ul>
             <a
               href={generatePackageEmail(plan.name, plan.type, plan.price, activeService)}
-              className={`block w-full p-3 md:p-4 rounded-md border text-white font-bold text-sm md:text-base cursor-pointer text-center mt-auto transition-all duration-300 ease-in-out ${
+                                className={`block w-full p-3 md:p-4 rounded-md border font-bold text-sm md:text-base cursor-pointer text-center mt-auto transition-all duration-300 ease-in-out ${
                 plan.type === "pro"
                   ? "bg-white text-accent-foreground"
-                  : "border-accent/30 bg-accent/10 hover:bg-accent hover:border-accent"
+                  : "border-none bg-accent text-black hover:bg-accent/90"
               }`}
             >
               Start today
@@ -252,7 +252,7 @@ Best regards,
             className={`block w-full p-3 md:p-4 rounded-md border text-black font-bold text-sm md:text-base cursor-pointer text-center mt-auto transition-all duration-300 ease-in-out ${
               currentPlans[2].type === "pro"
                 ? "bg-white text-accent-foreground"
-                : "border-accent/30 bg-accent/10 hover:bg-accent hover:border-accent"
+                : "border-none bg-accent text-black hover:bg-accent/90"
             }`}
           >
             Start today
@@ -285,7 +285,7 @@ Please provide more information about what's included and how to get started.
 
 Best regards,
 [Your Name]`)}`}
-            className="block w-full md:w-auto p-3 md:p-4 rounded-md border border-accent/30 bg-accent/10 text-white font-bold text-sm md:text-base cursor-pointer text-center transition-all duration-300 ease-in-out hover:bg-accent hover:border-accent"
+            className="block w-full md:w-auto p-3 md:p-4 rounded-md border-none bg-accent text-accent-foreground font-bold text-sm md:text-base cursor-pointer text-center transition-all duration-300 ease-in-out hover:bg-accent/90"
           >
             Start today
           </a>

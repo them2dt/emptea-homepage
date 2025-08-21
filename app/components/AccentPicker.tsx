@@ -93,14 +93,14 @@ export default function AccentPicker() {
             key={color.name}
             onClick={() => updateAccentColor(color)}
             onKeyDown={(e) => handleKeyDown(e, color)}
-            className="relative w-12 h-12 rounded-full transition-all duration-200 hover:scale-110 focus:outline-none focus:ring-2 focus:ring-accent focus:ring-offset-2 focus:ring-offset-obsidian group"
+            className="relative w-12 h-12 rounded-full transition-all duration-200 hover:scale-110 focus:outline-none group"
             style={{ backgroundColor: color.hex }}
             aria-label={`Set accent to ${color.name}`}
             title={color.name}
           >
             {/* Selected indicator */}
             {selectedColor.name === color.name && (
-              <div className="absolute inset-0 rounded-full border-3 border-black shadow-lg" />
+              <div className="absolute inset-0 rounded-full border-3 border-white/50 shadow-lg" />
             )}
             
             {/* Inner circle for depth effect */}

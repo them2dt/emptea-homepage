@@ -33,6 +33,20 @@ const Footer = () => {
               </li>
             </ul>
           </div>
+          
+          {/* Social Media Links */}
+          <div className="flex items-center">
+            <a 
+              href="https://instagram.com/empteastudios" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="text-white no-underline transition-colors duration-300 ease-in-out hover:text-accent text-sm focus:outline-none focus:ring-2 focus:ring-primary-500/50 focus:ring-offset-2 focus:ring-offset-obsidian rounded-sm"
+              aria-label="Follow us on Instagram"
+            >
+              Instagram
+            </a>
+          </div>
+          
           <div className="text-center md:text-right font-bold text-white text-base md:text-lg">
             <h4>EMPTEA STUDIOS®</h4>
           </div>
