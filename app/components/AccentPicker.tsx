@@ -85,7 +85,7 @@ export default function AccentPicker() {
   };
 
   return (
-    <div className="fixed bottom-6 left-6 z-50">
+    <div className="fixed bottom-6 left-1/2 -translate-x-1/2 md:left-6 md:translate-x-0 z-50">
       {/* Pill-shaped color picker container */}
       <div className="flex items-center gap-1 p-2 bg-obsidian/95 backdrop-blur-md rounded-full shadow-2xl border border-gray-700/50 shadow-black/30">
         {colorPalette.map((color) => (
