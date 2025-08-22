@@ -50,22 +50,22 @@ Best regards,
       {
         name: 'Basic',
         price: 499,
-        startingFrom: 'Starting from',
-        features: ['up to 2 weeks', 'basic website with core features', 'responsive design', 'ideal for start-ups, test launches'],
+        startingFrom: 'Ab',
+        features: ['bis zu 2 Wochen', 'grundlegende Website mit Kernfunktionen', 'responsives Design', 'ideal für Start-ups, Test-Launches'],
         type: 'basic',
       },
       {
         name: 'Essential',
         price: 1299,
-        startingFrom: 'Starting from',
-        features: ['up to 4 weeks', 'featured website with essentials', 'advanced functionality', 'ideal for smaller companies'],
+        startingFrom: 'Ab',
+        features: ['bis zu 4 Wochen', 'erweiterte Website mit Essentials', 'fortgeschrittene Funktionalität', 'ideal für kleinere Unternehmen'],
         type: 'essential',
       },
       {
         name: 'Pro',
         price: 2499,
-        startingFrom: 'Starting from',
-        features: ['up to 8 weeks', 'Full-stack web application', 'Brand guidelines', 'complete solution with all-inclusive', 'Unlimited support'],
+        startingFrom: 'Ab',
+        features: ['bis zu 8 Wochen', 'Full-Stack Web-Anwendung', 'Brand-Richtlinien', 'komplette All-inclusive-Lösung', 'Unbegrenzter Support'],
         type: 'pro',
       },
     ],
@@ -73,22 +73,22 @@ Best regards,
       {
         name: 'Basic',
         price: 799,
-        startingFrom: 'Starting from',
-        features: ['up to 3 weeks', 'basic mobile app with core features', 'iOS & Android compatible', 'ideal for start-ups, MVP launches'],
+        startingFrom: 'Ab',
+        features: ['bis zu 3 Wochen', 'grundlegende Mobile App mit Kernfunktionen', 'iOS & Android kompatibel', 'ideal für Start-ups, MVP-Launches'],
         type: 'basic',
       },
       {
         name: 'Essential',
         price: 1599,
-        startingFrom: 'Starting from',
-        features: ['up to 6 weeks', 'featured mobile app with essentials', 'backend integration', 'ideal for growing companies'],
+        startingFrom: 'Ab',
+        features: ['bis zu 6 Wochen', 'erweiterte Mobile App mit Essentials', 'Backend-Integration', 'ideal für wachsende Unternehmen'],
         type: 'essential',
       },
       {
         name: 'Pro',
         price: 2999,
-        startingFrom: 'Starting from',
-        features: ['up to 10 weeks', 'Full native mobile apps', 'Backend & API development', 'complete solution with all-inclusive', 'Unlimited support'],
+        startingFrom: 'Ab',
+        features: ['bis zu 10 Wochen', 'Vollständige native Mobile Apps', 'Backend & API-Entwicklung', 'komplette All-inclusive-Lösung', 'Unbegrenzter Support'],
         type: 'pro',
       },
     ]
@@ -102,10 +102,10 @@ Best regards,
       className="text-center pt-16 px-4 md:px-8 bg-obsidian"
     >
       <h2 className="font-bold text-xl md:text-2xl mb-2 text-white uppercase">
-        Pricing
+        Preise
       </h2>
       <p className="font-bold text-3xl md:text-5xl mb-8 md:mb-12 text-accent px-4">
-        Simple & <span className="text-accent">transparent.</span>
+        Einfach & <span className="text-accent">transparent.</span>
       </p>
 
       <div className="flex justify-center mb-8 sm:mb-10 lg:mb-12">
@@ -199,7 +199,7 @@ Best regards,
                   : "border-none bg-accent text-black hover:bg-accent/90"
               }`}
             >
-              Start today
+              Jetzt starten
             </a>
           </div>
         ))}{" "}
@@ -255,39 +255,39 @@ Best regards,
                 : "border-none bg-accent text-black hover:bg-accent/90"
             }`}
           >
-            Start today
+            Jetzt starten
           </a>
         </div>
       </div>
       <div className="flex flex-col md:flex-row justify-between items-start md:items-center max-w-6xl mx-auto mt-6 md:mt-8 p-4 md:p-6 border border-white/10 rounded-lg bg-obsidian text-left gap-4 md:gap-0">
         <div className="text-left">
           <h4 className="font-bold text-accent text-xl mb-1">
-            Service & Maintenance
+            Service & Wartung
           </h4>
           <p className="text-white m-0">
-            We&apos;ll take care of everything to keep your app up-to-date.
+            Wir kümmern uns um alles, um Ihre App auf dem neuesten Stand zu halten.
           </p>
         </div>
         <div className="flex flex-col md:flex-row items-start md:items-center gap-4 md:gap-6">
           <p className="font-black text-xl md:text-2xl leading-none text-white hidden md:block">
-            199 CHF/month
+            199 CHF/Monat
           </p>
           <a
-            href={`mailto:contact@emptea.xyz?subject=${encodeURIComponent('Service & Maintenance Inquiry')}&body=${encodeURIComponent(`Hi EMPTEA Studios,
+            href={`mailto:contact@emptea.xyz?subject=${encodeURIComponent('Anfrage für Service & Wartung')}&body=${encodeURIComponent(`Hallo EMPTEA Studios,
 
-I'm interested in your Service & Maintenance package.
+ich interessiere mich für Ihr Service & Wartung Paket.
 
-Package Details:
-- Service: Monthly maintenance and support
-- Price: 199 CHF/month
+Paket-Details:
+- Service: Monatliche Wartung und Support
+- Preis: 199 CHF/Monat
 
-Please provide more information about what's included and how to get started.
+Bitte stellen Sie mir mehr Informationen über das Inklusive und die nächsten Schritte zur Verfügung.
 
-Best regards,
-[Your Name]`)}`}
+Mit freundlichen Grüßen,
+[Ihr Name]`)}`}
             className="block w-full md:w-auto p-3 md:p-4 rounded-md border-none bg-accent text-accent-foreground font-bold text-sm md:text-base cursor-pointer text-center transition-all duration-300 ease-in-out hover:bg-accent/90"
           >
-            Start today
+            Jetzt starten
           </a>
         </div>
       </div>

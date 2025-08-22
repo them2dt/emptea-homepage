@@ -54,13 +54,13 @@ const Navbar = () => {
           </div>
           <div className="hidden lg:flex items-center gap-8 xl:gap-12">
             <div className="flex gap-6 xl:gap-8 font-medium">
-              <Link href="#services" className="text-white transition-all duration-300 ease-in-out text-sm xl:text-base relative hover:text-accent hover:-translate-y-px after:content-[''] after:absolute after:-bottom-1 after:left-0 after:w-0 after:h-0.5 after:bg-accent after:transition-all after:duration-300 after:ease-in-out hover:after:w-full focus:outline-none focus:ring-2 focus:ring-accent focus:ring-offset-2 focus:ring-offset-obsidian rounded-sm">Services</Link>
-              <Link href="#pricing" className="text-white transition-all duration-300 ease-in-out text-sm xl:text-base relative hover:text-accent hover:-translate-y-px after:content-[''] after:absolute after:-bottom-1 after:left-0 after:w-0 after:h-0.5 after:bg-accent after:transition-all after:duration-300 after:ease-in-out hover:after:w-full focus:outline-none focus:ring-2 focus:ring-accent focus:ring-offset-2 focus:ring-offset-obsidian rounded-sm">Pricing</Link>
-              <Link href="#testimonials" className="text-white transition-all duration-300 ease-in-out text-sm xl:text-base relative hover:text-accent hover:-translate-y-px after:content-[''] after:absolute after:-bottom-1 after:left-0 after:w-0 after:h-0.5 after:bg-accent after:transition-all after:duration-300 after:ease-in-out hover:after:w-full focus:outline-none focus:ring-2 focus:ring-accent focus:ring-offset-2 focus:ring-offset-obsidian rounded-sm">Testimonials</Link>
-              <Link href="#faq" className="text-white transition-all duration-300 ease-in-out text-sm xl:text-base relative hover:text-accent hover:-translate-y-px after:content-[''] after:absolute after:-bottom-1 after:left-0 after:w-0 after:h-0.5 after:bg-accent after:transition-all after:duration-300 after:ease-in-out hover:after:w-full focus:outline-none focus:ring-2 focus:ring-accent focus:ring-offset-2 focus:ring-offset-obsidian rounded-sm">FAQ</Link>
+                          <Link href="#services" className="text-white transition-all duration-300 ease-in-out text-sm xl:text-base relative hover:text-accent hover:-translate-y-px after:content-[''] after:absolute after:-bottom-1 after:left-0 after:w-0 after:h-0.5 after:bg-accent after:transition-all after:duration-300 after:ease-in-out hover:after:w-full focus:outline-none focus:ring-2 focus:ring-accent focus:ring-offset-2 focus:ring-offset-obsidian rounded-sm">Dienstleistungen</Link>
+            <Link href="#pricing" className="text-white transition-all duration-300 ease-in-out text-sm xl:text-base relative hover:text-accent hover:-translate-y-px after:content-[''] after:absolute after:-bottom-1 after:left-0 after:w-0 after:h-0.5 after:bg-accent after:transition-all after:duration-300 after:ease-in-out hover:after:w-full focus:outline-none focus:ring-2 focus:ring-accent focus:ring-offset-2 focus:ring-offset-obsidian rounded-sm">Preise</Link>
+            <Link href="#testimonials" className="text-white transition-all duration-300 ease-in-out text-sm xl:text-base relative hover:text-accent hover:-translate-y-px after:content-[''] after:absolute after:-bottom-1 after:left-0 after:w-0 after:h-0.5 after:bg-accent after:transition-all after:duration-300 after:ease-in-out hover:after:w-full focus:outline-none focus:ring-2 focus:ring-accent focus:ring-offset-2 focus:ring-offset-obsidian rounded-sm">Referenzen</Link>
+            <Link href="#faq" className="text-white transition-all duration-300 ease-in-out text-sm xl:text-base relative hover:text-accent hover:-translate-y-px after:content-[''] after:absolute after:-bottom-1 after:left-0 after:w-0 after:h-0.5 after:bg-accent after:transition-all after:duration-300 after:ease-in-out hover:after:w-full focus:outline-none focus:ring-2 focus:ring-accent focus:ring-offset-2 focus:ring-offset-obsidian rounded-sm">FAQ</Link>
             </div>
             <Link href="#contact" className="inline-flex items-center justify-center font-bold bg-accent text-accent-foreground border border-accent px-4 xl:px-6 py-2 xl:py-3 rounded-full text-sm xl:text-base cursor-pointer transition-all duration-300 ease-in-out hover:opacity-90 hover:-translate-y-px hover:shadow-lg hover:shadow-accent/25 focus:outline-none focus:ring-2 focus:ring-accent focus:ring-offset-2 focus:ring-offset-obsidian">
-              Get started
+              Loslegen
             </Link>
           </div>
         </nav>
@@ -100,7 +100,7 @@ const Navbar = () => {
                 onClick={toggleMobileNav} 
                 className="font-bold text-2xl sm:text-3xl text-white transition-all duration-300 ease-in-out hover:text-accent hover:-translate-y-0.5 focus:outline-none focus:ring-2 focus:ring-accent focus:ring-offset-2 focus:ring-offset-obsidian rounded-sm"
               >
-                Services
+                Dienstleistungen
               </Link>
             </motion.div>
             <motion.div variants={menuItemVariants}>
@@ -109,7 +109,7 @@ const Navbar = () => {
                 onClick={toggleMobileNav} 
                 className="font-bold text-2xl sm:text-3xl text-white transition-all duration-300 ease-in-out hover:text-accent hover:-translate-y-0.5 focus:outline-none focus:ring-2 focus:ring-accent focus:ring-offset-2 focus:ring-offset-obsidian rounded-sm"
               >
-                Pricing
+                Preise
               </Link>
             </motion.div>
             <motion.div variants={menuItemVariants}>
@@ -118,7 +118,7 @@ const Navbar = () => {
                 onClick={toggleMobileNav} 
                 className="font-bold text-2xl sm:text-3xl text-white transition-all duration-300 ease-in-out hover:text-accent hover:-translate-y-0.5 focus:outline-none focus:ring-2 focus:ring-accent focus:ring-offset-2 focus:ring-offset-obsidian rounded-sm"
               >
-                Testimonials
+                Referenzen
               </Link>
             </motion.div>
             <motion.div variants={menuItemVariants}>
@@ -136,7 +136,7 @@ const Navbar = () => {
                 className="inline-flex items-center justify-center text-xl sm:text-2xl text-black mt-4 px-6 sm:px-8 py-3 sm:py-4 border-2 border-black rounded-lg bg-accent transition-all duration-300 ease-in-out hover:bg-accent/90 hover:-translate-y-0.5 hover:shadow-lg hover:shadow-accent/25 focus:outline-none focus:ring-2 focus:ring-accent focus:ring-offset-2 focus:ring-offset-obsidian" 
                 onClick={toggleMobileNav}
               >
-                Get started
+                Loslegen
               </Link>
             </motion.div>
           </motion.div>

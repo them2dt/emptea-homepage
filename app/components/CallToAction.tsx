@@ -25,7 +25,7 @@ const CallToAction = () => {
   return (
     <section id="contact" className="py-12 md:py-16 px-4 md:px-6 text-center bg-obsidian relative">
       <div className="max-w-4xl mx-auto">
-        <h2 className="font-bold text-lg md:text-xl mb-2 text-white uppercase tracking-wide">Contact</h2>
+        <h2 className="font-bold text-lg md:text-xl mb-2 text-white uppercase tracking-wide">Kontakt</h2>
         <motion.div
           className="font-bold text-2xl md:text-3xl lg:text-4xl leading-tight text-white relative z-10"
           initial={{ opacity: 0, y: 20 }}
@@ -33,7 +33,7 @@ const CallToAction = () => {
           transition={{ duration: 0.5 }}
           viewport={{ once: true }}
         >
-          Send us an email at{' '}
+          Schreiben Sie uns eine E-Mail an{' '}
           <motion.a
             href="mailto:contact@emptea.xyz"
             className="inline-block text-accent no-underline cursor-pointer transition-all duration-300 ease-in-out relative hover:text-accent/80"

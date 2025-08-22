@@ -79,11 +79,11 @@ const Loader = () => {
       initial="hidden"
       animate="visible"
       exit={{
+        y: -100,
         opacity: 0,
-        scale: 1.05,
         transition: {
-          duration: 0.6,
-          ease: 'easeOut' as const
+          duration: 0.8,
+          ease: 'easeInOut' as const
         }
       }}
     >

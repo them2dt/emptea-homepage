@@ -3,23 +3,23 @@ import { Headset, Lightning, Target, MapPin } from '@phosphor-icons/react';
 const Features = () => {
   const features = [
     {
-      title: 'Direct communication',
-      description: 'No middleman. We work closely with our clients to ensure an amazing product you\'ll be happy to pay for.',
+      title: 'Direkte Kommunikation',
+      description: 'Keine Zwischenhändler. Wir arbeiten eng mit unseren Kunden zusammen, um ein erstaunliches Produkt zu schaffen, für das Sie gerne bezahlen werden.',
       icon: <Headset size={80} className="text-accent" weight="duotone" />
     },
     {
-      title: 'Fast iteration.',
-      description: 'You\'ll get your own team of engineers, so no time will be wasted with waiting.',
+      title: 'Schnelle Iteration.',
+      description: 'Sie bekommen Ihr eigenes Team von Ingenieuren, sodass keine Zeit mit Warten verschwendet wird.',
       icon: <Lightning size={80} className="text-accent" weight="duotone" />
     },
     {
-      title: 'Locked in.',
-      description: 'Your team will focus only on your project to get a tunnel vision, ensuring 100% attention for your needs.',
+      title: 'Fokussiert.',
+      description: 'Ihr Team konzentriert sich ausschließlich auf Ihr Projekt, um einen Tunnelblick zu bekommen und 100% Aufmerksamkeit für Ihre Bedürfnisse zu gewährleisten.',
       icon: <Target size={80} className="text-accent" weight="duotone" />
     },
     {
-      title: 'Made in Zurich.',
-      description: 'Located in the heart of Switzerland\'s financial and innovation hub, providing reliable, high-quality development services with Swiss precision.',
+      title: 'Made in Zürich.',
+      description: 'Angesiedelt im Herzen der Schweizer Finanz- und Innovationsdrehscheibe, bieten wir zuverlässige, hochwertige Entwicklungsdienstleistungen mit Schweizer Präzision.',
       icon: <MapPin size={80} className="text-accent" weight="duotone" />
     },
   ];

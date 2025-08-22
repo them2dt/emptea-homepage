@@ -29,21 +29,21 @@ const CustomPricing = () => {
   const [weeks, setWeeks] = useState(4);
 
   const webFeatureOptions = [
-    { key: 'responsiveDesign', label: 'Responsive Design' },
-    { key: 'seoOptimization', label: 'SEO Optimization' },
+    { key: 'responsiveDesign', label: 'Responsives Design' },
+    { key: 'seoOptimization', label: 'SEO-Optimierung' },
     { key: 'contentManagement', label: 'Content Management System' },
-    { key: 'ecommerce', label: 'E-commerce Functionality' },
-    { key: 'userAuthentication', label: 'User Authentication' },
-    { key: 'apiIntegration', label: 'API Integration' },
-    { key: 'analytics', label: 'Analytics & Reporting' },
+    { key: 'ecommerce', label: 'E-Commerce-Funktionalität' },
+    { key: 'userAuthentication', label: 'Benutzerauthentifizierung' },
+    { key: 'apiIntegration', label: 'API-Integration' },
+    { key: 'analytics', label: 'Analytics & Berichterstattung' },
   ];
 
   const mobileFeatureOptions = [
-    { key: 'responsiveDesign', label: 'Responsive Design' },
-    { key: 'userAuthentication', label: 'User Authentication' },
-    { key: 'apiIntegration', label: 'API Integration' },
-    { key: 'analytics', label: 'Analytics & Reporting' },
-    { key: 'crossPlatform', label: 'Cross-platform Development' },
+    { key: 'responsiveDesign', label: 'Responsives Design' },
+    { key: 'userAuthentication', label: 'Benutzerauthentifizierung' },
+    { key: 'apiIntegration', label: 'API-Integration' },
+    { key: 'analytics', label: 'Analytics & Berichterstattung' },
+    { key: 'crossPlatform', label: 'Cross-Platform-Entwicklung' },
   ];
 
   const toggleSection = (section: 'web' | 'mobile') => {
@@ -76,24 +76,21 @@ const CustomPricing = () => {
 
   return (
     <section className="px-4 md:px-6">
-      <div className="flex flex-col md:flex-row justify-between items-start md:items-center max-w-5xl mx-auto mt-6 md:mt-8 p-4 md:p-6 border-none rounded-lg bg-accent text-accent-foreground text-left gap-4 md:gap-0 mb-16">
+            <div className="flex flex-col md:flex-row justify-between items-start md:items-center max-w-6xl mx-auto mt-6 md:mt-8 p-4 md:p-6 border border-white/10 rounded-lg bg-obsidian text-left gap-4 md:gap-0">
         <div className="text-left">
-          <h4 className="font-bold text-black text-xl mb-1">
-            Custom Plan
+          <h4 className="font-bold text-accent text-xl mb-1">
+            Individueller Plan
           </h4>
-          <p className="text-black/70 m-0">
-            Need something specific? Let&apos;s build a plan tailored to your exact needs.
+          <p className="text-white m-0">
+            Brauchen Sie etwas Spezifisches? Lassen Sie uns einen Plan erstellen, der auf Ihre genauen Bedürfnisse zugeschnitten ist.
           </p>
         </div>
         <div className="flex flex-col md:flex-row items-start md:items-center gap-4 md:gap-6">
-          <p className="font-black text-xl md:text-2xl leading-none text-black hidden md:block">
-            Custom pricing
-          </p>
           <button 
             onClick={() => setIsModalOpen(true)} 
-            className="inline-flex items-center justify-center w-full md:w-auto px-4 md:px-6 py-2.5 md:py-3 rounded-md border border-black bg-white text-black font-bold text-sm md:text-base cursor-pointer text-center transition-all duration-300 ease-in-out hover:bg-white/90 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-accent"
+            className="block w-full md:w-auto p-3 md:p-4 rounded-md border-none bg-accent text-accent-foreground font-bold text-sm md:text-base cursor-pointer text-center transition-all duration-300 ease-in-out hover:bg-accent/90"
           >
-            Build Plan
+            Plan starten
           </button>
         </div>
       </div>
@@ -116,7 +113,7 @@ const CustomPricing = () => {
               onClick={(e) => e.stopPropagation()}
             >
               <div className="flex justify-between items-center py-4 md:py-6 px-5 md:px-8 border-b border-black/20 bg-gradient-to-r from-black/10 to-black/5">
-                <h3 className="font-bold text-lg md:text-2xl text-black">Build Your Custom Plan</h3>
+                <h3 className="font-bold text-lg md:text-2xl text-black">Erstellen Sie Ihren individuellen Plan</h3>
                 <button 
                   onClick={() => setIsModalOpen(false)} 
                   className="bg-transparent border-none text-black text-xl md:text-2xl cursor-pointer hover:text-black/70 transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-black focus:ring-offset-2 focus:ring-offset-accent rounded-sm p-1"
@@ -129,7 +126,7 @@ const CustomPricing = () => {
                 <div className="flex flex-col gap-4">
                   <div>
                     <button className="flex justify-between items-center w-full p-3 bg-gradient-to-r from-black/10 to-black/5 rounded-lg border border-black/20 cursor-pointer hover:bg-gradient-to-r hover:from-black/15 hover:to-black/10 transition-all duration-200" onClick={() => toggleSection('web')}>
-                      <label className="text-lg font-bold text-black">Web Development Features</label>
+                      <label className="text-lg font-bold text-black">Web-Entwicklungsfunktionen</label>
                       <CaretDown size={20} weight="bold" className={`text-black transition-transform duration-300 ease-in-out ${openSections.web ? 'rotate-180' : ''}`} />
                     </button>
                     <AnimatePresence initial={false}>
@@ -168,7 +165,7 @@ const CustomPricing = () => {
 
                   <div>
                     <button className="flex justify-between items-center w-full p-3 bg-gradient-to-r from-black/10 to-black/5 rounded-lg border border-black/20 cursor-pointer hover:bg-gradient-to-r hover:from-black/15 hover:to-black/10 transition-all duration-200" onClick={() => toggleSection('mobile')}>
-                      <label className="text-lg font-bold text-black">Mobile Development Features</label>
+                      <label className="text-lg font-bold text-black">Mobile-Entwicklungsfunktionen</label>
                       <CaretDown size={20} weight="bold" className={`text-black transition-transform duration-300 ease-in-out ${openSections.mobile ? 'rotate-180' : ''}`} />
                     </button>
                     <AnimatePresence initial={false}>
@@ -207,7 +204,7 @@ const CustomPricing = () => {
                 </div>
 
                 <div className="pt-8 border-t border-black/20 mt-4">
-                  <label htmlFor="weeks" className="pb-4 mb-4 text-black font-bold block text-center">How many weeks will your project take?</label>
+                  <label htmlFor="weeks" className="pb-4 mb-4 text-black font-bold block text-center">Wie viele Wochen wird Ihr Projekt dauern?</label>
                   <div className="flex items-center gap-6 w-full">
                     <input
                       type="range"
@@ -219,53 +216,53 @@ const CustomPricing = () => {
                       onChange={(e) => setWeeks(Number(e.target.value))}
                       className="w-full h-2 bg-black/30 rounded-lg appearance-none cursor-pointer [&::-webkit-slider-thumb]:appearance-none [&::-webkit-slider-thumb]:w-6 [&::-webkit-slider-thumb]:h-6 [&::-webkit-slider-thumb]:rounded-full [&::-webkit-slider-thumb]:bg-black [&::-webkit-slider-thumb]:cursor-pointer [&::-webkit-slider-thumb]:shadow-lg [&::-moz-range-thumb]:appearance-none [&::-moz-range-thumb]:w-6 [&::-moz-range-thumb]:h-6 [&::-moz-range-thumb]:rounded-full [&::-moz-range-thumb]:bg-black [&::-moz-range-thumb]:cursor-pointer [&::-moz-range-thumb]:border-none"
                     />
-                    <span className="font-bold text-black text-lg min-w-[100px] text-center">{weeks} week{weeks > 1 ? 's' : ''}</span>
+                    <span className="font-bold text-black text-lg min-w-[100px] text-center">{weeks} Woche{weeks > 1 ? 'n' : ''}</span>
                   </div>
                 </div>
               </div>
 
-              <div className="flex flex-col md:flex-row justify-between items-start md:items-center p-4 md:p-5 border-t border-black/20 gap-3 md:gap-0 bg-gradient-to-r from-black/10 to-black/5">
-                <div className="flex flex-col items-start justify-center">
-                  <p className="mb-1 text-black/70 text-xs md:text-sm">Starting from</p>
-                  <span className="font-bold text-xl md:text-2xl text-black"><AnimatedNumber value={startingPrice} /> CHF</span>
-                </div>
-                <a 
-                  href={`mailto:contact@emptea.xyz?subject=${encodeURIComponent('Custom Plan Quote Request')}&body=${encodeURIComponent(`Hi EMPTEA Studios,
+                              <div className="flex flex-col md:flex-row justify-between items-start md:items-center p-4 md:p-5 border-t border-black/20 gap-3 md:gap-0 bg-gradient-to-r from-black/10 to-black/5">
+                  <div className="flex flex-col items-start justify-center">
+                    <p className="mb-1 text-black/70 text-xs md:text-sm">Ab</p>
+                    <span className="font-bold text-xl md:text-2xl text-black"><AnimatedNumber value={startingPrice} /> CHF</span>
+                  </div>
+                  <a 
+                    href={`mailto:contact@emptea.xyz?subject=${encodeURIComponent('Anfrage für individuellen Plan')}&body=${encodeURIComponent(`Hallo EMPTEA Studios,
 
-I'm interested in a custom development plan.
+ich interessiere mich für einen individuellen Entwicklungsplan.
 
-Custom Plan Details:
-- Estimated Duration: ${weeks} week${weeks > 1 ? 's' : ''}
-- Estimated Price: Starting from ${startingPrice} CHF
+Details des individuellen Plans:
+- Geschätzte Dauer: ${weeks} Woche${weeks > 1 ? 'n' : ''}
+- Geschätzter Preis: Ab ${startingPrice} CHF
 
-Selected Features:
+Ausgewählte Funktionen:
 ${Object.entries(features)
   .filter(([_, hasFeature]) => hasFeature)
   .map(([key, _]) => {
     const featureMap: { [key: string]: string } = {
-      responsiveDesign: 'Responsive Design',
-      seoOptimization: 'SEO Optimization', 
+      responsiveDesign: 'Responsives Design',
+      seoOptimization: 'SEO-Optimierung', 
       contentManagement: 'Content Management System',
-      ecommerce: 'E-commerce Functionality',
-      userAuthentication: 'User Authentication',
-      apiIntegration: 'API Integration',
-      analytics: 'Analytics & Reporting',
-      crossPlatform: 'Cross-platform Development'
+      ecommerce: 'E-Commerce-Funktionalität',
+      userAuthentication: 'Benutzerauthentifizierung',
+      apiIntegration: 'API-Integration',
+      analytics: 'Analytics & Berichterstattung',
+      crossPlatform: 'Cross-Platform-Entwicklung'
     };
     return `- ${featureMap[key] || key}`;
   })
   .join('\n')}
 
-Please provide a detailed quote and next steps.
+Bitte stellen Sie mir ein detailliertes Angebot und die nächsten Schritte zur Verfügung.
 
-Best regards,
-[Your Name]`)}`}
-                  className="inline-flex items-center justify-center w-full md:w-auto px-4 md:px-6 py-2.5 md:py-3 rounded-md border-none bg-white text-black font-bold text-sm md:text-base cursor-pointer text-center transition-all duration-300 ease-in-out hover:bg-white/90 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-accent" 
-                  onClick={() => setIsModalOpen(false)}
-                >
-                  Get Quote
-                </a>
-              </div>
+Mit freundlichen Grüßen,
+[Ihr Name]`)}`}
+                    className="inline-flex items-center justify-center w-full md:w-auto px-4 md:px-6 py-2.5 md:py-3 rounded-md border-none bg-white text-black font-bold text-sm md:text-base cursor-pointer text-center transition-all duration-300 ease-in-out hover:bg-white/90 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-accent" 
+                    onClick={() => setIsModalOpen(false)}
+                  >
+                    Angebot anfordern
+                  </a>
+                </div>
             </motion.div>
           </motion.div>
         )}

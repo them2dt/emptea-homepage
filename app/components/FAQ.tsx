@@ -7,20 +7,20 @@ const FAQ = () => {
 
   const faqs = [
     {
-      question: 'What makes your agency different from other agencies?',
-      answer: 'Unlike other companies, we choose our clients carefully, so our teams can work in best interest for the clients.',
+      question: 'Was macht Ihre Agentur anders als andere Agenturen?',
+      answer: 'Im Gegensatz zu anderen Unternehmen wählen wir unsere Kunden sorgfältig aus, damit unsere Teams im besten Interesse der Kunden arbeiten können.',
     },
     {
-      question: "What's your WiFi-Password?",
-      answer: "That's a secret we can't share! But we can offer you some great coffee while you're here.",
+      question: "Wie lautet Ihr WiFi-Passwort?",
+      answer: "Das ist ein Geheimnis, das wir nicht teilen können! Aber wir können Ihnen einen tollen Kaffee anbieten, während Sie hier sind.",
     },
     {
-      question: 'Do you offer post-launch support and maintenance?',
-      answer: 'Yes! We offer a comprehensive service and maintenance plan to ensure your application stays up-to-date, secure, and running smoothly.',
+      question: 'Bieten Sie Post-Launch-Support und Wartung an?',
+      answer: 'Ja! Wir bieten einen umfassenden Service- und Wartungsplan, um sicherzustellen, dass Ihre Anwendung auf dem neuesten Stand, sicher und reibungslos läuft.',
     },
     {
-      question: 'Can you work with our existing designs or codebase?',
-      answer: 'Absolutely. We\'re happy to work with your existing assets to improve and build upon them.',
+      question: 'Können Sie mit unseren bestehenden Designs oder Codebase arbeiten?',
+      answer: 'Absolut. Wir arbeiten gerne mit Ihren bestehenden Assets, um sie zu verbessern und darauf aufzubauen.',
     },
   ];
 
@@ -46,7 +46,7 @@ const FAQ = () => {
       <div className="w-full max-w-4xl">
         <div className="text-center mb-6 md:mb-8">
           <h2 className="font-bold text-lg md:text-xl mb-2 text-white uppercase tracking-wide">FAQ</h2>
-          <p className="font-bold text-2xl md:text-3xl lg:text-4xl text-accent leading-tight">Frequently Asked Questions</p>
+          <p className="font-bold text-2xl md:text-3xl lg:text-4xl text-accent leading-tight">Häufig gestellte Fragen</p>
         </div>
         
         <div className="max-w-2xl mx-auto">

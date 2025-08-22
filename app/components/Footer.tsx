@@ -12,7 +12,7 @@ const Footer = () => {
                   href="/" 
                   className="text-white no-underline transition-colors duration-300 ease-in-out hover:text-accent text-sm focus:outline-none focus:ring-2 focus:ring-primary-500/50 focus:ring-offset-2 focus:ring-offset-obsidian rounded-sm"
                 >
-                  Home
+                  Startseite
                 </Link>
               </li>
               <li>
@@ -20,7 +20,7 @@ const Footer = () => {
                   href="/privacy" 
                   className="text-white no-underline transition-colors duration-300 ease-in-out hover:text-accent text-sm focus:outline-none focus:ring-2 focus:ring-primary-500/50 focus:ring-offset-2 focus:ring-offset-obsidian rounded-sm"
                 >
-                  Privacy
+                  Datenschutz
                 </Link>
               </li>
               <li>
@@ -28,7 +28,7 @@ const Footer = () => {
                   href="/imprint" 
                   className="text-white no-underline transition-colors duration-300 ease-in-out hover:text-accent text-sm focus:outline-none focus:ring-2 focus:ring-primary-500/50 focus:ring-offset-2 focus:ring-offset-obsidian rounded-sm"
                 >
-                  Imprint
+                  Impressum
                 </Link>
               </li>
             </ul>
@@ -52,7 +52,7 @@ const Footer = () => {
           </div>
         </div>
         <div className="mt-6 md:mt-8 pt-4 md:pt-6 border-t border-white/10 text-center text-xs text-gray-400">
-          <p>&copy; {new Date().getFullYear()} Emptea Studios. All rights reserved.</p>
+          <p>&copy; {new Date().getFullYear()} Emptea Studios. Alle Rechte vorbehalten.</p>
         </div>
       </div>
     </footer>
