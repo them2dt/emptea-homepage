@@ -133,7 +133,7 @@ const Navbar = () => {
             <motion.div variants={menuItemVariants}>
               <Link 
                 href="#contact" 
-                className="inline-flex items-center justify-center text-xl sm:text-2xl text-accent mt-4 px-6 sm:px-8 py-3 sm:py-4 border-2 border-accent rounded-lg bg-transparent transition-all duration-300 ease-in-out hover:bg-accent hover:text-accent-foreground hover:-translate-y-0.5 hover:shadow-lg hover:shadow-accent/25 focus:outline-none focus:ring-2 focus:ring-accent focus:ring-offset-2 focus:ring-offset-obsidian" 
+                className="inline-flex items-center justify-center text-xl sm:text-2xl text-black mt-4 px-6 sm:px-8 py-3 sm:py-4 border-2 border-black rounded-lg bg-accent transition-all duration-300 ease-in-out hover:bg-accent/90 hover:-translate-y-0.5 hover:shadow-lg hover:shadow-accent/25 focus:outline-none focus:ring-2 focus:ring-accent focus:ring-offset-2 focus:ring-offset-obsidian" 
                 onClick={toggleMobileNav}
               >
                 Get started
