@@ -31,8 +31,17 @@ const Navbar = () => {
 
   return (
     <>
+      <style jsx>{`
+        @media (max-width: 1023px) {
+          .mobile-navbar {
+            height: 64px !important;
+            padding-top: 20px !important;
+            padding-bottom: 20px !important;
+          }
+        }
+      `}</style>
       <motion.header
-        className="fixed top-0 left-0 w-full z-50 py-3 sm:py-4 bg-obsidian/85 backdrop-blur-md border-b border-white/10 supports-[backdrop-filter]:bg-obsidian/60"
+        className="fixed top-0 left-0 w-full z-50 bg-obsidian/85 backdrop-blur-md border-b border-white/10 supports-[backdrop-filter]:bg-obsidian/60 py-4 mobile-navbar"
         initial={{ y: -100, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.5, ease: 'easeOut', delay: 1.5 }}
@@ -58,12 +67,18 @@ const Navbar = () => {
       </motion.header>
 
       <button 
-        className="lg:hidden bg-transparent border-none cursor-pointer z-[1001] fixed top-4 sm:top-5 right-4 sm:right-6 p-2 rounded-md hover:bg-white/10 transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-accent focus:ring-offset-2 focus:ring-offset-obsidian" 
+        className="lg:hidden bg-transparent border-none cursor-pointer z-[1001] fixed right-4 sm:right-6 rounded-md hover:bg-white/10 transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-accent focus:ring-offset-2 focus:ring-offset-obsidian" 
+        style={{ 
+          top: '10px',
+          width: '32px',
+          height: '32px',
+          padding: '4px'
+        }}
         onClick={toggleMobileNav} 
         aria-label="Toggle navigation menu"
         aria-expanded={mobileNavOpen}
       >
-        <svg width="24" height="24" viewBox="0 0 24 24" className="w-6 h-6">
+        <svg width="24" height="24" viewBox="0 0 24 24" style={{ width: '24px', height: '24px' }}>
           <motion.path stroke="#ffffff" strokeWidth="2" animate={mobileNavOpen ? 'open' : 'closed'} variants={{ closed: { d: 'M 2 4 L 22 4' }, open: { d: 'M 4 18 L 20 2' } }} />
           <motion.path stroke="#ffffff" strokeWidth="2" d="M 2 12 L 22 12" animate={mobileNavOpen ? 'open' : 'closed'} variants={{ closed: { opacity: 1 }, open: { opacity: 0 } }} />
           <motion.path stroke="#ffffff" strokeWidth="2" animate={mobileNavOpen ? 'open' : 'closed'} variants={{ closed: { d: 'M 2 20 L 22 20' }, open: { d: 'M 4 2 L 20 18' } }} />

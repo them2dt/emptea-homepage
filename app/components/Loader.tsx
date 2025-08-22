@@ -88,7 +88,7 @@ const Loader = () => {
       }}
     >
       <motion.div
-        className="font-black text-5xl text-white flex overflow-hidden mb-8"
+        className="font-black text-4xl text-white flex overflow-hidden mb-8"
         variants={textVariants}
       >
         <motion.div

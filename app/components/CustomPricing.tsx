@@ -76,7 +76,7 @@ const CustomPricing = () => {
 
   return (
     <>
-      <div className="flex flex-col md:flex-row justify-between items-start md:items-center max-w-6xl mx-auto mt-6 md:mt-8 p-4 md:p-6 border-none rounded-lg bg-accent text-accent-foreground text-left gap-4 md:gap-0 mb-16">
+      <div className="flex flex-col md:flex-row justify-between items-start md:items-center max-w-5xl mx-auto mt-6 md:mt-8 p-4 md:p-6 border-none rounded-lg bg-accent text-accent-foreground text-left gap-4 md:gap-0 mb-16">
         <div className="text-left">
           <h4 className="font-bold text-black text-xl mb-1">
             Custom Plan
@@ -196,7 +196,7 @@ const CustomPricing = () => {
                                   onChange={handleFeatureChange}
                                   className="peer opacity-0 absolute w-full h-full cursor-pointer"
                                 />
-                                <label htmlFor={key} className="text-sm md:text-base pl-7 relative cursor-pointer text-black font-medium leading-snug before:content-[''] before:absolute before:left-0 before:top-1/2 before:-translate-y-1/2 before:w-4 before:h-4 before:border-2 before:border-black/40 before:rounded-sm before:bg-white before:transition-all before:duration-200 after:content-['✓'] after:absolute after:left-1.5 after:top-1/2 after:-translate-y-1/2 after:scale-0 after:text-sm after:font-bold after:text-black after:transition-all after:duration-200 peer-checked:after:scale-100">{label}</label>
+                                <label htmlFor={key} className="text-sm md:text-base pl-7 relative cursor-pointer text-black font-medium leading-snug before:content-[''] before:absolute before:left-0 before:top-1/2 before:-translate-y-1/2 before:w-4 before:h-4 before:border-2 before:border-black/40 before:rounded-sm before:bg-white before:transition-all before:duration-200 after:content-['✓'] after:absolute after:left-1 after:top-1/2 after:-translate-y-3/5 after:scale-0 after:text-sm after:font-bold after:text-black after:transition-all after:duration-200 peer-checked:after:scale-100">{label}</label>
                               </div>
                             ))}
                           </div>
