@@ -1,4 +1,4 @@
-import { Headset, Lightning, Target } from '@phosphor-icons/react';
+import { Headset, Lightning, Target, MapPin } from '@phosphor-icons/react';
 
 const Features = () => {
   const features = [
@@ -16,6 +16,11 @@ const Features = () => {
       title: 'Locked in.',
       description: 'Your team will focus only on your project to get a tunnel vision, ensuring 100% attention for your needs.',
       icon: <Target size={80} className="text-accent" weight="duotone" />
+    },
+    {
+      title: 'Made in Zurich.',
+      description: 'Located in the heart of Switzerland\'s financial and innovation hub, providing reliable, high-quality development services with Swiss precision.',
+      icon: <MapPin size={80} className="text-accent" weight="duotone" />
     },
   ];
 

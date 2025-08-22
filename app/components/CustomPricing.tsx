@@ -62,7 +62,7 @@ const CustomPricing = () => {
   };
 
   const calculatePrice = () => {
-    const basePrice = 2000;
+    const basePrice = 799;
     let featureMultiplier = 1;
     
     Object.values(features).forEach(hasFeature => {
@@ -75,8 +75,8 @@ const CustomPricing = () => {
   const startingPrice = calculatePrice();
 
   return (
-    <>
-      <div className="flex flex-col md:flex-row justify-between items-start md:items-center max-w-5xl mt-6 md:mt-8 p-4 md:p-6 border-none rounded-lg bg-accent text-accent-foreground text-left gap-4 md:gap-0 mx-4 mb-16">
+    <section className="px-4 md:px-6">
+      <div className="flex flex-col md:flex-row justify-between items-start md:items-center max-w-5xl mx-auto mt-6 md:mt-8 p-4 md:p-6 border-none rounded-lg bg-accent text-accent-foreground text-left gap-4 md:gap-0 mb-16">
         <div className="text-left">
           <h4 className="font-bold text-black text-xl mb-1">
             Custom Plan
@@ -270,7 +270,7 @@ Best regards,
           </motion.div>
         )}
       </AnimatePresence>
-    </>
+    </section>
   );
 };
 
