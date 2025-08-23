@@ -61,15 +61,37 @@ const CustomPricing = () => {
     }));
   };
 
+  /**
+   * Calculate custom plan price based on weekly feature rates
+   * @returns Total price in CHF
+   */
   const calculatePrice = () => {
-    const basePrice = 799;
-    let featureMultiplier = 1;
+    // Base weekly rate for custom development
+    const baseWeeklyRate = 300; // CHF per week
     
-    Object.values(features).forEach(hasFeature => {
-      if (hasFeature) featureMultiplier += 0.15;
+    // Weekly feature rates from catalog
+    const featureWeeklyRates = {
+      responsiveDesign: 50,
+      seoOptimization: 75,
+      contentManagement: 100,
+      ecommerce: 150,
+      userAuthentication: 80,
+      apiIntegration: 120,
+      analytics: 60,
+      crossPlatform: 100,
+    };
+    
+    // Calculate total weekly rate
+    let totalWeeklyRate = baseWeeklyRate;
+    
+    Object.entries(features).forEach(([featureKey, hasFeature]) => {
+      if (hasFeature && featureKey in featureWeeklyRates) {
+        totalWeeklyRate += featureWeeklyRates[featureKey as keyof typeof featureWeeklyRates];
+      }
     });
     
-    return Math.round(basePrice * featureMultiplier * (weeks / 4));
+    // Calculate total price for the specified weeks
+    return Math.round(totalWeeklyRate * weeks);
   };
 
   const startingPrice = calculatePrice();
@@ -223,8 +245,35 @@ const CustomPricing = () => {
 
                               <div className="flex flex-col md:flex-row justify-between items-start md:items-center p-4 md:p-5 border-t border-black/20 gap-3 md:gap-0 bg-gradient-to-r from-black/10 to-black/5">
                   <div className="flex flex-col items-start justify-center">
-                    <p className="mb-1 text-black/70 text-xs md:text-sm">Ab</p>
-                    <span className="font-bold text-xl md:text-2xl text-black"><AnimatedNumber value={startingPrice} /> CHF</span>
+                    <div className="mb-2">
+                      <p className="text-black/70 text-xs md:text-sm">Wöchentlicher Satz</p>
+                      <span className="font-bold text-lg text-black">
+                        {(() => {
+                          const baseWeeklyRate = 300;
+                          const featureWeeklyRates = {
+                            responsiveDesign: 50,
+                            seoOptimization: 75,
+                            contentManagement: 100,
+                            ecommerce: 150,
+                            userAuthentication: 80,
+                            apiIntegration: 120,
+                            analytics: 60,
+                            crossPlatform: 100,
+                          };
+                          let totalWeeklyRate = baseWeeklyRate;
+                          Object.entries(features).forEach(([featureKey, hasFeature]) => {
+                            if (hasFeature && featureKey in featureWeeklyRates) {
+                              totalWeeklyRate += featureWeeklyRates[featureKey as keyof typeof featureWeeklyRates];
+                            }
+                          });
+                          return totalWeeklyRate;
+                        })()} CHF/Woche
+                      </span>
+                    </div>
+                    <div>
+                      <p className="mb-1 text-black/70 text-xs md:text-sm">Gesamtpreis ({weeks} Woche{weeks > 1 ? 'n' : ''})</p>
+                      <span className="font-bold text-xl md:text-2xl text-black"><AnimatedNumber value={startingPrice} /> CHF</span>
+                    </div>
                   </div>
                   <a 
                     href={`mailto:contact@emptea.xyz?subject=${encodeURIComponent('Anfrage für individuellen Plan')}&body=${encodeURIComponent(`Hallo EMPTEA Studios,
@@ -233,7 +282,27 @@ ich interessiere mich für einen individuellen Entwicklungsplan.
 
 Details des individuellen Plans:
 - Geschätzte Dauer: ${weeks} Woche${weeks > 1 ? 'n' : ''}
-- Geschätzter Preis: Ab ${startingPrice} CHF
+- Wöchentlicher Satz: ${(() => {
+    const baseWeeklyRate = 300;
+    const featureWeeklyRates = {
+      responsiveDesign: 50,
+      seoOptimization: 75,
+      contentManagement: 100,
+      ecommerce: 150,
+      userAuthentication: 80,
+      apiIntegration: 120,
+      analytics: 60,
+      crossPlatform: 100,
+    };
+    let totalWeeklyRate = baseWeeklyRate;
+    Object.entries(features).forEach(([featureKey, hasFeature]) => {
+      if (hasFeature && featureKey in featureWeeklyRates) {
+        totalWeeklyRate += featureWeeklyRates[featureKey as keyof typeof featureWeeklyRates];
+      }
+    });
+    return totalWeeklyRate;
+  })()} CHF/Woche
+- Geschätzter Gesamtpreis: ${startingPrice} CHF
 
 Ausgewählte Funktionen:
 ${Object.entries(features)
