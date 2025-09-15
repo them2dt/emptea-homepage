@@ -53,6 +53,7 @@ const Footer = () => {
         </div>
         <div className="mt-6 md:mt-8 pt-4 md:pt-6 border-t border-white/10 text-center text-xs text-gray-400">
           <p>&copy; {new Date().getFullYear()} Emptea Studios. Alle Rechte vorbehalten.</p>
+          <p className="mt-2">Gegründet in 2020 von <a href="https://maruthan.com" target="_blank" rel="noopener noreferrer" className="text-accent hover:text-accent/80 transition-colors duration-300">maruthan(maruthan.com)</a></p>
         </div>
       </div>
     </footer>
