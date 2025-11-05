@@ -87,3 +87,32 @@
     @apply bg-background text-foreground;
   }
 }
+
+@layer base {
+  .rise-background {
+    background: radial-gradient(circle at center, rgba(20, 20, 20, 0.5) 0%, rgba(9, 9, 9, 0.9) 50%, #000 85%);
+  }
+}
+
+@layer components {
+  .rise-icon-tile {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .rise-leaf-icon {
+    color: rgba(255, 255, 255, 0.9);
+  }
+
+  .rise-store-icon {
+    @apply inline-flex items-center justify-center rounded-full p-2 text-gray-600;
+    opacity: 0.35;
+    transition: opacity 200ms ease;
+  }
+
+  .rise-store-icon:hover {
+    opacity: 0.55;
+  }
+
+}

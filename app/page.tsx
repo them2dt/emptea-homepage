@@ -1,136 +1,176 @@
 "use client"
 
 import { useState } from "react"
-import AppShowcase from "@/components/app-showcase"
+import Image from "next/image"
+import { motion } from "framer-motion"
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import { faLock } from "@fortawesome/free-solid-svg-icons"
+import IconTransparent from "./assets/icon-transparent.png"
 
 const APPS = [
   {
     id: 1,
-    name: "Rise",
-    description: "Achieve your goals",
-    icon: "feather",
+    name: "rise",
+    tagline: "Achieve your goals",
+    logo: IconTransparent,
   },
   {
     id: 2,
-    name: "Flow",
-    description: "Master your workflow",
-    icon: "zap",
+    name: "flow",
+    tagline: "Master your workflow",
+    logo: IconTransparent,
   },
   {
     id: 3,
-    name: "Focus",
-    description: "Eliminate distractions",
-    icon: "target",
+    name: "focus",
+    tagline: "Eliminate distractions",
+    logo: IconTransparent,
   },
-  {
-    id: 4,
-    name: "Sync",
-    description: "Connect everything",
-    icon: "link",
-  },
-  {
-    id: 5,
-    name: "Pulse",
-    description: "Feel the rhythm",
-    icon: "activity",
-  },
-  {
-    id: 6,
-    name: "Nest",
-    description: "Organize your world",
-    icon: "grid",
-  },
-  {
-    id: 7,
-    name: "Glow",
-    description: "Illuminate your path",
-    icon: "sun",
-  },
-  {
-    id: 8,
-    name: "Wave",
-    description: "Ride the momentum",
-    icon: "wave-3",
-  },
-]
+] as const
+
+const APP_BACKGROUNDS = [
+  "#000000", // rise - black
+  "rgba(59, 130, 246, 0.15)", // flow - blue
+  "rgba(168, 85, 247, 0.15)", // focus - purple
+  "rgba(236, 72, 153, 0.15)", // sync - pink
+  "rgba(239, 68, 68, 0.15)", // pulse - red
+  "rgba(245, 158, 11, 0.15)", // nest - amber
+  "rgba(16, 185, 129, 0.15)", // glow - emerald
+  "rgba(6, 182, 212, 0.15)", // wave - cyan
+] as const
 
 export default function Page() {
-  const [currentIndex, setCurrentIndex] = useState(4)
+  const [activeIndex, setActiveIndex] = useState(0) // Index 0 = app 1 (Rise)
+  const [direction, setDirection] = useState<"left" | "right">("right")
+  const currentApp = APPS[activeIndex]
 
-  const handleNext = () => {
-    setCurrentIndex((prev) => (prev + 1) % APPS.length)
+  const handleNavigation = (newIndex: number) => {
+    // Allow navigation to the first three apps (Rise, Flow, Focus)
+    if (newIndex > 2) return
+
+    if (newIndex > activeIndex) {
+      setDirection("right")
+    } else {
+      setDirection("left")
+    }
+    setActiveIndex(newIndex)
   }
 
-  const handlePrev = () => {
-    setCurrentIndex((prev) => (prev - 1 + APPS.length) % APPS.length)
-  }
-
-  const goToApp = (index: number) => {
-    setCurrentIndex(index)
+  const slideVariants = {
+    enter: (direction: "left" | "right") => ({
+      x: direction === "right" ? 30 : -30,
+      opacity: 0,
+    }),
+    center: {
+      x: 0,
+      opacity: 1,
+    },
+    exit: (direction: "left" | "right") => ({
+      x: direction === "right" ? -30 : 30,
+      opacity: 0,
+    }),
   }
 
   return (
-    <main className="min-h-screen bg-black flex flex-col justify-center items-center px-4">
-      {/* Header */}
-      <header className="absolute top-0 left-0 right-0 pt-8 md:pt-12">
-        <div className="text-center">
-          <h1 className="text-base md:text-lg font-light tracking-widest">
-            <span className="text-white">emptea</span> <span className="text-gray-600">studios</span>
-          </h1>
-        </div>
+    <main
+      className="relative flex min-h-screen flex-col items-center justify-center overflow-hidden px-6 py-24 text-gray-500"
+      style={{
+        background: APP_BACKGROUNDS[activeIndex],
+      }}
+    >
+      {/* White opacity gradient overlay layer */}
+      <div
+        className="absolute inset-0"
+        style={{
+          zIndex: 5,
+          background: 'radial-gradient(circle at center, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.5) 40%, rgba(0, 0, 0, 1) 70%)',
+        }}
+      />
+
+      <header className="pointer-events-none absolute left-0 right-0 top-16 z-20 text-center font-mono font-light text-xs sm:text-sm">
+        <span className="text-gray-100">emptea</span>
+        <span className="ml-3 text-gray-700">studios</span>
       </header>
 
-      {/* Content */}
-      <div className="flex flex-col items-center gap-12 md:gap-16">
-        {/* App Showcase */}
-        <AppShowcase app={APPS[currentIndex]} />
+      <div className="relative z-10 flex flex-col items-center gap-12 text-center w-80 h-96 sm:w-96 sm:h-112">
+        <motion.div
+          key={activeIndex}
+          className="rise-icon-tile h-64 w-64 sm:h-72 sm:w-72"
+          custom={direction}
+          variants={slideVariants}
+          initial="enter"
+          animate="center"
+          exit="exit"
+          transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
+        >
+          {activeIndex === 0 ? (
+            <Image
+              src={currentApp.logo}
+              alt={`${currentApp.name} logo`}
+              width={96}
+              height={96}
+              className="h-24 w-24 object-contain"
+            />
+          ) : (
+            <FontAwesomeIcon icon={faLock} className="h-24 w-24 text-gray-500" />
+          )}
+        </motion.div>
 
-        {/* Navigation Controls */}
-        <div className="flex items-center gap-6 md:gap-8">
-          <button
-            onClick={handlePrev}
-            className="text-gray-600 hover:text-gray-400 transition-colors p-2"
-            aria-label="Previous app"
-          >
-            <svg className="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-              <polyline points="15 18 9 12 15 6" />
-            </svg>
-          </button>
+        <motion.div
+          key={`text-${activeIndex}`}
+          className="space-y-4 font-mono"
+          custom={direction}
+          variants={slideVariants}
+          initial="enter"
+          animate="center"
+          exit="exit"
+          transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
+        >
+          <p className="text-2xl lowercase text-white sm:text-3xl font-mono font-light">
+            {activeIndex === 0 ? currentApp.name : "***"}
+          </p>
+          <p className="text-xs text-gray-600 sm:text-sm font-mono font-light">
+            {activeIndex === 0 ? currentApp.tagline : "***"}
+          </p>
+        </motion.div>
 
-          <button
-            onClick={handleNext}
-            className="text-gray-600 hover:text-gray-400 transition-colors p-2"
-            aria-label="Next app"
-          >
-            <svg className="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-              <polyline points="9 18 15 12 9 6" />
-            </svg>
-          </button>
-        </div>
+        {activeIndex === 0 && (
+          <div className="flex items-center gap-8 text-gray-700">
+            <span className="rise-store-icon text-sm font-mono font-light">
+              Google Play
+            </span>
+            <span className="rise-store-icon text-sm font-mono font-light">
+              App Store
+            </span>
+          </div>
+        )}
 
-        {/* App Info */}
-        <div className="flex flex-col items-center gap-2 md:gap-4">
-          <h2 className="text-xl md:text-2xl font-light text-white">{APPS[currentIndex].name}</h2>
-          <p className="text-gray-600 text-sm md:text-base">{APPS[currentIndex].description}</p>
-        </div>
-
-        {/* Pagination */}
-        <div className="flex gap-2 md:gap-3">
-          {APPS.map((_, index) => (
-            <button
-              key={index}
-              onClick={() => goToApp(index)}
-              className={`text-sm md:text-base transition-colors ${
-                index === currentIndex ? "text-white" : "text-gray-700 hover:text-gray-500"
-              }`}
-              aria-label={`Go to app ${index + 1}`}
-              aria-current={index === currentIndex ? "page" : undefined}
-            >
-              {index + 1}
-            </button>
-          ))}
-        </div>
+        <nav aria-label="Featured apps" className="font-mono font-light text-xs text-gray-700">
+          <ul className="flex items-center gap-4">
+            {APPS.map((app, index) => (
+              <li key={app.id}>
+                {index <= 2 ? (
+                  <button
+                    onClick={() => handleNavigation(index)}
+                    className={`transition-colors ${
+                      index === activeIndex ? "text-white" : "text-gray-700/60 hover:text-gray-500"
+                    }`}
+                    aria-label={`View ${app.name}`}
+                    aria-current={index === activeIndex ? "page" : undefined}
+                  >
+                    {app.id}
+                  </button>
+                ) : (
+                  <span className="text-gray-700/30 cursor-not-allowed flex items-center justify-center">
+                    <FontAwesomeIcon icon={faLock} className="h-3 w-3" />
+                  </span>
+                )}
+              </li>
+            ))}
+          </ul>
+        </nav>
       </div>
     </main>
   )
 }
+
