@@ -1,6 +1,6 @@
 "use client"
 
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import Image from "next/image"
 import { motion } from "framer-motion"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
@@ -42,11 +42,25 @@ const APP_BACKGROUNDS = [
 export default function Page() {
   const [activeIndex, setActiveIndex] = useState(0) // Index 0 = app 1 (Rise)
   const [direction, setDirection] = useState<"left" | "right">("right")
+  const [isLoading, setIsLoading] = useState(true)
   const currentApp = APPS[activeIndex]
+
+  // Simulate haptic feedback for mobile
+  const triggerHapticFeedback = () => {
+    if (typeof window !== 'undefined' && 'navigator' in window) {
+      // Check for vibration API (works on most mobile devices)
+      if ('vibrate' in navigator) {
+        navigator.vibrate(50) // 50ms vibration
+      }
+    }
+  }
 
   const handleNavigation = (newIndex: number) => {
     // Allow navigation to the first three apps (Rise, Flow, Focus)
-    if (newIndex > 2) return
+    if (newIndex > 2 || newIndex < 0) return
+
+    // Trigger haptic feedback on mobile
+    triggerHapticFeedback()
 
     if (newIndex > activeIndex) {
       setDirection("right")
@@ -55,6 +69,30 @@ export default function Page() {
     }
     setActiveIndex(newIndex)
   }
+
+  const handleDragEnd = (event: any, info: any) => {
+    const swipeThreshold = 50
+    const swipeVelocity = 500
+
+    if (Math.abs(info.velocity.x) > swipeVelocity || Math.abs(info.offset.x) > swipeThreshold) {
+      if (info.offset.x > 0) {
+        // Swipe right - go to previous app
+        handleNavigation(activeIndex - 1)
+      } else {
+        // Swipe left - go to next app
+        handleNavigation(activeIndex + 1)
+      }
+    }
+  }
+
+  // Handle initial loading
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setIsLoading(false)
+    }, 800) // Simulate loading time
+
+    return () => clearTimeout(timer)
+  }, [])
 
   const slideVariants = {
     enter: (direction: "left" | "right") => ({
@@ -69,6 +107,23 @@ export default function Page() {
       x: direction === "right" ? -30 : 30,
       opacity: 0,
     }),
+  }
+
+  // Loading screen
+  if (isLoading) {
+    return (
+      <main className="relative flex min-h-screen flex-col items-center justify-center overflow-hidden px-6 py-24 text-gray-500 bg-black">
+        <motion.div
+          initial={{ opacity: 0, scale: 0.8 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.5 }}
+          className="text-center"
+        >
+          <div className="text-4xl font-mono font-light text-white mb-4">emptea</div>
+          <div className="text-sm font-mono font-light text-gray-400">studios</div>
+        </motion.div>
+      </main>
+    )
   }
 
   return (
@@ -92,7 +147,13 @@ export default function Page() {
         <span className="ml-3 text-gray-700">studios</span>
       </header>
 
-      <div className="relative z-10 flex flex-col items-center gap-12 text-center w-80 h-96 sm:w-96 sm:h-112">
+      <motion.div
+        className="relative z-10 flex flex-col items-center gap-12 text-center w-80 h-96 sm:w-96 sm:h-112 cursor-grab active:cursor-grabbing"
+        drag="x"
+        dragConstraints={{ left: 0, right: 0 }}
+        dragElastic={0.1}
+        onDragEnd={handleDragEnd}
+      >
         <motion.div
           key={activeIndex}
           className="rise-icon-tile h-64 w-64 sm:h-72 sm:w-72"
@@ -169,7 +230,7 @@ export default function Page() {
             ))}
           </ul>
         </nav>
-      </div>
+      </motion.div>
     </main>
   )
 }
