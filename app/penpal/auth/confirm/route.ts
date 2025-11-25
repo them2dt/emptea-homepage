@@ -6,10 +6,10 @@ export async function GET(request: NextRequest) {
   const { searchParams } = new URL(request.url)
   const token_hash = searchParams.get('token_hash')
   const type = searchParams.get('type') as EmailOtpType | null
-  const next = searchParams.get('next') ?? '/rise/auth/confirmed'
+  const next = searchParams.get('next') ?? '/penpal/auth/confirmed'
 
   if (token_hash && type) {
-    const supabase = await createClient('rise')
+    const supabase = await createClient('penpal')
 
     const { error } = await supabase.auth.verifyOtp({
       type,
@@ -24,7 +24,7 @@ export async function GET(request: NextRequest) {
 
   // Return the user to an error page with some instructions
   return NextResponse.redirect(
-    new URL('/rise/auth/error?message=Could not verify email', request.url)
+    new URL('/penpal/auth/error?message=Could not verify email', request.url)
   )
 }
 

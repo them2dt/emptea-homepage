@@ -1,9 +1,14 @@
-import { createBrowserClient } from '@supabase/ssr'
+import { createBrowserClient as createSupabaseBrowserClient } from '@supabase/ssr'
+import {
+  DEFAULT_SUPABASE_PROJECT,
+  getSupabaseConfig,
+} from './config'
 
-export function createClient() {
-  return createBrowserClient(
-    process.env.NEXT_PUBLIC_RISE_SUPABASE_URL!,
-    process.env.NEXT_PUBLIC_RISE_SUPABASE_ANON_KEY!
-  )
+export function createClient(
+  project: string = DEFAULT_SUPABASE_PROJECT
+) {
+  const { url, anonKey } = getSupabaseConfig(project)
+
+  return createSupabaseBrowserClient(url, anonKey)
 }
 

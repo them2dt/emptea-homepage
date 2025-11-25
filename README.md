@@ -28,14 +28,18 @@ This project uses [`next/font`](https://nextjs.org/docs/app/building-your-applic
 
 This project supports email confirmation for Supabase Auth. Follow these steps to configure it:
 
-### 1. Environment Variables
+-### 1. Environment Variables
 
-Create a `.env.local` file in the root directory with your Supabase credentials:
+Create a `.env.local` file in the root directory with the Supabase credentials for each app you plan to host. Use uppercase project slugs to form the env-var names:
 
 ```bash
-NEXT_PUBLIC_RISE_SUPABASE_URL=your-project-url
-NEXT_PUBLIC_RISE_SUPABASE_ANON_KEY=your-anon-key
+NEXT_PUBLIC_RISE_SUPABASE_URL=your-rises-project-url
+NEXT_PUBLIC_RISE_SUPABASE_ANON_KEY=your-rises-anon-key
+NEXT_PUBLIC_PENPAL_SUPABASE_URL=your-penpal-project-url
+NEXT_PUBLIC_PENPAL_SUPABASE_ANON_KEY=your-penpal-anon-key
 ```
+
+The helper in `lib/supabase` will normalize the slug you pass to `createClient()` (defaulting to `rise`), so make sure every new app has its own pair of vars before wiring the routes.
 
 Get these values from your [Supabase Dashboard](https://app.supabase.com):
 - Navigate to your project

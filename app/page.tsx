@@ -1,7 +1,6 @@
 "use client"
 
 import { useState, useEffect } from "react"
-import Image from "next/image"
 import { motion } from "framer-motion"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faLock } from "@fortawesome/free-solid-svg-icons"
@@ -165,13 +164,8 @@ export default function Page() {
           transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
         >
           {activeIndex === 0 ? (
-            <Image
-              src={currentApp.logo}
-              alt={`${currentApp.name} logo`}
-              width={96}
-              height={96}
-              className="h-24 w-24 object-contain"
-            />
+            <></>
+
           ) : (
             <FontAwesomeIcon icon={faLock} className="h-24 w-24 text-gray-500" />
           )}

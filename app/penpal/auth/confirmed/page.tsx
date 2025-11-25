@@ -2,7 +2,6 @@
 
 import Link from "next/link"
 import { motion } from "framer-motion"
-import IconTransparent from "@/app/assets/icon-transparent.png"
 
 export default function ConfirmedPage() {
   return (
@@ -13,10 +12,6 @@ export default function ConfirmedPage() {
         transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
         className="relative z-10 flex flex-col items-center gap-12 text-center"
       >
-        <div className="rise-icon-tile h-48 w-48">
-          <></>
-        </div>
-
         <div className="space-y-4 font-mono">
           <h1 className="text-3xl lowercase text-white font-light">
             you're all set
