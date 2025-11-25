@@ -1,12 +1,9 @@
 import { createBrowserClient } from '@supabase/ssr'
-import { type AppName, getSupabaseConfig } from './config'
 
-export function createClient(app: AppName) {
-  const config = getSupabaseConfig(app)
-  
+export function createClient() {
   return createBrowserClient(
-    config.url,
-    config.anonKey
+    process.env.NEXT_PUBLIC_RISE_SUPABASE_URL!,
+    process.env.NEXT_PUBLIC_RISE_SUPABASE_ANON_KEY!
   )
 }
 

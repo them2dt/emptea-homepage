@@ -9,7 +9,7 @@ export async function GET(request: NextRequest) {
   const next = searchParams.get('next') ?? '/rise/auth/confirmed'
 
   if (token_hash && type) {
-    const supabase = await createClient('rise')
+    const supabase = await createClient()
 
     const { error } = await supabase.auth.verifyOtp({
       type,

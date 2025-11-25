@@ -1,78 +1,237 @@
+"use client"
 
-interface App {
-  id: string;
-  name: string;
-  tagline: string;
-  color: string;
-}
+import { useState, useEffect } from "react"
+import Image from "next/image"
+import { motion } from "framer-motion"
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import { faLock } from "@fortawesome/free-solid-svg-icons"
+import IconTransparent from "./assets/icon-transparent.png"
 
-const APPS: App[] = [
-  { id: "rise", name: "Rise", tagline: "Achieve goals.", color: "bg-neutral-900/90" },
-  { id: "penpal", name: "Penpal", tagline: "Connect deeply.", color: "bg-blue-600/90" },
-];
+const APPS = [
+  {
+    id: 1,
+    name: "rise",
+    tagline: "Achieve your goals",
+    logo: IconTransparent,
+  },
+  {
+    id: 2,
+    name: "flow",
+    tagline: "Master your workflow",
+    logo: IconTransparent,
+  },
+  {
+    id: 3,
+    name: "focus",
+    tagline: "Eliminate distractions",
+    logo: IconTransparent,
+  },
+] as const
 
-export default function Home() {
-  return (
-    <div className="flex min-h-screen justify-center bg-white px-6 py-16 text-neutral-900">
-      <main className="flex w-full max-w-[1100px] flex-col items-center gap-16 md:flex-row md:items-center md:justify-between md:gap-28">
-        <section className="flex w-full flex-col items-center gap-6 text-center md:w-auto md:items-end md:text-right">
-          <h1 className="text-[clamp(3.5rem,12vw,6rem)] font-semibold leading-none tracking-[-0.05em] text-black/10">
-            emptea.xyz
-          </h1>
-          <p className="text-sm tracking-[0.3em] text-black/30">by Maru</p>
-        </section>
+const APP_BACKGROUNDS = [
+  "#000000", // rise - black
+  "rgba(59, 130, 246, 0.15)", // flow - blue
+  "rgba(168, 85, 247, 0.15)", // focus - purple
+  "rgba(236, 72, 153, 0.15)", // sync - pink
+  "rgba(239, 68, 68, 0.15)", // pulse - red
+  "rgba(245, 158, 11, 0.15)", // nest - amber
+  "rgba(16, 185, 129, 0.15)", // glow - emerald
+  "rgba(6, 182, 212, 0.15)", // wave - cyan
+] as const
 
-        <section className="flex w-full max-w-[420px] flex-col gap-8 md:w-auto">
-          {APPS.map((app) => (
-            <AppCard key={app.id} app={app} />
-          ))}
-        </section>
+export default function Page() {
+  const [activeIndex, setActiveIndex] = useState(0) // Index 0 = app 1 (Rise)
+  const [direction, setDirection] = useState<"left" | "right">("right")
+  const [isLoading, setIsLoading] = useState(true)
+  const currentApp = APPS[activeIndex]
+
+  // Simulate haptic feedback for mobile
+  const triggerHapticFeedback = () => {
+    if (typeof window !== 'undefined' && 'navigator' in window) {
+      // Check for vibration API (works on most mobile devices)
+      if ('vibrate' in navigator) {
+        navigator.vibrate(50) // 50ms vibration
+      }
+    }
+  }
+
+  const handleNavigation = (newIndex: number) => {
+    // Allow navigation to the first three apps (Rise, Flow, Focus)
+    if (newIndex > 2 || newIndex < 0) return
+
+    // Trigger haptic feedback on mobile
+    triggerHapticFeedback()
+
+    if (newIndex > activeIndex) {
+      setDirection("right")
+    } else {
+      setDirection("left")
+    }
+    setActiveIndex(newIndex)
+  }
+
+  const handleDragEnd = (event: any, info: any) => {
+    const swipeThreshold = 50
+    const swipeVelocity = 500
+
+    if (Math.abs(info.velocity.x) > swipeVelocity || Math.abs(info.offset.x) > swipeThreshold) {
+      if (info.offset.x > 0) {
+        // Swipe right - go to previous app
+        handleNavigation(activeIndex - 1)
+      } else {
+        // Swipe left - go to next app
+        handleNavigation(activeIndex + 1)
+      }
+    }
+  }
+
+  // Handle initial loading
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setIsLoading(false)
+    }, 800) // Simulate loading time
+
+    return () => clearTimeout(timer)
+  }, [])
+
+  const slideVariants = {
+    enter: (direction: "left" | "right") => ({
+      x: direction === "right" ? 30 : -30,
+      opacity: 0,
+    }),
+    center: {
+      x: 0,
+      opacity: 1,
+    },
+    exit: (direction: "left" | "right") => ({
+      x: direction === "right" ? -30 : 30,
+      opacity: 0,
+    }),
+  }
+
+  // Loading screen
+  if (isLoading) {
+    return (
+      <main className="relative flex min-h-screen flex-col items-center justify-center overflow-hidden px-6 py-24 text-gray-500 bg-black">
+        <motion.div
+          initial={{ opacity: 0, scale: 0.8 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.5 }}
+          className="text-center"
+        >
+          <div className="text-4xl font-mono font-light text-white mb-4">emptea</div>
+          <div className="text-sm font-mono font-light text-gray-400">studios</div>
+        </motion.div>
       </main>
-    </div>
-  );
-}
+    )
+  }
 
-function AppCard({ app }: { app: App }) {
   return (
-    <article className="flex gap-5">
-      <div className="relative flex h-32 w-32 flex-shrink-0 items-center justify-center rounded-[24px] p-1 shadow-[0px_0px_2px_rgba(0,0,0,0.12),0px_12px_32px_rgba(0,0,0,0.08)]">
-        <span className="pointer-events-none absolute inset-0 rounded-[24px] bg-[rgba(140,140,140,0.25)]" />
-        <span className="pointer-events-none absolute inset-0 rounded-[24px] bg-white/60 backdrop-blur-md" />
-        <div className="relative h-[120px] w-[120px] overflow-hidden rounded-[20px]">
-          {/* Icon will go here */}
-        </div>
-        <span className="pointer-events-none absolute inset-0 rounded-[24px] shadow-[inset_3px_3px_0.5px_-3.5px_rgba(255,255,255,0.9),inset_2px_2px_0.5px_-2px_rgba(38,38,38,0.45),inset_-2px_-2px_0.5px_-2px_rgba(38,38,38,0.35),inset_0px_0px_0px_1px_rgba(166,166,166,1),inset_0px_0px_8px_rgba(242,242,242,1)]" />
-      </div>
-
-      <div className="flex flex-col justify-center gap-3">
-        <div className="space-y-1">
-          <p className="text-2xl font-semibold tracking-[-0.05em] text-black">
-            {app.name}
-          </p>
-          <p className="text-lg tracking-[-0.04em] text-neutral-400">
-            {app.tagline}
-          </p>
-        </div>
-        <div className="flex gap-2 text-sm font-semibold tracking-[-0.04em] text-black">
-          <GlassLink label="Apple" />
-          <GlassLink label="Android" />
-        </div>
-      </div>
-    </article>
-  );
-}
-
-function GlassLink({ label }: { label: string }) {
-  return (
-    <a
-      href="#"
-      className="relative inline-flex min-w-[96px] items-center justify-center overflow-hidden rounded-full px-6 py-3 shadow-[0px_0px_2px_rgba(0,0,0,0.12),0px_8px_18px_rgba(0,0,0,0.08)]"
+    <main
+      className="relative flex min-h-screen flex-col items-center justify-center overflow-hidden px-6 py-24 text-gray-500"
+      style={{
+        background: APP_BACKGROUNDS[activeIndex],
+      }}
     >
-      <span className="pointer-events-none absolute inset-0 rounded-full bg-[rgba(140,140,140,0.25)]" />
-      <span className="pointer-events-none absolute inset-0 rounded-full bg-white/70 backdrop-blur-md" />
-      <span className="relative z-10 text-[0.95rem] text-black">{label}</span>
-      <span className="pointer-events-none absolute inset-0 rounded-full shadow-[inset_3px_3px_0.5px_-3.5px_rgba(255,255,255,0.9),inset_2px_2px_0.5px_-2px_rgba(38,38,38,0.35),inset_-2px_-2px_0.5px_-2px_rgba(38,38,38,0.35),inset_0px_0px_0px_1px_rgba(166,166,166,1),inset_0px_0px_6px_rgba(242,242,242,1)]" />
-    </a>
-  );
+      {/* White opacity gradient overlay layer */}
+      <div
+        className="absolute inset-0"
+        style={{
+          zIndex: 5,
+          background: 'radial-gradient(circle at center, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.5) 40%, rgba(0, 0, 0, 1) 70%)',
+        }}
+      />
+
+      <header className="pointer-events-none absolute left-0 right-0 top-16 z-20 text-center font-mono font-light text-xs sm:text-sm">
+        <span className="text-gray-100">emptea</span>
+        <span className="ml-3 text-gray-700">studios</span>
+      </header>
+
+      <motion.div
+        className="relative z-10 flex flex-col items-center gap-12 text-center w-80 h-96 sm:w-96 sm:h-112 cursor-grab active:cursor-grabbing"
+        drag="x"
+        dragConstraints={{ left: 0, right: 0 }}
+        dragElastic={0.1}
+        onDragEnd={handleDragEnd}
+      >
+        <motion.div
+          key={activeIndex}
+          className="rise-icon-tile h-64 w-64 sm:h-72 sm:w-72"
+          custom={direction}
+          variants={slideVariants}
+          initial="enter"
+          animate="center"
+          exit="exit"
+          transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
+        >
+          {activeIndex === 0 ? (
+            <Image
+              src={currentApp.logo}
+              alt={`${currentApp.name} logo`}
+              width={96}
+              height={96}
+              className="h-24 w-24 object-contain"
+            />
+          ) : (
+            <FontAwesomeIcon icon={faLock} className="h-24 w-24 text-gray-500" />
+          )}
+        </motion.div>
+
+        <motion.div
+          key={`text-${activeIndex}`}
+          className="space-y-4 font-mono"
+          custom={direction}
+          variants={slideVariants}
+          initial="enter"
+          animate="center"
+          exit="exit"
+          transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
+        >
+          <p className="text-2xl lowercase text-white sm:text-3xl font-mono font-light">
+            {activeIndex === 0 ? currentApp.name : "***"}
+          </p>
+          <p className="text-xs text-gray-600 sm:text-sm font-mono font-light">
+            {activeIndex === 0 ? currentApp.tagline : "***"}
+          </p>
+        </motion.div>
+
+        {activeIndex === 0 && (
+          <div className="flex items-center gap-8 text-gray-700">
+            <span className="rise-store-icon text-sm font-mono font-light">
+              Google Play
+            </span>
+            <span className="rise-store-icon text-sm font-mono font-light">
+              App Store
+            </span>
+          </div>
+        )}
+
+        <nav aria-label="Featured apps" className="font-mono font-light text-xs text-gray-700">
+          <ul className="flex items-center gap-4">
+            {APPS.map((app, index) => (
+              <li key={app.id}>
+                {index <= 2 ? (
+                  <button
+                    onClick={() => handleNavigation(index)}
+                    className={`transition-colors ${
+                      index === activeIndex ? "text-white" : "text-gray-700/60 hover:text-gray-500"
+                    }`}
+                    aria-label={`View ${app.name}`}
+                    aria-current={index === activeIndex ? "page" : undefined}
+                  >
+                    {app.id}
+                  </button>
+                ) : (
+                  <span className="text-gray-700/30 cursor-not-allowed flex items-center justify-center">
+                    <FontAwesomeIcon icon={faLock} className="h-3 w-3" />
+                  </span>
+                )}
+              </li>
+            ))}
+          </ul>
+        </nav>
+      </motion.div>
+    </main>
+  )
 }
 

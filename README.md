@@ -33,8 +33,8 @@ This project supports email confirmation for Supabase Auth. Follow these steps t
 Create a `.env.local` file in the root directory with your Supabase credentials:
 
 ```bash
-NEXT_PUBLIC_SUPABASE_URL=your-project-url
-NEXT_PUBLIC_SUPABASE_ANON_KEY=your-anon-key
+NEXT_PUBLIC_RISE_SUPABASE_URL=your-project-url
+NEXT_PUBLIC_RISE_SUPABASE_ANON_KEY=your-anon-key
 ```
 
 Get these values from your [Supabase Dashboard](https://app.supabase.com):

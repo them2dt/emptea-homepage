@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 
@@ -13,37 +13,15 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "emptea.xyz - Apps by Maru",
-  description: "Discover Rise and Penpal - productivity apps designed to help you achieve your goals and connect deeply.",
-  keywords: ["productivity", "goals", "apps", "rise", "penpal", "emptea", "mobile apps"],
-  authors: [{ name: "Maru" }],
-  creator: "Maru",
-  publisher: "emptea",
-  openGraph: {
-    title: "emptea.xyz - Apps by Maru",
-    description: "Discover Rise and Penpal - productivity apps designed to help you achieve your goals and connect deeply.",
-    url: "https://emptea.xyz",
-    siteName: "emptea.xyz",
-    locale: "en_US",
-    type: "website",
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: "emptea.xyz - Apps by Maru",
-    description: "Discover Rise and Penpal - productivity apps designed to help you achieve your goals and connect deeply.",
-    creator: "@maru", // Update with your Twitter handle
-  },
-  robots: {
-    index: true,
-    follow: true,
-    googleBot: {
-      index: true,
-      follow: true,
-      "max-video-preview": -1,
-      "max-image-preview": "large",
-      "max-snippet": -1,
-    },
-  },
+  title: "rise — emptea studios",
+  description: "A minimal showcase for rise, the focus-forward app by emptea studios.",
+};
+
+export const viewport: Viewport = {
+  width: 'device-width',
+  initialScale: 1,
+  maximumScale: 1,
+  themeColor: '#000000',
 };
 
 export default function RootLayout({
