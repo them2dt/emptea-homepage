@@ -7,8 +7,6 @@ const ease = [0.22, 1, 0.36, 1] as const;
 
 const works = [
   { name: "Crank", href: "https://getcrank.app" },
-  { name: "Planetono", href: "https://www.planetono.space/" },
-  { name: "OCI", href: "https://oci.madebybuzzworthy.com/" },
 ];
 
 export default function Page() {
