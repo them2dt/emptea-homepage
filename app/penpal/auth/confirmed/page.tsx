@@ -1,36 +1,32 @@
-"use client"
+"use client";
 
-import Link from "next/link"
-import { motion } from "framer-motion"
+import Link from "next/link";
+import { motion } from "framer-motion";
+
+const ease = [0.22, 1, 0.36, 1] as const;
 
 export default function ConfirmedPage() {
   return (
-    <main className="relative flex min-h-screen flex-col items-center justify-center overflow-hidden px-6 py-24 bg-black">
+    <main className="flex min-h-screen flex-col items-center justify-center px-6">
       <motion.div
-        initial={{ opacity: 0, scale: 0.9 }}
-        animate={{ opacity: 1, scale: 1 }}
-        transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
-        className="relative z-10 flex flex-col items-center gap-12 text-center"
+        initial={{ opacity: 0, y: 24 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.7, ease }}
+        className="flex flex-col items-center gap-6 text-center"
       >
-        <div className="space-y-4 font-mono">
-          <h1 className="text-3xl lowercase text-white font-light">
-            you're all set
-          </h1>
-          <p className="text-sm text-gray-400 font-light">
-            Your email has been confirmed.
-            <br />
-            You can now close this window and return to the app.
-          </p>
-        </div>
-
+        <h1 className="text-3xl font-bold tracking-[-0.02em]">Confirmed.</h1>
+        <p className="text-sm text-muted-foreground">
+          Your email has been verified.
+          <br />
+          You can now close this window and return to the app.
+        </p>
         <Link
           href="/"
-          className="text-xs text-gray-500 hover:text-gray-300 transition-colors font-mono font-light"
+          className="heading-caption transition-opacity hover:opacity-60"
         >
           Return home
         </Link>
       </motion.div>
     </main>
-  )
+  );
 }
-
