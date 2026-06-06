@@ -1,66 +1,194 @@
 @import "tailwindcss";
+@import "tw-animate-css";
 
-:root {
-  --bg: #e7e5e4;
-  --text: #1c1917;
-  --text-muted: #a8a29e;
-  --accent: #7c2d12;
-  --border: rgba(0, 0, 0, 0.1);
+@custom-variant dark (&:is(.dark *));
+
+@theme {
+  --color-gray-100: #f2f2f2;
+  --color-gray-200: #ebebeb;
+  --color-gray-300: #e6e6e6;
+  --color-gray-400: #ebebeb;
+  --color-gray-500: #c9c9c9;
+  --color-gray-600: #a8a8a8;
+  --color-gray-700: #8f8f8f;
+  --color-gray-800: #7d7d7d;
+  --color-gray-900: #4d4d4d;
+  --color-gray-1000: #171717;
+
+  --color-blue-100: #f0f7ff;
+  --color-blue-200: #ebf5ff;
+  --color-blue-300: #e0f0ff;
+  --color-blue-400: #cce6ff;
+  --color-blue-500: #99ceff;
+  --color-blue-600: #52aeff;
+  --color-blue-700: #0072f5;
+  --color-blue-800: #0062d1;
+  --color-blue-900: #0068d6;
+  --color-blue-1000: #00254d;
+
+  --color-red-100: #fff0f0;
+  --color-red-200: #ffebeb;
+  --color-red-300: #ffe5e5;
+  --color-red-400: #fdd8d8;
+  --color-red-500: #f8b9b9;
+  --color-red-600: #f87275;
+  --color-red-700: #e5484d;
+  --color-red-800: #da2f35;
+  --color-red-900: #cb2a2f;
+  --color-red-1000: #391417;
+
+  --color-amber-100: #fff6e5;
+  --color-amber-200: #fff4d6;
+  --color-amber-300: #fef0cd;
+  --color-amber-400: #ffdd8f;
+  --color-amber-500: #ffc96b;
+  --color-amber-600: #f5b047;
+  --color-amber-700: #ffb224;
+  --color-amber-800: #ff990a;
+  --color-amber-900: #a35200;
+  --color-amber-1000: #4e2009;
+
+  --color-green-100: #effbef;
+  --color-green-200: #ebfaeb;
+  --color-green-300: #daf6da;
+  --color-green-400: #c6f1c7;
+  --color-green-500: #99e69e;
+  --color-green-600: #6cda75;
+  --color-green-700: #45a557;
+  --color-green-800: #398e4a;
+  --color-green-900: #297a3a;
+  --color-green-1000: #1b311e;
+
+  --color-teal-100: #eefcf9;
+  --color-teal-200: #e5faf6;
+  --color-teal-300: #d4f7f0;
+  --color-teal-400: #bef4eb;
+  --color-teal-500: #86ead9;
+  --color-teal-600: #45dec5;
+  --color-teal-700: #12a594;
+  --color-teal-800: #0d8c7d;
+  --color-teal-900: #067a6e;
+  --color-teal-1000: #073c34;
+
+  --color-purple-100: #f9f0ff;
+  --color-purple-200: #f9f1fe;
+  --color-purple-300: #f4e8fc;
+  --color-purple-400: #eddcf9;
+  --color-purple-500: #d5b1f1;
+  --color-purple-600: #bf89ec;
+  --color-purple-700: #8e4ec6;
+  --color-purple-800: #763da9;
+  --color-purple-900: #7820bc;
+  --color-purple-1000: #2e004d;
+
+  --color-pink-100: #ffebf5;
+  --color-pink-200: #feecf2;
+  --color-pink-300: #fce3ec;
+  --color-pink-400: #f9d7e2;
+  --color-pink-500: #f5b8cc;
+  --color-pink-600: #ee87a7;
+  --color-pink-700: #ea3e83;
+  --color-pink-800: #df2670;
+  --color-pink-900: #bd2864;
+  --color-pink-1000: #430a23;
+
+  --shadow-2xs: 0 0 #0000;
+  --shadow-xs: 0 0 #0000;
+  --shadow-sm: 0 0 #0000;
+  --shadow-md: 0 0 #0000;
+  --shadow-lg: 0 0 #0000;
+  --shadow-xl: 0 0 #0000;
+  --shadow-2xl: 0 0 #0000;
+  --inset-shadow-2xs: 0 0 #0000;
+  --inset-shadow-xs: 0 0 #0000;
+  --inset-shadow-sm: 0 0 #0000;
+  --drop-shadow-xs: 0 0 #0000;
+  --drop-shadow-sm: 0 0 #0000;
+  --drop-shadow-md: 0 0 #0000;
+  --drop-shadow-lg: 0 0 #0000;
+  --drop-shadow-xl: 0 0 #0000;
+  --drop-shadow-2xl: 0 0 #0000;
+
+  --default-border-width: 1px;
 }
 
-html {
-  background: var(--bg);
-  -webkit-text-size-adjust: 100%;
-  text-size-adjust: 100%;
+:root {
+  --radius: 0.625rem;
+  --background: #ffffff;
+  --foreground: #171717;
+  --card: #ffffff;
+  --card-foreground: #171717;
+  --popover: #ffffff;
+  --popover-foreground: #171717;
+  --primary: #171717;
+  --primary-foreground: #ffffff;
+  --secondary: #f2f2f2;
+  --secondary-foreground: #171717;
+  --muted: #f2f2f2;
+  --muted-foreground: #8f8f8f;
+  --accent: #f2f2f2;
+  --accent-foreground: #171717;
+  --destructive: #e5484d;
+  --border: #ebebeb;
+  --input: #e6e6e6;
+  --ring: #a8a8a8;
+}
+
+.dark {
+  --background: #171717;
+  --foreground: #f2f2f2;
+  --card: #171717;
+  --card-foreground: #f2f2f2;
+  --popover: #171717;
+  --popover-foreground: #f2f2f2;
+  --primary: #f2f2f2;
+  --primary-foreground: #171717;
+  --secondary: #4d4d4d;
+  --secondary-foreground: #f2f2f2;
+  --muted: #4d4d4d;
+  --muted-foreground: #a8a8a8;
+  --accent: #4d4d4d;
+  --accent-foreground: #f2f2f2;
+  --destructive: #f87275;
+  --border: #4d4d4d;
+  --input: #4d4d4d;
+  --ring: #8f8f8f;
 }
 
 @theme inline {
-  --color-bg: var(--bg);
-  --color-text: var(--text);
-  --color-text-muted: var(--text-muted);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
   --color-accent: var(--accent);
-
-  --color-background: var(--bg);
-  --color-foreground: var(--text);
-  --color-muted-foreground: var(--text-muted);
-
-  --font-sans: var(--font-geist), ui-sans-serif, system-ui, sans-serif;
-  --font-serif: var(--font-eb-garamond), ui-serif, Georgia, serif;
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
 }
 
 @layer base {
-  body {
-    background: var(--bg);
-    color: var(--text-muted);
-    font-family: var(--font-geist), ui-sans-serif, system-ui, sans-serif;
-    font-weight: 400;
-    line-height: 1.5;
-    -webkit-font-smoothing: antialiased;
-    text-rendering: optimizeLegibility;
+  * {
+    @apply border-border outline-ring/50;
   }
-}
-
-.text-balance {
-  text-wrap: balance;
-}
-.text-pretty {
-  text-wrap: pretty;
-}
-
-.heading-caption {
-  font-size: 0.6875rem;
-  font-weight: 400;
-  text-transform: uppercase;
-  letter-spacing: 0.22em;
-  color: var(--text-muted);
-}
-
-.link-hover {
-  position: relative;
-  display: inline-block;
-  color: var(--text-muted);
-  transition: color 200ms ease-out;
-}
-.link-hover:hover {
-  color: var(--text);
+  body {
+    @apply bg-background text-foreground;
+  }
 }

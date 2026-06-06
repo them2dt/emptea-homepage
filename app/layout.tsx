@@ -1,59 +1,84 @@
 import type { Metadata, Viewport } from "next";
-import { EB_Garamond, Geist } from "next/font/google";
+import { GeistSans } from "geist/font/sans";
+import { GeistMono } from "geist/font/mono";
 import { Analytics } from "@vercel/analytics/next";
 import "./globals.css";
 
-const ebGaramond = EB_Garamond({
-  subsets: ["latin"],
-  weight: ["400"],
-  variable: "--font-eb-garamond",
-  display: "swap",
-});
-
-const geist = Geist({
-  subsets: ["latin"],
-  weight: ["400"],
-  variable: "--font-geist",
-  display: "swap",
-});
+const title = "emptea — The powerhouse for the businesses of the future";
+const description =
+  "Three apps for what AI giants won't touch — distribution, operations, and market intelligence.";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://emptea.xyz"),
-  title: "emptea studios",
-  description: "Emptea studios, a powerhouse. Curious & industrial.",
+  title: {
+    default: title,
+    template: "%s · emptea",
+  },
+  description,
+  applicationName: "emptea",
+  keywords: [
+    "emptea",
+    "Octo",
+    "Aris",
+    "Peck",
+    "vibecoding",
+    "app distribution",
+    "app operations",
+    "app market intelligence",
+    "indie hackers",
+    "AI tools",
+  ],
+  authors: [{ name: "emptea studios" }],
+  creator: "emptea studios",
+  publisher: "emptea studios",
+  alternates: { canonical: "/" },
   openGraph: {
-    title: "emptea studios",
-    description: "Emptea studios, a powerhouse. Curious & industrial.",
     type: "website",
     url: "https://emptea.xyz",
-    siteName: "emptea studios",
+    siteName: "emptea",
+    title,
+    description,
+    locale: "en_US",
   },
   twitter: {
     card: "summary_large_image",
-    title: "emptea studios",
-    description: "Emptea studios, a powerhouse. Curious & industrial.",
+    title,
+    description,
   },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-snippet": -1,
+      "max-image-preview": "large",
+      "max-video-preview": -1,
+    },
+  },
+  icons: { icon: "/favicon.ico" },
+  formatDetection: { telephone: false, address: false, email: false },
 };
 
 export const viewport: Viewport = {
   width: "device-width",
   initialScale: 1,
   viewportFit: "cover",
-  themeColor: "#e7e5e4",
+  themeColor: [
+    { media: "(prefers-color-scheme: light)", color: "#ffffff" },
+    { media: "(prefers-color-scheme: dark)", color: "#171717" },
+  ],
 };
 
 export default function RootLayout({
   children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+}: Readonly<{ children: React.ReactNode }>) {
   return (
     <html
       lang="en"
-      suppressHydrationWarning
-      className={`${ebGaramond.variable} ${geist.variable} antialiased`}
+      className={`${GeistSans.variable} ${GeistMono.variable}`}
     >
-      <body className="min-h-screen">
+      <body className="antialiased">
         {children}
         <Analytics />
       </body>
