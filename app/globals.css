@@ -192,3 +192,243 @@
     @apply bg-background text-foreground;
   }
 }
+
+/* ── CD ──────────────────────────────────────────────────────────────
+   Geometry follows a real compact disc (values in % of the radius,
+   via `circle closest-side` so 100% = the rim):
+     hole 0–12.2 · clear hub 12.2–27 (semi-transparent through the mask)
+     stacking ring ~27 · mirror band 28–37.5 · data area 37.5–95
+     clear rim 95–100
+   The center hole and hub are cut with a shared alpha mask, so the
+   page shows through them. */
+
+@layer components {
+  .cd {
+    position: relative;
+    display: block;
+    aspect-ratio: 1;
+    padding: 0;
+    border: 0;
+    background: none;
+    cursor: pointer;
+    /* hover scale + return path after a launch */
+    transition:
+      opacity 0.5s ease,
+      transform 0.35s ease;
+    /* shared cutout: hole → translucent hub → opaque disc → translucent rim */
+    --cd-cut: radial-gradient(
+      circle closest-side,
+      transparent 0 12.2%,
+      rgba(0, 0, 0, 0.55) 13% 26.8%,
+      #000 28.2% 97.2%,
+      rgba(0, 0, 0, 0.5) 98.4% 99.4%,
+      transparent 100%
+    );
+    /* iridescence + grooves live only in the data area */
+    --cd-data: radial-gradient(
+      circle closest-side,
+      transparent 0 37.5%,
+      #000 40% 94.5%,
+      transparent 97%
+    );
+  }
+
+  .cd:focus-visible {
+    outline: 2px solid var(--ring);
+    outline-offset: 6px;
+    border-radius: 50%;
+  }
+
+  .cd-spin {
+    position: absolute;
+    inset: 0;
+  }
+
+  .cd:hover,
+  .cd:focus-visible {
+    transform: scale(1.025);
+  }
+
+  /* launch: pulse to 1.1 and settle back while the spin winds up,
+     then lift off and fade */
+  .cd-launching {
+    pointer-events: none;
+    animation:
+      cd-pulse 0.5s ease forwards,
+      cd-rise 0.5s cubic-bezier(0.55, 0, 1, 0.45) 0.65s forwards;
+  }
+
+  .cd-launching .cd-spin {
+    animation: cd-launch-spin 1.15s cubic-bezier(0.8, 0, 1, 0.35) forwards;
+  }
+
+  .cd-face,
+  .cd-glare {
+    position: absolute;
+    inset: 0;
+    border-radius: 50%;
+    mask-image: var(--cd-cut);
+  }
+
+  .cd-glare {
+    pointer-events: none;
+    /* stationary light: the disc spins underneath it */
+    background:
+      radial-gradient(120% 120% at 30% 22%, rgba(255, 255, 255, 0.5) 0%, rgba(255, 255, 255, 0) 45%),
+      radial-gradient(140% 140% at 74% 86%, rgba(255, 255, 255, 0.28) 0%, rgba(255, 255, 255, 0) 42%);
+  }
+
+  .cd-face > * {
+    position: absolute;
+    inset: 0;
+    border-radius: 50%;
+  }
+
+  .cd-base {
+    background:
+      /* mirror band, slightly brighter than the data area */
+      radial-gradient(
+        circle closest-side,
+        transparent 27%,
+        rgba(255, 255, 255, 0.55) 30% 36%,
+        transparent 39.5%
+      ),
+      /* directional light across the aluminum */
+      linear-gradient(135deg, rgba(255, 255, 255, 0.85) 0%, rgba(255, 255, 255, 0) 40%, rgba(23, 23, 23, 0.05) 100%),
+      radial-gradient(circle closest-side, #f7f7f7 0%, #eeeeee 34%, #e3e3e3 62%, #d8d8d8 84%, #cdcdcd 100%);
+  }
+
+  .cd-logo {
+    object-fit: cover;
+    mask-image: var(--cd-data);
+    opacity: 0.85;
+  }
+
+  .cd-iridescence {
+    mask-image: var(--cd-data);
+    background: conic-gradient(
+      from 205deg,
+      transparent 0deg,
+      rgba(96, 165, 250, 0.5) 28deg,
+      rgba(45, 212, 191, 0.45) 55deg,
+      rgba(232, 121, 249, 0.4) 95deg,
+      transparent 130deg 175deg,
+      rgba(253, 224, 71, 0.38) 205deg,
+      rgba(74, 222, 128, 0.32) 235deg,
+      rgba(125, 211, 252, 0.45) 268deg,
+      transparent 300deg 360deg
+    );
+    filter: blur(7px) saturate(1.15);
+  }
+
+  .cd-iridescence-b {
+    background: conic-gradient(
+      from 30deg,
+      transparent 0deg 40deg,
+      rgba(244, 114, 182, 0.32) 70deg,
+      rgba(129, 140, 248, 0.38) 100deg,
+      transparent 135deg 220deg,
+      rgba(45, 212, 191, 0.28) 250deg,
+      rgba(250, 204, 21, 0.25) 285deg,
+      transparent 320deg 360deg
+    );
+    filter: blur(10px) saturate(1.1);
+  }
+
+  .cd-grooves {
+    mask-image: var(--cd-data);
+    background:
+      /* radial "brushed" spokes — the sparkle when the disc turns */
+      repeating-conic-gradient(
+        rgba(255, 255, 255, 0.09) 0deg 0.4deg,
+        rgba(255, 255, 255, 0) 0.4deg 2.2deg
+      ),
+      /* the data track: hairline concentric rings */
+      repeating-radial-gradient(
+        circle closest-side,
+        rgba(255, 255, 255, 0.18) 0px,
+        rgba(23, 23, 23, 0.04) 1px,
+        rgba(255, 255, 255, 0) 2px
+      );
+    opacity: 0.45;
+  }
+
+  .cd-rings {
+    background: radial-gradient(
+      circle closest-side,
+      transparent 0 12.4%,
+      rgba(255, 255, 255, 0.9) 12.8% 13.4%,   /* hole rim highlight */
+      transparent 14.2% 25.6%,
+      rgba(23, 23, 23, 0.1) 26.2% 26.8%,      /* stacking ring shadow */
+      rgba(255, 255, 255, 0.8) 27.2% 27.8%,   /* stacking ring highlight */
+      transparent 28.6% 36.8%,
+      rgba(23, 23, 23, 0.07) 37.4% 37.9%,     /* data area starts */
+      transparent 38.6% 94.2%,
+      rgba(23, 23, 23, 0.06) 94.8% 95.3%,     /* data area ends */
+      transparent 96%,
+      rgba(23, 23, 23, 0.16) 98.6% 100%       /* rim shading */
+    );
+  }
+
+  .cd-text {
+    display: block;
+    width: 100%;
+    height: 100%;
+  }
+
+  .cd-title {
+    font-family: var(--font-mono);
+    font-size: 13.5px;
+    font-weight: 500;
+    letter-spacing: 3px;
+    fill: rgba(23, 23, 23, 0.78);
+  }
+}
+
+@keyframes cd-pulse {
+  0% {
+    transform: scale(1.025);
+  }
+  20% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes cd-launch-spin {
+  to {
+    transform: rotate(14turn);
+  }
+}
+
+@keyframes cd-rise {
+  to {
+    transform: translateY(-45vh) scale(1);
+    opacity: 0;
+  }
+}
+
+@keyframes cd-fade {
+  to {
+    opacity: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cd,
+  .cd:hover,
+  .cd:focus-visible {
+    transition: none;
+    transform: none;
+  }
+
+  .cd-launching {
+    animation: cd-fade 0.5s ease forwards;
+  }
+
+  .cd-launching .cd-spin {
+    animation: none;
+  }
+}
